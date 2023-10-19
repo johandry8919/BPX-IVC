@@ -13,8 +13,6 @@ const Outs = document.getElementById("outsp");
 const barraEquiposElement = document.getElementById("barras");
 
 function runTemplateUpdate() {
-
-    
   const url1 = new URL("https://bss.qualitybeisbol.com/api/boxscore");
   const url2 = new URL("https://bss.qualitybeisbol.com/api/lineup");
 
@@ -85,12 +83,15 @@ function runTemplateUpdate() {
               posicion_bateo_visitante,
             } = result1.data.juego;
 
-
-            console.log(result1.data.juego)
+            console.log(result1.data.juego);
 
             let id_quipos_juega;
-            parte == 1 ? id_quipos_juega = id_equipo_homeclub : id_quipos_juega = id_equipo_visitante;
-            id_quipos_juega == 2 ? document.getElementById("f1_gfx1").style.color = "black": "";
+            parte == 1
+              ? (id_quipos_juega = id_equipo_homeclub)
+              : (id_quipos_juega = id_equipo_visitante);
+            id_quipos_juega == 2
+              ? (document.getElementById("f1_gfx1").style.color = "black")
+              : "";
 
             let homeclub_lanzadores = result1.data.boxscore.homeclub.lanzadores;
             let homeclub_peloteros = result1.data.boxscore.homeclub.peloteros;
@@ -98,9 +99,9 @@ function runTemplateUpdate() {
             let lanzadores_visitante =
               result1.data.boxscore.visitante.lanzadores;
 
-            inning ? inning : inning = "0";
+            inning ? inning : (inning = "0");
             Inning.innerText = inning;
-           
+
             if (outs === 1) {
               Outs.src = "./img/aout-1.png";
             } else if (outs === 2) {
@@ -154,7 +155,8 @@ function runTemplateUpdate() {
                     return numero.toString().substring(1);
                   }
 
-                  var AVE = element.AVE == null ? ".00": convertirNumero(element.AVE);
+                  var AVE =
+                    element.AVE == null ? ".00" : convertirNumero(element.AVE);
                   let nombre = element.nombre;
                   document.getElementById(
                     "f0_gfx"
@@ -180,7 +182,7 @@ function runTemplateUpdate() {
                     return numero.toString().substring(1);
                   }
 
-                  var AVE = element.AVE == null ? ".00" :element.AVE ;
+                  var AVE = element.AVE == null ? ".00" : element.AVE;
                   let nombre = element.nombre;
 
                   document.getElementById(
@@ -202,24 +204,27 @@ function runTemplateUpdate() {
                 }
               });
             }
-            let colorDebase = "red";
-            if (hombre_primera == 1) {
-              Hombre_primera.style.backgroundColor = colorDebase;
+            const colorDebase = "red";
+            
+
+            function actualizarColor(elemento, valor) {
+              elemento.style.backgroundColor = valor === 1 ? colorDebase : "";
             }
 
-            if (hombre_segunda ===1) {
-              Hombre_segunda.style.backgroundColor = colorDebase;
-            }
+            actualizarColor(Hombre_primera, hombre_primera);
+            actualizarColor(Hombre_segunda, hombre_segunda);
+            actualizarColor(Hombre_tercera, hombre_tercera);
 
-            if (hombre_tercera === 1) {
-              Hombre_tercera.style.backgroundColor = colorDebase;
-            }
-            Carreras_homeclub.innerText = carreras_homeclub ? carreras_homeclub: carreras_homeclub = "00";
+            Carreras_homeclub.innerText = carreras_homeclub
+              ? carreras_homeclub
+              : (carreras_homeclub = "00");
             Carreras_visitante.innerText = carreras_visitante
               ? carreras_visitante
-              : carreras_visitante = "00";
+              : (carreras_visitante = "00");
 
-            id_equipo_visitante == 2 ? Carreras_visitante.style.color = "black": "";
+            id_equipo_visitante == 2
+              ? (Carreras_visitante.style.color = "black")
+              : "";
 
             if (!animationExecuted) {
               runAnimationIN();
