@@ -1,0 +1,33 @@
+{
+  "general": {
+    "username": "admin",
+    "password": "",
+    "hostname": "",
+    "greeting": "",
+    "langfile": "english.json",
+    "loglevel": "info",
+    "launchchrome": false,
+    "resolution": "HD",
+    "preview": "selected",
+    "renderer": "normal",
+    "apikey": "",
+    "logfolder": "C:/Users/johandry/Desktop/BPX-IVC/LOG/",
+    "dataroot": "C:/Users/johandry/Desktop/BPX-IVC/DATAROOT/",
+    "templatesource": "spx-ip-address",
+    "port": "5656",
+    "disableConfigUI": false,
+    "disableLocalRenderer": false,
+    "disableSeveralControllersWarning": false,
+    "recents": []
+  },
+  "casparcg": {
+    "servers": []
+  },
+  "globalExtras": {
+    "customscript": "/ExtraFunctions/demoFunctions.js",
+    "CustomControls": []
+  },
+  "warning": "GENERATED DEFAULT CONFIG. Modifications done in the SPX will overwrite this file.",
+  "copyright": "(c) 2020- Softpix (https://spx.graphics)",
+  "updated": "2023-10-19T18:41:29.296Z"
+}
