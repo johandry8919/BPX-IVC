@@ -1,0 +1,58 @@
+@font-face {
+font-family: rajdhani-bold;
+src: url('../_fonts/Rajdhani-Bold.ttf');
+}
+@font-face {
+font-family: rajdhani-medium;
+src: url('../_fonts/Rajdhani-Medium.ttf');
+}
+@font-face {
+font-family: rajdhani-regular;
+src: url('../_fonts/Rajdhani-Regular.ttf');
+}
+@font-face {
+font-family: rajdhani-light;
+src: url('../_fonts/Rajdhani-Light.ttf');
+}
+@font-face {
+font-family: anton-regular;
+src: url('../_fonts/Anton-Regular.ttf');
+}
+@font-face {
+font-family: ibm-thin;
+src: url('../_fonts/IBMPlexSans-Thin.ttf');
+}
+@font-face {
+font-family: ibm-bold;
+src: url('../_fonts/IBMPlexSans-Bold.ttf');
+}
+@font-face {
+font-family: ibm-regultar;
+src: url('../_fonts/IBMPlexSans-Regular.ttf');
+}
+
+.medium{
+font-family: rajdhani-medium;
+}
+.bold{
+font-family: rajdhani-bold;
+}
+.regular{
+font-family: rajdhani-regular;
+}
+.light{
+font-family: rajdhani-medium;
+}
+
+.anton{
+	font-family: anton-regular;
+}
+.ibmthin{
+	font-family: ibm-thin;
+}
+.ibmbold{
+	font-family: ibm-bold;
+}
+.ibmregular{
+	font-family: ibm-regular;
+}

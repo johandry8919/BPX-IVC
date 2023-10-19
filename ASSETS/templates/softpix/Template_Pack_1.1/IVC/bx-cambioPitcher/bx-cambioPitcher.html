@@ -1,0 +1,137 @@
+<!-- ### CASPAR ### -->
+<script src="../../js/gsap3.2.6.min.js"></script>
+<link rel="stylesheet" type="text/css" href="../../css/spx_layout.css" />
+<link rel="stylesheet" type="text/css" href="../../css/spx_fonts.css" />
+<script type="text/javascript" src="../../js/spx_interface.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" type="text/css" id="DynamicTheme" href="css/styles.css" />
+
+
+
+
+<script type="text/javascript">
+  window.SPXGCTemplateDefinition = {
+    description: "",
+    playserver: "OVERLAY",
+    playchannel: "1",
+    playlayer: "1",
+    webplayout: "6",
+    out: "manual",
+    dataformat: "json",
+    uicolor: "5",
+    DataFields: [
+      {
+        field: "comment",
+        ftype: "textfield",
+        title: "bx-cambioPitcher",
+        value: "bx-cambioPitcher",
+      },
+
+      {
+        field: "f0",
+        ftype: "textfield",
+        title: "ID DEL JUEGO",
+        value: "23+2+4++4",
+      },
+      {
+          field: "f3",
+          ftype: "filelist",
+          title: "Elija la imagen del patrocinador",
+          assetfolder: "/media/images/bg/",
+          extension: "png",
+          value: "none",
+        },
+
+
+
+    ],
+  };
+</script>
+</head>
+
+<body>
+
+
+
+
+
+  <div id="container" class="container SPXWindow SPX_AUTOSIZE"
+    data-spx-remember="Use either SPX_AUTOSIZE or SPX_FIXSIZE">
+
+
+    <div id="entreinnings" class="entreinnings">
+      <div id="cont-logo"  class="cont-patrocinador">
+        <div>
+          <img
+          id="logoPatrocinio"
+           style="text-align: center"
+           width="100%"
+           height="auto"
+           src="img/Munchy.png"
+           alt=""
+         />
+        </div>
+      </div>
+     
+      <div  class="cont_che_alta_baja">
+        
+        <div id="alta_baja" style="color: aliceblue; display: flex; padding: 3px; align-items: center;" class="alta_baja">
+          <p id="Inning" style="margin-left: 10px;"></p>
+          <p id="ALTA_BAJA"  style="color: aliceblue; margin-left: 20px; font-size: 25px;"></p>
+        </div>
+        <div class="che"></div>
+      </div>
+
+      <div class="cont_innings">
+        <div class="logo_visitante cont-logo">
+          <div class="logo visitante"> <img id="id_equipo_visitante" width="100%" height="65" alt=""></div>
+          <div class="number_data">
+            <div id="Carreras_visitante"></div>
+           
+          </div>
+
+        </div>
+        <div class="logo_homeclub cont-logo">
+
+         
+          <div class="logo homeclub">  <img id="id_equipo_homeclub" width="100%" height="65"  alt=""></div>
+          <div class="number_data">
+            <div id="Carreras_homeclub"></div>
+           
+
+          </div>
+
+
+    
+
+        </div>
+
+       
+        <div id="cont-base" class="cont-base">
+          <div id="hombre_primera"></div>
+          <div id="hombre_segunda"></div>
+          <div id="hombre_tercera"></div>
+
+        
+        </div>
+        <div id="outs" class="outs">
+          <img id="outsp" width="100%"   alt="">
+        </div>
+      </div>
+
+    </div>
+
+
+    <div style="opacity: 0" id="f3"></div>
+    <div style="opacity: 0" id="f0"></div>
+  </div>
+
+  <script src="../_js/jquery-3.0.0.min.js"></script>
+  <script src="js/animaciones.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/temStyles.js"></script>
+
+</body>
