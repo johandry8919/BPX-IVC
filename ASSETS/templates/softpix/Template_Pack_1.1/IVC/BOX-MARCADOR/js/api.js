@@ -83,8 +83,7 @@ function runTemplateUpdate() {
               posicion_bateo_visitante,
             } = result1.data.juego;
 
-            console.log(result1.data.juego);
-
+           
             let id_quipos_juega;
             parte == 1? (id_quipos_juega = id_equipo_homeclub): (id_quipos_juega = id_equipo_visitante);
             id_quipos_juega == 2? (document.getElementById("f1_gfx1").style.color = "black"): "";
@@ -148,10 +147,7 @@ function runTemplateUpdate() {
               homeclub_lanzadores.forEach((element) => {
                 if (element.id_picher == id_lanzador_homeclub) {
                   let nombre = element.nombre;
-                  document.getElementById(
-                    "f1_gfx"
-                  ).innerHTML = ` <p>${nombre.charAt(0)} ${element.apellido}</p>
-                        <p>L ${totalStrikesBolasFoul} </p> `;
+                  document.getElementById("f1_gfx" ).innerHTML = ` <p>${nombre.charAt(0)} ${element.apellido}</p><p>L ${totalStrikesBolasFoul} </p> `;
                 }
               });
 
@@ -170,10 +166,7 @@ function runTemplateUpdate() {
                   let nombre = element.nombre;
                   document.getElementById(
                     "f0_gfx"
-                  ).innerHTML = ` <p>${nombre.charAt(0)} ${
-                    element.apellido
-                  } </p>
-                    <p>${AVE}</p>  `;
+                  ).innerHTML = ` <p>${nombre.charAt(0)} ${element.apellido} </p <p>${AVE}</p>  `;
                 }
               });
             }
@@ -194,13 +187,7 @@ function runTemplateUpdate() {
 
                   var AVE = element.AVE == null ? ".00" : element.AVE;
                   let nombre = element.nombre;
-
-                  document.getElementById(
-                    "f1_gfx"
-                  ).innerHTML = ` <p>${nombre.charAt(0)} ${
-                    element.apellido
-                  } </p>
-                            <p>${AVE}</p>  `;
+                  document.getElementById("f1_gfx").innerHTML = `<p>${nombre.charAt(0)} HERNANDEZ </p><p>${AVE}</p>`;
                 }
               });
 
@@ -210,7 +197,7 @@ function runTemplateUpdate() {
                   document.getElementById(
                     "f0_gfx"
                   ).innerHTML = ` <p>${nombre.charAt(0)} ${element.apellido}</p>
-                        <p>L ${totalStrikesBolasFoul} </p>  `;
+                      <p>L ${totalStrikesBolasFoul} </p>  `;
                 }
               });
             }
@@ -233,6 +220,7 @@ function runTemplateUpdate() {
               : (carreras_visitante = "00");
 
             id_equipo_visitante == 2? (Carreras_visitante.style.color = "black")  : "";
+            id_equipo_visitante == 3? (Carreras_visitante.style.color = "black")  : "";
 
             if (!animationExecuted) {
               runAnimationIN();
