@@ -5,10 +5,23 @@ const homeclub = document.getElementById('homeclub')
 const posicion_1_visitante = document.getElementById('posicion_1_visitante')
 const posicion_2_visitante = document.getElementById('posicion_2_visitante')
 const posicion_3_visitante = document.getElementById('posicion_3_visitante')
+const posicion_4_visitante = document.getElementById('posicion_4_visitante')
+const posicion_5_visitante = document.getElementById('posicion_5_visitante')
+const posicion_6_visitante = document.getElementById('posicion_6_visitante')
+const posicion_7_visitante = document.getElementById('posicion_7_visitante')
+const posicion_8_visitante = document.getElementById('posicion_8_visitante')
+const posicion_9_visitante = document.getElementById('posicion_9_visitante')
+
 
 const posicion_1_homeclub = document.getElementById('posicion_1_homeclub')
 const posicion_2_homeclub = document.getElementById('posicion_2_homeclub')
 const posicion_3_homeclub = document.getElementById('posicion_3_homeclub')
+const posicion_4_homeclub = document.getElementById('posicion_4_homeclub')
+const posicion_5_homeclub = document.getElementById('posicion_5_homeclub')
+const posicion_6_homeclub = document.getElementById('posicion_6_homeclub')
+const posicion_7_homeclub = document.getElementById('posicion_7_homeclub')
+const posicion_8_homeclub = document.getElementById('posicion_8_homeclub')
+const posicion_9_homeclub = document.getElementById('posicion_9_homeclub')
 const Carreras_visitante = document.getElementById('Carreras_visitante')
 const Carreras_homeclub = document.getElementById('Carreras_homeclub')
 const Hits_visitante = document.getElementById('hits_visitante')
@@ -96,19 +109,32 @@ function runTemplateUpdate() {
                             
                   
 
-                        posicion_1_visitante.innerText  = result2.data.visitante[0]
-                        posicion_2_visitante.innerText  = result2.data.visitante[1]
-                        posicion_3_visitante.innerText  = result2.data.visitante[2] ? result2.data.visitante[2] : '0'
-                       
-                         // posicion de la pizarra del 0 al 9 visitante
-
-
-                        // posicion de la pizarra del 0 al 9 homeclub
-
-
-                        posicion_1_homeclub.innerText  = result2.data.homeclub[0]
-                        posicion_2_homeclub.innerText  = result2.data.homeclub[1]
-                        posicion_3_homeclub.innerText  = result2.data.homeclub[2] ? result2.data.homeclub[2] : '0'
+                            posicion_1_visitante.innerText  = result2.data.visitante[0] ? result2.data.visitante[0] :'0'
+                            posicion_2_visitante.innerText  = result2.data.visitante[1] ? result2.data.visitante[1] :'0'
+                            posicion_3_visitante.innerText  = result2.data.visitante[2] ? result2.data.visitante[2] : '0'
+                            posicion_4_visitante.innerText  = result2.data.visitante[3] ? result2.data.visitante[3] : '0'
+                            posicion_5_visitante.innerText  = result2.data.visitante[4] ? result2.data.visitante[4] : '0'
+                            posicion_6_visitante.innerText  = result2.data.visitante[5] ? result2.data.visitante[5] : '0'
+                            posicion_7_visitante.innerText  = result2.data.visitante[6] ? result2.data.visitante[6] : '0'
+                            posicion_8_visitante.innerText  = result2.data.visitante[7] ? result2.data.visitante[7] : '0'
+                            posicion_9_visitante.innerText  = result2.data.visitante[8] ? result2.data.visitante[8] : '0'
+    
+    
+                            // posicion de la pizarra del 0 al 9 visitante
+    
+    
+                            // posicion de la pizarra del 0 al 9 homeclub
+    
+    
+                            posicion_1_homeclub.innerText  = result2.data.homeclub[0]
+                            posicion_2_homeclub.innerText  = result2.data.homeclub[1]
+                            posicion_3_homeclub.innerText  = result2.data.homeclub[2] ? result2.data.homeclub[2] : '0'
+                            posicion_4_homeclub.innerText  = result2.data.homeclub[3] ? result2.data.homeclub[3] : '0'
+                            posicion_5_homeclub.innerText  = result2.data.homeclub[4] ? result2.data.homeclub[4] : '0'
+                            posicion_6_homeclub.innerText  = result2.data.homeclub[5] ? result2.data.homeclub[5] : '0'
+                            posicion_7_homeclub.innerText  = result2.data.homeclub[6] ? result2.data.homeclub[6] : '0'
+                            posicion_8_homeclub.innerText  = result2.data.homeclub[7] ? result2.data.homeclub[7] : '0'
+                            posicion_9_homeclub.innerText  = result2.data.homeclub[8] ? result2.data.homeclub[8] : '0'
                        
                          // posicion de la pizarra del 0 al 9 homeclub
 

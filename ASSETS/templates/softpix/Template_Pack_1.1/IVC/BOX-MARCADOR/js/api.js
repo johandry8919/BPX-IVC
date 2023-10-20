@@ -86,12 +86,8 @@ function runTemplateUpdate() {
             console.log(result1.data.juego);
 
             let id_quipos_juega;
-            parte == 1
-              ? (id_quipos_juega = id_equipo_homeclub)
-              : (id_quipos_juega = id_equipo_visitante);
-            id_quipos_juega == 2
-              ? (document.getElementById("f1_gfx1").style.color = "black")
-              : "";
+            parte == 1? (id_quipos_juega = id_equipo_homeclub): (id_quipos_juega = id_equipo_visitante);
+            id_quipos_juega == 2? (document.getElementById("f1_gfx1").style.color = "black"): "";
 
             let homeclub_lanzadores = result1.data.boxscore.homeclub.lanzadores;
             let homeclub_peloteros = result1.data.boxscore.homeclub.peloteros;
@@ -113,16 +109,30 @@ function runTemplateUpdate() {
             document.getElementById("fondo_visitante").src =
               Fondo_equipos[id_equipo_visitante].img_url;
 
-            let totalS = 0;
-            let totalB = 0;
-
-            for (let i = 0; i < secuencia_lanzamientos.length; i++) {
-              if (secuencia_lanzamientos[i] === "S") {
-                totalS++;
-              } else if (secuencia_lanzamientos[i] === "B") {
-                totalB++;
+              let totalS = 0;
+              let totalB = 0;
+              let totalF = 0;
+          
+          for (let i = 0; i < secuencia_lanzamientos.length; i++) {
+              if (secuencia_lanzamientos[i] === 'S') {
+                  totalS++;
+              } else if (secuencia_lanzamientos[i] === 'B') {
+                  totalB++;
+              } else if (secuencia_lanzamientos[i] === 'F') {
+                  totalF++;
               }
-            }
+          }
+          
+          if (totalF === 1 && totalS === 2) {
+              totalS = 0;
+              totalB = 0;
+          } else if (totalF === 2 && totalS === 1) {
+              totalS = 0;
+              totalB = 0;
+          } else if (totalF === 3 || totalS === 3 || totalB === 4) {
+              totalS = 0;
+              totalB = 0;
+          }
 
             document.getElementById("bolas").innerText = totalB;
             document.getElementById("strain").innerText = totalS;
@@ -222,9 +232,7 @@ function runTemplateUpdate() {
               ? carreras_visitante
               : (carreras_visitante = "00");
 
-            id_equipo_visitante == 2
-              ? (Carreras_visitante.style.color = "black")
-              : "";
+            id_equipo_visitante == 2? (Carreras_visitante.style.color = "black")  : "";
 
             if (!animationExecuted) {
               runAnimationIN();
