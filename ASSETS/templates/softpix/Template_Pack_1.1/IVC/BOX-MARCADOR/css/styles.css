@@ -61,7 +61,7 @@ body {
   display: flex;
   justify-content: space-between;
   text-wrap: nowrap;
-
+ 
 }
 .cont-name .name_2 {
   opacity: 1;
@@ -71,6 +71,7 @@ body {
   display: flex;
   justify-content: space-between;
   text-wrap: nowrap;
+ 
 }
 
 .cont_logo_equipos {

@@ -147,7 +147,7 @@ function runTemplateUpdate() {
               homeclub_lanzadores.forEach((element) => {
                 if (element.id_picher == id_lanzador_homeclub) {
                   let nombre = element.nombre;
-                  document.getElementById("f1_gfx" ).innerHTML = ` <p>${nombre.charAt(0)} ${element.apellido}</p><p>L ${totalStrikesBolasFoul} </p> `;
+                  document.getElementById("f1_gfx" ).innerHTML = `<p>${nombre.charAt(0)} ${element.apellido}</p><p>L ${totalStrikesBolasFoul} </p> `;
                 }
               });
 
@@ -156,17 +156,14 @@ function runTemplateUpdate() {
                 if (element.id_pelotero == id_bateador_visitante) {
                   function convertirNumero(numero) {
                     if (numero === null || typeof numero === "undefined") {
-                      numero = 0.0;
+                      numero = 'AVG.000';
                     }
                     return numero.toString().substring(1);
                   }
 
-                  var AVE =
-                    element.AVE == null ? ".00" : convertirNumero(element.AVE);
+                  var AVE = convertirNumero(element.AVE)
                   let nombre = element.nombre;
-                  document.getElementById(
-                    "f0_gfx"
-                  ).innerHTML = ` <p>${nombre.charAt(0)} ${element.apellido} </p <p>${AVE}</p>  `;
+                  document.getElementById("f0_gfx").innerHTML = `<p>${nombre.charAt(0)} ${element.apellido} </p <p>AVG${AVE}</p> `;
                 }
               });
             }
@@ -180,14 +177,14 @@ function runTemplateUpdate() {
                 if (element.id_pelotero == id_bateador_homeclub) {
                   function convertirNumero(numero) {
                     if (numero === null || typeof numero === "undefined") {
-                      numero = 0.0;
+                      numero = 'AVG.000';
                     }
                     return numero.toString().substring(1);
                   }
 
-                  var AVE = element.AVE == null ? ".00" : element.AVE;
+                  var AVE = convertirNumero(element.AVE)
                   let nombre = element.nombre;
-                  document.getElementById("f1_gfx").innerHTML = `<p>${nombre.charAt(0)} HERNANDEZ </p><p>${AVE}</p>`;
+                  document.getElementById("f1_gfx").innerHTML = `<p>${nombre.charAt(0)} ${element.apellido} </p><p>AVG${AVE}</p>`;
                 }
               });
 
