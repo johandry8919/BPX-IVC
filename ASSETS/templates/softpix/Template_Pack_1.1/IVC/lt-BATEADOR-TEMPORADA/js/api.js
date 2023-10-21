@@ -100,7 +100,6 @@ function runTemplateUpdate() {
          
             let id_quipos_juega 
             parte == 1 ? id_quipos_juega = id_equipo_homeclub :id_quipos_juega = id_equipo_visitante
-            id_quipos_juega == 2  ? document.getElementById("f1_gfx1").style.color = 'black': '';
 
             barraEquiposElement.style.backgroundImage = `url(${Barra_equipos[id_quipos_juega].img_url})`;  
 

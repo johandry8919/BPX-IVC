@@ -74,7 +74,7 @@ function runTemplateUpdate() {
          
             let id_quipos_juega 
             parte == 1 ? id_quipos_juega = id_equipo_homeclub :id_quipos_juega = id_equipo_visitante
-            id_quipos_juega == 2  ? document.getElementById("f1_gfx1").style.color = 'black': '';      
+             
             
            let texname_1 = htmlDecode(e('f1').innerText);
            let texname_2 = htmlDecode(e('f2').innerText);
