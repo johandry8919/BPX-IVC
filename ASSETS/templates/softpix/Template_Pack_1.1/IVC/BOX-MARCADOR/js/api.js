@@ -113,58 +113,88 @@ function runTemplateUpdate() {
                          document.getElementById("fondo_visitante").src =Fondo_equipos[id_equipo_visitante].img_url;
 
 
-              let totalS = 0;
-              let totalB = 0;
-              let totalF = 0;
-          
-          for (let i = 0; i < secuencia_lanzamientos.length; i++) {
-              if (secuencia_lanzamientos[i] === 'S') {
-                  totalS++;
-              } else if (secuencia_lanzamientos[i] === 'B') {
-                  totalB++;
-              } else if (secuencia_lanzamientos[i] === 'F') {
-                  totalF++;
-              }
-          }
-          
-          if (totalF === 1 && totalS === 2) {
-              totalS = 0;
-              totalB = 0;
-          } else if (totalF === 2 && totalS === 1) {
-              totalS = 0;
-              totalB = 0;
-          } else if (totalF === 3 || totalS === 3 || totalB === 4) {
-              totalS = 0;
-              totalB = 0;
-          }
+                            let totalS = 0;
+                            let totalB = 0;
+                            let totalF = 0;
+                        
+                        for (let i = 0; i < secuencia_lanzamientos.length; i++) {
+                            if (secuencia_lanzamientos[i] === 'S') {
+                                totalS++;
+                            } else if (secuencia_lanzamientos[i] === 'B') {
+                                totalB++;
+                            } else if (secuencia_lanzamientos[i] === 'F') {
+                                totalF++;
+                            }
+                        }
+                        
+                        if (totalF === 1 && totalS === 2) {
+                            totalS = 0;
+                            totalB = 0;
+                        } else if (totalF === 2 && totalS === 1) {
+                            totalS = 0;
+                            totalB = 0;
+                        } else if (totalF === 3 || totalS === 3 || totalB === 4) {
+                            totalS = 0;
+                            totalB = 0;
+                        }
+    
+                       
+                        document.getElementById("bolas").innerText = totalB;
+                        document.getElementById("strain").innerText = totalS;
+                        if (parte === 0) {
+                          const totalStrikesBolasFoul =
+                            lanzador_homeclub_strikes +
+                            lanzador_homeclub_bolas +
+                            lanzador_homeclub_foul;
+                          Initt_alta_baja.src = alta_baja[1].img_url;
+                          Initt_alta_baja.src = "./img/alta.png";
+                          //data / boxscore / homeclub /lanzador
+                          homeclub_lanzadores.forEach((element) => {
+                            if (element.id_picher == id_lanzador_homeclub) {
+                              let nombre = element.nombre;
+                              document.getElementById("f1_gfx" ).innerHTML = `<p>${nombre.charAt(0)} ${element.apellido}</p><p>L${totalStrikesBolasFoul} </p> `;
+                            }
 
-            document.getElementById("bolas").innerText = totalB;
-            document.getElementById("strain").innerText = totalS;
+                            // picher 4 fila 
+                            document.getElementById('li_valor_4').innerText =  element.IP
+                            document.getElementById('hold_valor_4').innerText = element.HOLD
+                            document.getElementById('k_valor_4').innerText = element.SO +'/' + element.BB
+                            document.getElementById('efect_valor_4').innerText = element.ERA
+                            // picher 4 fila 
 
-            if (parte === 0) {
-              const totalStrikesBolasFoul =
-                lanzador_homeclub_strikes +
-                lanzador_homeclub_bolas +
-                lanzador_homeclub_foul;
-              Initt_alta_baja.src = alta_baja[1].img_url;
-              Initt_alta_baja.src = "./img/alta.png";
-              //data / boxscore / homeclub /lanzador
-              homeclub_lanzadores.forEach((element) => {
-                if (element.id_picher == id_lanzador_homeclub) {
-                  let nombre = element.nombre;
-                  document.getElementById("f1_gfx" ).innerHTML = `<p>${nombre.charAt(0)} ${element.apellido}</p><p>L ${totalStrikesBolasFoul} </p> `;
-                }
-              });
+                            // picher 5 fila 
+                            document.getElementById('gp_valor_5').innerText =  element.G + '/' + element.P
+                            document.getElementById('il_valor_5').innerText = element.IP
+                            document.getElementById('KBB_valor_5').innerText = element.SO +'/' + element.BB
+                            document.getElementById('efect_valor_5').innerText = element.ERA
+                            document.getElementById('ehip_valor_5').innerText = element.WHIP
 
-              //data / boxscore / visitante /visitante
-              peloteros_visitante.forEach((element) => {
-                if (element.id_pelotero == id_bateador_visitante) {
-                  function convertirNumero(numero) {
-                    if (numero === null || typeof numero === "undefined") {
-                      numero = 'AVG.000';
-                    }
-                    return numero.toString().substring(1);
-                  }
+                              
+                            // picher 5 fila 
+
+                            // picher 6 fila 
+                            document.getElementById('gp_valor_6').innerText =  element.G + '/' + element.P
+                            document.getElementById('il_valor_6').innerText = element.IP
+                            document.getElementById('KBB_valor_6').innerText = element.SO +'/' + element.BB
+                             document.getElementById('AVGOPP_valor_6').innerText = element.ERA
+                            document.getElementById('efect_valor_6').innerText = element.ERA
+                            document.getElementById('ehip_valor_6').innerText = element.WHIP
+                           
+
+                              
+                            // picher 6 fila 
+
+                          });
+              
+                          //data / boxscore / visitante /visitante
+                          peloteros_visitante.forEach((element) => {
+                            if (element.id_pelotero == id_bateador_visitante) {
+                              function convertirNumero(numero) {
+                                if (numero === null || typeof numero === "undefined") {
+                                  numero = 0.00;
+                                }
+                                return numero.toString().substring(1);
+                              }
 
                   var AVE =
                     element.AVE == null ? ".00" : convertirNumero(element.AVE);
