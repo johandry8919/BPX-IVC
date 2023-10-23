@@ -39,6 +39,10 @@ const alta_baja = [
     { id_equipo: 0, img_url: "./img/alta.png" },
     
   ];
+
+
+
+  
 const video_media = [
   { id_equipo: 0, img_url: "" },
   { id_equipo: 1, img_url: "./media/logo_team_1.webm" },

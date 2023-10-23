@@ -40,8 +40,58 @@
           field: "f0",
           ftype: "textfield",
           title: "ID DEL JUEGO",
-          value: "23+2+4++3",
+          value: "23+5+3++3",
         },
+
+        {
+                "field": "f1",
+                "ftype": "dropdown",
+                "title": "Bx-pitcher-homeClub",
+                "value": "0",
+                "items": [
+                    {
+                        "text": "carrar pestaña",
+                        "value": "0"
+                    },
+                    {
+                        "text": "Bx-pitcher-4lineas",
+                        "value": "1"
+                    },
+                    {
+                        "text": "Bx-pitcher-5lineas",
+                        "value": "2"
+                    },
+                    {
+                        "text": "Bx-pitcher-6lineas",
+                        "value": "3"
+                    },
+                ]
+            },
+
+            {
+                "field": "f2",
+                "ftype": "dropdown",
+                "title": "Bx-pitcher-Visiatnte",
+                "value": "0",
+                "items": [
+                    {
+                        "text": "carrar pestaña",
+                        "value": "0"
+                    },
+                    {
+                        "text": "Bx-pitcher-4lineas",
+                        "value": "4"
+                    },
+                    {
+                        "text": "Bx-pitcher-5lineas",
+                        "value": "5"
+                    },
+                    {
+                        "text": "Bx-pitcher-6lineas",
+                        "value": "6"
+                    },
+                ]
+            },
        
 
       
@@ -54,115 +104,314 @@
   
     
     <div
-      id="container"
+    id="container"
       class="container SPXWindow SPX_AUTOSIZE"
       data-spx-remember="Use either SPX_AUTOSIZE or SPX_FIXSIZE"
     >
-
-    <div class="cont-1">
-       <div class="cont-name">
-        <div id="f0_gfx" class="name name_1"></div>
-        <div id="f1_gfx" class="name name_2">sdfsdfsdf</div>
-       </div>
-
-
-        <div class="cont_logo_equipos">
-            <div id="id_equipo_visitante" class="logo_equipo logo_equipo_2">
-                <img id="fondo_visitante" height="60" width="100%"  >
-                <div class="carreras_visitante">
-                   <p  id="carreras_visitante"></p>
-                </div>
-    
-            </div>
-            <div id="id_equipo_homeclub" class="logo_equipo logo_equipo_1">
-              <img  id="fondo_homeclut" height="60" width="100%" >
-              <div class="carreras_homeclub">
-                  <p id="carreras_homeclub" ></p>
-              </div>
-    
-            </div>
-        </div>
-
-
-        <div class="cont-2">
-            <div class="innin">
-                <div id="animate_fondo" class="animate_fondo"></div>
-               <div style="color: black;" id="inning" class="iniit"></div>
-               <div id="alta_vaja" class="alta_vaja">
-                  
-                <img id="initt_alta-baja"  style="text-align: center;" width="30" height="30" >
-</div>
-            </div>
-           
-        </div>
-
-        <div class="cont-3">
-
-
-            <div id="animacion_aout" style="color: red;" class="animacion_aout">
-              <p style="opacity: 0;"  id="animacion_O"> O</p>
-              <p style="opacity: 0;"  id="animacion_U"> U</p>
-              <p style="opacity: 0;" id="animacion_T"> T</p>
-            </div>
-            <div id="animeradio" class="animeradio"></div>
-
-
-                <div id="cont-base" class="cont-base">
-                  <div id="hombre_primera"></div>
-                  <div id="hombre_segunda"></div>
-                  <div id="hombre_tercera"></div>
-
-                 
-                </div>
-                <div id="outs" class="outs">
-                  <img id="outsp" width="100%"  alt="">
-                </div>
-               
-             
-        </div>
-       
-
-        <div id="cont"   class="cont-4">
-
-          <div style="opacity: 0;" id="bolas" class="bolas"></div>
-          <div  style="opacity: 0;"  id="xrt" class="xrt">-</div>
-          <div  style="opacity: 0;"  id="strain" class="strain"></div>
-           
-        </div>
-        <div id="cont-5" class="cont-5">
-           
-        </div>
-        <div id="cont-6" class="cont-6">
-          <div id="temporada" class="temporada"></div>
-          <div id="lineup" class="lineup">
-            <img height="50"  width="100%" id="lineuP" >
+    <div id="pitcher1" class="ventanas Bx-pitcher-4H">
+      <div class="pitcher_data">
+        <div class="cont-data">
+          <div>
+            <p>LI</p>
+            <p id="li_valor_4"></p>
           </div>
-          
-            <div id="cont"  class="cont">
-              <div id="barra_equipos"  class="barra_equipos">
-                <div id="barras" class="barras"></div>
-                <div id="barras_text" class="barras_text">
-                  <div class="TALENTOS1"  id="f1_gfx1">
-                  
-                  </div>
-                  <div id="f1_gfx2"  class="TALENTOS2">
-                  
-                  </div>
-                  
-                </div>
-            
-             </div>
+          <div>
+            <p>HOLD</p>
+            <p id="hold_valor_4"></p>
+          </div>
+          <div>
+            <p>K/BB</p>
+            <p id="k_valor_4"></p>
+          </div>
+          <div>
+            <p>EFECT</p>
+            <p id="efect_valor_4"></p>
+          </div>
 
-            </div>
         </div>
+      <div class="logo_picher">
+          <video class="video"  height="150"  id="video1" loop muted autoplay ></video>
+      </div>
+    </div>
+
+  
+    </div>
+    <div id="pitcher2" class=" Bx-pitcher-5H">
+      <div class="pitcher_data">
+        <div class="cont-data">
+          <div>
+            <p>G/P</p>
+            <p id="gp_valor_5"></p>
+          </div>
+          <div>
+            <p>IL</p>
+            <p id="il_valor_5"></p>
+          </div>
+          <div>
+            <p>K/BB</p>
+            <p id="KBB_valor_5"></p>
+          </div>
+          <div>
+            <p>EFECT</p>
+            <p id="efect_valor_5"></p>
+          </div>
+          <div>
+            <p>EHIP</p>
+            <p id="ehip_valor_5"></p>
+          </div>
+
+        </div>
+      <div class="logo_picher">
+          <video class="video"  height="155" id="video2" loop muted autoplay></video>
+      </div>
        
+    
+    </div>
+    </div>
+    <div id="pitcher3" class="ventanas Bx-pitcher-6H">
+      <div class="pitcher_data">
+        <div class="cont-data">
+          <div>
+            <p>G/P</p>
+            <p id="gp_valor_6"></p>
+          </div>
+          <div>
+            <p>IL</p>
+            <p id="il_valor_6"></p>
+          </div>
+          <div>
+            <p>K/BB</p>
+            <p id="KBB_valor_6"></p>
+          </div>
+          <div>
+            <p>AVG OPP</p>
+            <p id="AVGOPP_valor_6"></p>
+          </div>
+          <div>
+            <p>EFECT</p>
+            <p id="efect_valor_6"></p>
+          </div>
+          <div>
+            <p>EHIP</p>
+            <p id="ehip_valor_6"></p>
+          </div>
+        
+
+        </div>
+      <div class="logo_picher">
+          <video class="video"  height="150" id="video3" loop muted autoplay></video>
+      </div>
+       
+    
+    </div>
+
     </div>
 
 
+    
+    <div id="pitcher4" class=" Bx-pitcher-4V">
+      <div class="pitcher_data">
+        <div class="cont-data">
+          <div>
+            <p>LI</p>
+            <p id="li_valor_4v"></p>
+          </div>
+          <div>
+            <p>HOLD</p>
+            <p id="hold_valor_4v"></p>
+          </div>
+          <div>
+            <p>K/BB</p>
+            <p id="k_valor_4v"></p>
+          </div>
+          <div>
+            <p>EFECT</p>
+            <p id="efect_valor_4v"></p>
+          </div>
+  
+        </div>
+      <div class="logo_picher">
+          <video class="video"  height="150"  id="video4" loop muted autoplay ></video>
+      </div>
+    </div>
+  
+    </div>
+  <div id="pitcher5" class="ventanas Bx-pitcher-5V">
+    <div class="pitcher_data">
+      <div class="cont-data">
+        <div>
+          <p>G/P</p>
+          <p id="gp_valor_5v"></p>
+        </div>
+        <div>
+          <p>IL</p>
+          <p id="il_valor_5v"></p>
+        </div>
+        <div>
+          <p>K/BB</p>
+          <p id="KBB_valor_5v"></p>
+        </div>
+        <div>
+          <p>EFECT</p>
+          <p id="efect_valor_5v"></p>
+        </div>
+        <div>
+          <p>EHIP</p>
+          <p id="ehip_valor_5v"></p>
+        </div>
 
-   
-   
-      <div style="opacity: 0" id="f3"></div>
+      </div>
+    <div class="logo_picher">
+        <video class="video"  height="155" id="video5" loop muted autoplay></video>
+    </div>
+     
+  
+  </div>
+  </div>
+  <div id="pitcher6" class="ventanas Bx-pitcher-6V">
+    <div class="pitcher_data">
+      <div class="cont-data">
+        <div>
+          <p>G/P</p>
+          <p id="gp_valor_6v"></p>
+        </div>
+        <div>
+          <p>IL</p>
+          <p id="il_valor_6v"></p>
+        </div>
+        <div>
+          <p>K/BB</p>
+          <p id="KBB_valor_6"></p>
+        </div>
+        <div>
+          <p>AVG OPP</p>
+          <p id="AVGOPP_valor_6v"></p>
+        </div>
+        <div>
+          <p>EFECT</p>
+          <p id="efect_valor_6v"></p>
+        </div>
+        <div>
+          <p>EHIP</p>
+          <p id="ehip_valor_6v"></p>
+        </div>
+      
+
+      </div>
+    <div class="logo_picher">
+        <video class="video"  height="150" id="video6" loop muted autoplay></video>
+    </div>
+     
+  
+  </div>
+
+  </div>
+ </div>
+
+
+ 
+    <div id="cont-name" class="cont-name">
+      <div id="f0_gfx" class="name name_1"></div>
+      <div id="f1_gfx" class="name name_2"></div>
+     </div>
+
+
+    <div id="container2" class="container2">
+      <div class="cont-1">
+         <div class="cont_logo_equipos">
+             <div id="id_equipo_visitante" class="logo_equipo logo_equipo_2">
+                 <img id="fondo_visitante" height="60" width="100%"  >
+                 <div class="carreras_visitante">
+                    <p  id="carreras_visitante"></p>
+                 </div>
+     
+             </div>
+             <div id="id_equipo_homeclub" class="logo_equipo logo_equipo_1">
+               <img  id="fondo_homeclut" height="60" width="100%" >
+               <div class="carreras_homeclub">
+                   <p id="carreras_homeclub" ></p>
+               </div>
+     
+             </div>
+         </div>
+
+         <div class="cont-2">
+             <div class="innin">
+                 <div id="animate_fondo" class="animate_fondo"></div>
+                <div style="color: black;" id="inning" class="iniit"></div>
+                <div id="alta_vaja" class="alta_vaja">
+                   
+                 <img id="initt_alta-baja"  style="text-align: center;" width="30" height="30" >
+ </div>
+             </div>
+            
+         </div>
+ 
+         <div class="cont-3">
+ 
+ 
+             <div  id="animacion_aout" style="color: red; background-color: white; z-index: 1000;" class="animacion_aout">
+               <p style="opacity: 0;"  id="animacion_O"> O</p>
+               <p style="opacity: 0;"  id="animacion_U"> U</p>
+               <p style="opacity: 0;" id="animacion_T"> T</p>
+             </div>
+             <div id="animeradio" class="animeradio"></div>
+ 
+ 
+                 <div id="cont-base" class="cont-base">
+                   <div id="hombre_primera"></div>
+                   <div id="hombre_segunda"></div>
+                   <div id="hombre_tercera"></div>
+ 
+                  
+                 </div>
+                 <div id="outs" class="outs">
+                   <img id="outsp" width="100%"  alt="">
+                 </div>
+                
+              
+         </div>
+        
+ 
+         <div id="cont"   class="cont-4">
+ 
+           <div style="opacity: 0;" id="bolas" class="bolas"></div>
+           <div  style="opacity: 0;"  id="xrt" class="xrt">-</div>
+           <div  style="opacity: 0;"  id="strain" class="strain"></div>
+            
+         </div>
+         <div id="cont-5" class="cont-5">
+            
+         </div>
+         <div id="cont-6" class="cont-6">
+           <div id="temporada" class="temporada"></div>
+           <div id="lineup" class="lineup">
+             <img height="50"  width="100%" id="lineuP" >
+           </div>
+           
+             <div id="cont"  class="cont">
+               <div id="barra_equipos"  class="barra_equipos">
+                 <div id="barras" class="barras"></div>
+                 <div id="barras_text" class="barras_text">
+                   <div class="TALENTOS1"  id="f1_gfx1">
+                   
+                   </div>
+                   <div id="f1_gfx2"  class="TALENTOS2">
+                   
+                   </div>
+                   
+                 </div>
+             
+              </div>
+ 
+             </div>
+         </div>
+        
+     </div>
+    </div>
+
+      <div style="opacity: 0" id="f1"></div>
+      <div style="opacity: 0" id="f2"></div>
       <div style="opacity: 0" id="f0"></div>
     
   </div>

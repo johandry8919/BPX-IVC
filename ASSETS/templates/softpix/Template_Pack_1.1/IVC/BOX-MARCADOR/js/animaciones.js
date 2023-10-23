@@ -4,7 +4,6 @@
     if (window.top.spxRenderer && window.top.spxRenderer.fps) {
         gsap.ticker.fps(window.top.spxRenderer.fps);
         console.log("spxRenderer: " + window.top.spxRenderer.fps + " FPS");
-    
       }
 
 
@@ -24,7 +23,7 @@
         );
         gsap.fromTo(
           '#container',
-          { opacity: 0 },
+          { opacity: 1 },
           {
             delay: 0.2,
             duration: dur - 0.2,
@@ -228,20 +227,41 @@
         );
       };
 
-      animateLogo_equipo("#id_equipo_homeclub", 0.5, 10 );
-      animateLogo_equipo("#id_equipo_visitante", 0.5, 10 );   
+      animateLogo_equipo("#id_equipo_homeclub", 0.2, 10 );
+      animateLogo_equipo("#id_equipo_visitante", 0.2, 10 );   
 
 
    
   }
+
+
+
  
   
   function runAnimationOUT() {
     const container = document.getElementById('container'); // Asume que el contenedor tiene el ID 'container'.
+    const name = document.getElementById('cont-name'); // Asume que el contenedor tiene el ID 'container'.
+    const container2 = document.getElementById('container2'); // Asume que el contenedor tiene el ID 'container'.
     const windowWidth = window.innerWidth; // Ancho de la ventana del navegador.
     const containerWidth = container.offsetWidth; // Ancho del contenedor.
   
     gsap.to(container, {
+      x: -2000, 
+      opacity: 1,
+      duration: 2, 
+      onComplete: function() {
+        container.style.display = 'none';
+      }
+    });
+    gsap.to(name, {
+      x: -2000, 
+      opacity: 1,
+      duration: 2, 
+      onComplete: function() {
+        container.style.display = 'none';
+      }
+    });
+    gsap.to(container2, {
       x: -2000, 
       opacity: 1,
       duration: 2, 
