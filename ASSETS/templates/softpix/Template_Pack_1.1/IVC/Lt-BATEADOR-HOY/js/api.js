@@ -125,8 +125,10 @@ function getDataB() {
                              let peloteros;
                              parte == 0 ? peloteros = id_bateador_visitante   : peloteros = id_bateador_homeclub
                              parte == 0 ?  equipo_jugando = result1.data.boxscore.visitante.peloteros : equipo_jugando = result1.data.boxscore.homeclub.peloteros  
-               
+                             
                                function equipo_juega (equipo_jugando,pelotero){
+
+                                
                                  equipo_jugando.forEach((element, index) => {          
         
                                    if(element.id_pelotero == pelotero){
@@ -155,15 +157,14 @@ function getDataB() {
 
 
                                equipo_juega(equipo_jugando , id_peloteros)
+
+
                
                            let id_quipos_juega 
                            parte == 0 ?  id_quipos_juega = id_equipo_visitante :id_quipos_juega = id_equipo_homeclub 
                            barraEquiposElement.style.backgroundImage = `url(${Barra_equipos[id_quipos_juega].img_url})`;  
                
-                       if (!animationExecuted) {
                            runAnimationIN(id_quipos_juega)
-                           animationExecuted = true;
-                       }
                
                       
                    }else {console.error("Error fetching data:", response.statusText);}})
