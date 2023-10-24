@@ -43,7 +43,7 @@ const alta_baja = [
 
 
   
-const video_media = [
+const Video_media = [
   { id_equipo: 0, img_url: "" },
   { id_equipo: 1, img_url: "./media/logo_team_1.webm" },
   { id_equipo: 2, img_url: "./media/logo_team_2.webm" },

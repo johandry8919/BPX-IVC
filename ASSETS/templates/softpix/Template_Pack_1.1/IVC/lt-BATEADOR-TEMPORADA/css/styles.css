@@ -28,6 +28,17 @@ body {
   color: white;
 }
 
+.f1_gfx1 {
+ display: flex;
+ text-wrap: nowrap;
+ overflow: hidden;
+}
+.f1_gfx1 div {
+  margin-left: 10px ;
+  letter-spacing: 5px;
+}
+
+
 
 
 .cont-6{
@@ -55,20 +66,16 @@ body {
  display: flex;
  align-items: center;
  opacity: 0;
+ color: black;
+ font-size: 17px;
+ padding: 15px 5px ;
+ text-align: center;
+ justify-content: center;
+ text-wrap: nowrap;
 }
 
 
-.cont-6 .temporada p{
-  width: 193px;
-  height: auto;
-  position: relative;
-  font-size: 17px;
-  margin-top: 10px;
-  font-weight: bold;
-  text-wrap: wrap;
-  color: #1a1a1a;
-  padding: 3px;
-}
+
 .cont-6 .lineup{
   width: 193px;
   height: 42px;

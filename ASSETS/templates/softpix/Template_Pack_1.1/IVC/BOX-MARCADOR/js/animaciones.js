@@ -7,6 +7,9 @@
       }
 
 
+  
+
+
       const animateLogo_equipo = (selector, delayTime, Offset) => {
         const dur = 0.2;
         const dur2 = 0.4;
@@ -230,9 +233,10 @@
       animateLogo_equipo("#id_equipo_homeclub", 0.2, 10 );
       animateLogo_equipo("#id_equipo_visitante", 0.2, 10 );   
 
-
+      
    
   }
+
 
 
 
