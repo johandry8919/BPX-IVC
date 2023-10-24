@@ -387,7 +387,7 @@ function runTemplateUpdate() {
                                   }
                         
                                 
-                           if(htmlDecode(e('f1').innerText)== 0  || htmlDecode(e('f2').innerText)== 0 ){
+                           if(htmlDecode(e('f1').innerText)== 0  || htmlDecode(e('f2').innerText)== 0  && i == 1){
                             gsap.fromTo(pitcherSelector,{ y: 0 },{delay: delayValue,opacity: 0, duration: dur2 - 0.2,y: 162,ease: easeValue, });
                             gsap.fromTo(pitcherSelector,{ y:0},{ delay: 0.2,  opacity:0,duration: dur2 - 0.2, y:162, ease: "back.out(0.2)",});
                             gsap.fromTo(Value,{ y:-162},{ delay: 0.2, duration: dur2 - 0.2, y: 0, ease: "back.out(0.2)",} );
@@ -396,7 +396,7 @@ function runTemplateUpdate() {
                           }
                             }
                         
-                            gsap.fromTo(nombre_piecher,{ opacity: 1 },{delay: 0.2,duration: dur2 - 0.2,opacity: 1,ease: "Power4.easeOut",});
+                       
                             if(picher_homeclup >=0  || picher_visitante >=0){
                             gsap.fromTo(
                               nombre_piecher,
@@ -406,7 +406,13 @@ function runTemplateUpdate() {
                                 gsap.fromTo(nombre_piecher,{ opacity: 1 },{delay: 0.2,duration: dur2 - 0.2,opacity: 1,ease: "Power4.easeOut",});
                                 gsap.fromTo( nombre_piecher,{ y:30}, { delay: 0.2, opacity:1, duration: dur2 - 0.2, y: -162, ease: "back.out(0.2)",});
                                 gsap.fromTo(ventana,{ opacity: 0 },{ delay: 0.2,duration: dur2 - 0.2,opacity: 1,ease: "Power4.easeOut",});
-                                gsap.fromTo( ventana,{ y:162},{ delay: 0.2,  opacity: 1, duration: dur2 - 0.2, y: 0, ease: "back.out(0.2)",});
+                                gsap.fromTo( ventana,{ y:162},{ delay: 0.2,  opacity: 1, duration: dur2 - 0.2, y: 0, ease: "back.out(0.2)",
+
+                                onComplete: () => {
+                                 
+                                }
+                              
+                              });
                               }
                             });
                             }
@@ -422,19 +428,11 @@ function runTemplateUpdate() {
                 .catch(error => {
                     console.error("Error en una de las solicitudes:", error);
                 });
-
-             
         }
     
-        
         fetchData();
-
-        
-
         const updateInterval = 10000; // 10 segundos
         setInterval(fetchData, updateInterval);
-
-       
     }
     
  updateGameData();
