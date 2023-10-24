@@ -28,7 +28,6 @@ function runTemplateUpdate() {
       const expresion = htmlDecode(e('f0').innerText);
       const cadenaAjustada = ajustarCadena(expresion);
     
-
     const params = {
         id_juego:  `${cadenaAjustada}`,
     };
@@ -231,7 +230,7 @@ function runTemplateUpdate() {
                             lanzador_visitante_bolas +
                             lanzador_visitante_foul +
                             lanzador_visitante_strikes;
-                          Initt_alta_baja.src = alta_baja[0].img_url;
+                          Initt_alta_baja.src = alta_baja[1].img_url;
                           homeclub_lanzadores.forEach((element) => {
                             if (element.id_picher == id_lanzador_homeclub) {
                          

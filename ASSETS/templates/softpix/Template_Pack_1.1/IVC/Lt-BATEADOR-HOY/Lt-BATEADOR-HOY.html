@@ -45,6 +45,108 @@
           value: "23+2+4++3",
         },
 
+        {
+                "field": "f1",
+                "ftype": "dropdown",
+                "title": "BATEADORES HOMECLUB",
+                "value": "",
+                "items": [
+
+                  {
+                        "text": "bateador-N/A",
+                        "value": ""
+                    },
+                    {
+                        "text": "bateador-1",
+                        "value": "0"
+                    },
+                    {
+                        "text": "bateador-2",
+                        "value": "1"
+                    },
+                    {
+                        "text": "bateador-3",
+                        "value": "2"
+                    },
+                    {
+                        "text": "bateador-4",
+                        "value": "3"
+                    },
+                    {
+                        "text": "bateador-5",
+                        "value": "4"
+                    },
+                    {
+                        "text": "bateador-6",
+                        "value": "5"
+                    },
+                    {
+                        "text": "bateador-7",
+                        "value": "6"
+                    },
+                    {
+                        "text": "bateador-8",
+                        "value": "7"
+                    },
+                    {
+                        "text": "bateador-9",
+                        "value": "8"
+                    },
+                   
+                ]
+            },
+
+            {
+                "field": "f2",
+                "ftype": "dropdown",
+                "title": "BATEADORES VISITANTE",
+                "value": "",
+                "items": [
+                   {
+                        "text": "bateador-N/A",
+                        "value": ""
+                    },
+                    {
+                        "text": "bateador-1",
+                        "value": "0"
+                    },
+                    {
+                        "text": "bateador-2",
+                        "value": "1"
+                    },
+                    {
+                        "text": "bateador-3",
+                        "value": "2"
+                    },
+                    {
+                        "text": "bateador-4",
+                        "value": "3"
+                    },
+                    {
+                        "text": "bateador-5",
+                        "value": "4"
+                    },
+                    {
+                        "text": "bateador-6",
+                        "value": "5"
+                    },
+                    {
+                        "text": "bateador-7",
+                        "value": "6"
+                    },
+                    {
+                        "text": "bateador-8",
+                        "value": "7"
+                    },
+                    {
+                        "text": "bateador-9",
+                        "value": "8"
+                    },
+                   
+                ]
+            },
+
+
       
          
         ],
@@ -68,7 +170,15 @@
                 <div id="barras" class="barras"></div>
                 <div id="barras_text" class="barras_text">
                   <video loop width="100" height="60" autoplay muted id="video"></video>
-                  <div class="f1_gfx1"  style=" text-wrap: nowrap; overflow: hidden; display: flex; " id="f1_gfx1"></div>
+
+                  <div id="f1_gfx2">
+                   
+                  </div>
+                  <div class="f1_gfx1"  style=" text-wrap: nowrap; overflow: hidden; display: flex; " id="f1_gfx1">
+                   
+                  
+                  
+                  </div>
                   
                 </div>
                 
@@ -88,11 +198,15 @@
    
       <div style="opacity: 0" id="f3"></div>
       <div style="opacity: 0" id="f0"></div>
+      <div style="opacity: 0" id="f1"></div>
+      <div style="opacity: 0" id="f2"></div>
   </div>
 
     <script src="../_js/jquery-3.0.0.min.js"></script>
+    <script src="https://apis.google.com/js/api.js"></script>
     <script src="js/animaciones.js"></script>
     <script src="js/api.js"></script>
     <script src="js/temStyles.js"></script>
+   
    
   </body>

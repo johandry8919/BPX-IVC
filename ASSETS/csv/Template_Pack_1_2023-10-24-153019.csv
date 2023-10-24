@@ -1,0 +1,21 @@
+
+# SPX Rundown item CSV export. (More info: https://spxgc.tawk.help/article/help-csv-files)
+
+# description #;
+# playserver #;OVERLAY
+# playchannel #;1
+# playlayer #;1
+# webplayout #;5
+# out #;manual
+# uicolor #;4
+# dataformat #;json
+# relpath #;/softpix/Template_Pack_1.1/IVC/Lt-BATEADOR-HOY/Lt-BATEADOR-HOY.html
+# onair #;false
+# project #;sdfsdfsd
+# rundown #;sdfsdf
+
+# FieldUUIDs #;comment;f0;f1;f2;
+# FieldTypes #;textfield;textfield;dropdown;dropdown;
+# FieldTitls #;Lt-BATEADOR-HOY;ID DEL JUEGO;BATEADORES HOMECLUB;BATEADORES VISITANTE;
+
+# ID:auto;Lt-BATEADOR-HOY;23+8+2+12;;;
