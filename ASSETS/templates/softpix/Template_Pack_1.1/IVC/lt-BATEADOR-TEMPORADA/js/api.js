@@ -73,7 +73,7 @@ function runTemplateUpdate() {
             } = result1.data.juego;
            
             let iquipo_juega;
-            parte == 0 ? iquipo_juega = id_bateador_visitante : iquipo_juega = id_bateador_homeclub
+            parte == 0 ?   iquipo_juega = id_bateador_visitante  : iquipo_juega = id_bateador_homeclub 
             const url = new URL(
               "https://bss.qualitybeisbol.com/api/anual-pelotero-ave"
           );
@@ -124,7 +124,6 @@ function runTemplateUpdate() {
                 element.AVE == null ? element.AVE = 0.000: element.AVE =  convertirNumero(element.AVE);
                 element.HR == 0 ? element.HR = 0.000 : element.HR = convertirNumero(element.HR) ;
                  element.CI == 0 ? element.CI = 0.000 : element.CI = convertirNumero(element.CI);
-                  
                    element.OPS == 0 ?  element.OPS = 0 :element.OPS =  convertirNumero(element.OPS);
                 
                 
@@ -144,7 +143,7 @@ function runTemplateUpdate() {
           });
 
             let id_quipos_juega 
-            parte == 1 ? id_quipos_juega = id_equipo_homeclub :id_quipos_juega = id_equipo_visitante
+            parte == 0 ?  id_quipos_juega = id_equipo_visitante : id_quipos_juega = id_equipo_homeclub 
             barraEquiposElement.style.backgroundImage = `url(${Barra_equipos[id_quipos_juega].img_url})`;  
 
         if (!animationExecuted) {

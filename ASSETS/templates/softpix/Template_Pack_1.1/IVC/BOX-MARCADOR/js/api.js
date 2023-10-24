@@ -98,6 +98,9 @@ function runTemplateUpdate() {
                         let peloteros_visitante = result1.data.boxscore.visitante.peloteros;
                         let lanzadores_visitante = result1.data.boxscore.visitante.lanzadores;
 
+
+
+                  
                         inning ? inning : inning = "0";
                         Inning.innerText = inning;
               
@@ -139,20 +142,18 @@ function runTemplateUpdate() {
                        
                         document.getElementById("bolas").innerText = totalB;
                         document.getElementById("strain").innerText = totalS;
-                        if (parte === 0) {
+                        if (parte == 1) {
                           const totalStrikesBolasFoul =
                             lanzador_homeclub_strikes +
                             lanzador_homeclub_bolas +
                             lanzador_homeclub_foul;
-                          Initt_alta_baja.src = alta_baja[1].img_url;
-                          Initt_alta_baja.src = "./img/alta.png";
+                          Initt_alta_baja.src = alta_baja[0].img_url;
+                          
                           //data / boxscore / homeclub /lanzador
-                          homeclub_lanzadores.forEach((element) => {
-                            if (element.id_picher == id_lanzador_homeclub) {
-
-                             
+                          homeclub_peloteros.forEach((element) => {
+                            if (element.id_pelotero == id_bateador_homeclub) {
                               let nombre = element.nombre;
-                              document.getElementById("f1_gfx" ).innerHTML = `<p>${nombre.charAt(0)} ${element.apellido}</p><p>L${totalStrikesBolasFoul} </p> `;
+                              document.getElementById("f1_gfx" ).innerHTML = `<p>${nombre.charAt(0)} ${element.apellido}</p><p>${element.AVE} </p> `;
                             }
 
                             // picher 4 fila 
@@ -187,8 +188,8 @@ function runTemplateUpdate() {
                           });
               
                           //data / boxscore / visitante /visitante
-                          peloteros_visitante.forEach((element) => {
-                            if (element.id_pelotero == id_bateador_visitante) {
+                          lanzadores_visitante.forEach((element) => {
+                            if (element.id_picher == id_lanzador_visitante) {
 
                               function convertirNumero(numero) {
                                 if (numero === null || typeof numero === "undefined") {
@@ -200,16 +201,16 @@ function runTemplateUpdate() {
                               element.AVE == null ? 0.000 :element.total_AVE
                               let AVE = convertirNumero(element.total_AVE)
                               let nombre = element.nombre;
-                              document.getElementById("f0_gfx").innerHTML = `<p>${nombre.charAt(0)}.${element.apellido}</p> <p>AVG    ${AVE}</p>`;
+                              document.getElementById("f0_gfx").innerHTML = `<p>${nombre.charAt(0)}.${element.apellido}</p> <p>L ${totalStrikesBolasFoul} </p>`;
                             }
                           });
 
 
                           
                           const videoMedia = [
-                            { id: "video1", imgUrl: Video_media[id_equipo_homeclub].img_url },
-                            { id: "video2", imgUrl: Video_media[id_equipo_homeclub].img_url },
-                            { id: "video3", imgUrl: Video_media[id_equipo_homeclub].img_url },
+                            { id: "video1", imgUrl: Video_media[id_equipo_visitante].img_url },
+                            { id: "video2", imgUrl: Video_media[id_equipo_visitante].img_url },
+                            { id: "video3", imgUrl: Video_media[id_equipo_visitante].img_url },
                           ];
                           
                           function createVideoElement(id, imgUrl) {
@@ -225,32 +226,34 @@ function runTemplateUpdate() {
                           })
 
                         }
-                        if (parte === 1) {
+                        if (parte === 0) {
                           const totalStrikesBolasFoul =
                             lanzador_visitante_bolas +
                             lanzador_visitante_foul +
                             lanzador_visitante_strikes;
                           Initt_alta_baja.src = alta_baja[0].img_url;
-                          homeclub_peloteros.forEach((element) => {
-                            if (element.id_pelotero == id_bateador_homeclub) {
-                              function convertirNumero(numero) {
-                                if (numero === null || typeof numero === "undefined") {
-                                  numero =.000;
-                                }
-                                return numero.toString().substring(1);
-                              }
-
-                              element.total_AVE == null ? 0.000 :element.total_AVE
-                              let AVE = convertirNumero(element.total_AVE)
+                          homeclub_lanzadores.forEach((element) => {
+                            if (element.id_picher == id_lanzador_homeclub) {
+                         
                               let nombre = element.nombre;
-                              document.getElementById("f1_gfx").innerHTML = `<p>${nombre.charAt(0)}.${element.apellido}</p> <p>AVG    ${AVE}</p>`;
+                              document.getElementById("f1_gfx").innerHTML = `<p>${nombre.charAt(0)}.${element.apellido}</p> <p>L ${totalStrikesBolasFoul} </p> `;
                             }
                           });
               
-                          lanzadores_visitante.forEach((element) => {
-                            if (element.id_picher == id_lanzador_visitante) {
+                          peloteros_visitante.forEach((element) => {
+
+                            function convertirNumero(numero) {
+                              if (numero === null || typeof numero === "undefined") {
+                                numero =.000;
+                              }
+                              return numero.toString().substring(1);
+                            }
+
+                            element.total_AVE == null ? 0.000 :element.total_AVE
+                            let AVE = convertirNumero(element.total_AVE)
+                            if (element.id_pelotero == id_bateador_visitante) {
                               let nombre = element.nombre;
-                              document.getElementById("f0_gfx").innerHTML = `<p>${nombre.charAt(0)} ${element.apellido}</p> <p>L ${totalStrikesBolasFoul} </p>  `;
+                              document.getElementById("f0_gfx").innerHTML = `<p>${nombre.charAt(0)} ${element.apellido}</p> <p>AVG ${AVE}</p>  `;
 
                                // picher 4 fila 
                             document.getElementById('li_valor_4v').innerText =  element.IP
@@ -281,9 +284,9 @@ function runTemplateUpdate() {
                           
                             // picher 6 fila 
                                 const videoMedia = [
-                              { id: "video4", imgUrl: Video_media[id_equipo_visitante].img_url },
-                              { id: "video5", imgUrl: Video_media[id_equipo_visitante].img_url },
-                              { id: "video6", imgUrl: Video_media[id_equipo_visitante].img_url },
+                              { id: "video4", imgUrl: Video_media[id_equipo_homeclub].img_url },
+                              { id: "video5", imgUrl: Video_media[id_equipo_homeclub].img_url },
+                              { id: "video6", imgUrl: Video_media[id_equipo_homeclub].img_url },
                             ];
                             
                             function createVideoElement(id, imgUrl) {

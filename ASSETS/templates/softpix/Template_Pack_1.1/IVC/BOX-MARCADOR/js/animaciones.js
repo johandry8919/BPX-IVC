@@ -11,7 +11,7 @@
 
 
       const animateLogo_equipo = (selector, delayTime, Offset) => {
-        const dur = 0.2;
+        const dur = 0.5;
         const dur2 = 0.4;
       
         gsap.fromTo(
@@ -19,7 +19,7 @@
           { opacity: 0 },
           {
             delay: delayTime,
-            duration: dur - 0.2,
+            duration: dur - 0.5,
             opacity: 1,
             ease: "Power4.easeOut",
           }

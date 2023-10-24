@@ -14,8 +14,7 @@ const barraEquiposElement = document.getElementById('barras');
 
 function runTemplateUpdate() {
     const url1 = new URL("https://bss.qualitybeisbol.com/api/boxscore");
-    const url2 = new URL("https://bss.qualitybeisbol.com/api/lineup");
-    
+   
     function ajustarCadena(cadena) {
         cadena = cadena.replace(/\+/g, ' ');
         cadena = cadena.replace(/\+/g, ' ');
@@ -66,75 +65,61 @@ function runTemplateUpdate() {
                
             } = result1.data.juego;
 
+           
+              let equipo_jugando ;
+              let peloteros;
+              parte == 0 ? peloteros = id_bateador_visitante   : peloteros = id_bateador_homeclub
+              parte == 0 ?  equipo_jugando = result1.data.boxscore.visitante.peloteros : equipo_jugando = result1.data.boxscore.homeclub.peloteros  
 
+                function equipo_juega (equipo_jugando,pelotero){
+                  equipo_jugando.forEach((element, index) => {
 
+                    if(element.id_pelotero == pelotero){
+                      function convertirNumero(numero) {
+                        if (numero === null || typeof numero === "undefined") {
+                          numero =.000;
+                        }
+                        return numero.toString().substring(1);
+                      }
+      
+                      element.VB == null ? 0 :element.VB
+                      let VB = element.VB
+      
+                      element.HIT == null ? 0 :element.HIT
+                      let HIT = element.HIT
+      
+      
+                    
+                      if(document.getElementById('f1_gfx1')){
+                        document.getElementById('f1_gfx1').innerHTML = ` 
+                   <div>
+                    ${element.nombre}     ${element.apellido} 
+                  </div>
+      
+                    <div>
+                        ${VB}   -
+                     </div>
+      
+      
+                    <div> 
+                      ${HIT}  
+                    </div>
+      
+                     `;
+              
+                     }
+                    }
+                  })
 
-
-
-            let iquipo_juega;
-            parte == 0 ? iquipo_juega = id_bateador_visitante : iquipo_juega = id_bateador_homeclub
-            const url = new URL(
-              "https://bss.qualitybeisbol.com/api/anual-pelotero-ave"
-          );
-          
-          const params = {
-              "id_bateador": iquipo_juega,
-              "periodo": "TR",
-          };
-          Object.keys(params)
-              .forEach(key => url.searchParams.append(key, params[key]));
-          
-          
-          fetch(url, {
-              method: "GET",
-              headers,
-          }).then(response => response.json())
-          .then(datas => {
-    
-    
-         
-            datas.data.forEach((element, index) => {
-              if(index == 0){
-                function convertirNumero(numero) {
-                  if (numero === null || typeof numero === "undefined") {
-                    numero =.000;
-                  }
-                  return numero.toString().substring(1);
                 }
 
-                element.VB == null ? 0 :element.VB
-                let VB = element.VB
 
-                element.HIT == null ? 0 :element.HIT
-                let HIT = element.HIT
+                equipo_juega(equipo_jugando , peloteros)
 
 
-              
-                if(document.getElementById('f1_gfx1')){
-                  document.getElementById('f1_gfx1').innerHTML = ` 
-             <div>
-              ${element.nombre}     ${element.apellido} 
-            </div>
-
-              <div>
-                  ${VB}   -
-               </div>
-
-
-              <div> 
-                ${HIT}  
-              </div>
-
-               `;
-        
-               }
-              }
-            })
-    
-          });
 
             let id_quipos_juega 
-            parte == 1 ? id_quipos_juega = id_equipo_homeclub :id_quipos_juega = id_equipo_visitante
+            parte == 0 ?  id_quipos_juega = id_equipo_visitante :id_quipos_juega = id_equipo_homeclub 
             barraEquiposElement.style.backgroundImage = `url(${Barra_equipos[id_quipos_juega].img_url})`;  
 
         if (!animationExecuted) {
