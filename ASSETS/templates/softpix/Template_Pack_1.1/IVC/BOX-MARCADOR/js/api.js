@@ -93,8 +93,6 @@ function runTemplateUpdate() {
                         } = result1.data.juego;
 
 
-                      
-
                         let homeclub_lanzadores = result1.data.boxscore.homeclub.lanzadores;
                         let homeclub_peloteros =result1.data.boxscore.homeclub.peloteros;
                         let peloteros_visitante = result1.data.boxscore.visitante.peloteros;

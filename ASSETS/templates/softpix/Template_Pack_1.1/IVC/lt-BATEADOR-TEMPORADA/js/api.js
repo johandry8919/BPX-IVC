@@ -71,12 +71,7 @@ function runTemplateUpdate() {
                 parte,
                
             } = result1.data.juego;
-
-
-
-
-
-
+           
             let iquipo_juega;
             parte == 0 ? iquipo_juega = id_bateador_visitante : iquipo_juega = id_bateador_homeclub
             const url = new URL(
@@ -118,16 +113,19 @@ function runTemplateUpdate() {
               
                 function convertirNumero(numero) {
                   if (numero === null || typeof numero === 'undefined') {
-                    numero = .00;
+                    numero = 0.000;
                   }
                   return numero.toString().substring(1);
                 }
+
+
+         
                 
-                   var AVE = typeof element.AVE == null ? ".00": convertirNumero(element.AVE);
-                  var HR = typeof element.HR == null ? ".00" :convertirNumero(element.HR) ;
-                  var CI = typeof element.CI == null ? ".00" : convertirNumero(element.CI);
-                  var OBP = typeof element.OBP == null ? ".00" : convertirNumero(element.OBP);
-                  var OPS = typeof element.OPS == null ? ".00" :  convertirNumero(element.OPS);
+                element.AVE == null ? element.AVE = 0.000: element.AVE =  convertirNumero(element.AVE);
+                element.HR == 0 ? element.HR = 0.000 : element.HR = convertirNumero(element.HR) ;
+                 element.CI == 0 ? element.CI = 0.000 : element.CI = convertirNumero(element.CI);
+                  
+                   element.OPS == 0 ?  element.OPS = 0 :element.OPS =  convertirNumero(element.OPS);
                 
                 
                 
@@ -135,11 +133,10 @@ function runTemplateUpdate() {
                 
                 document.getElementById("f1_gfx1").innerHTML =  ` 
                 <p id="">${nombre} ${element.apellido}</p>
-                <p id="">AVG  ${AVE}</p>
-                <p id="">HR  ${HR}</p>
-                <p id="">CI  ${CI}</p>
-                <p id="">OBP  ${OBP}</p>
-                <p id="">OPS  ${OPS}</p>  `;
+                <p id="">AVG  ${element.AVE}</p>
+                <p id="">HR  ${element.HR}</p>
+                <p id="">CI  ${element.CI}</p>
+                <p id="">OPS  ${element.OPS}</p>  `;
                 
               }
             })
