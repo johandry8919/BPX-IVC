@@ -24,7 +24,7 @@
         playserver: "OVERLAY",
         playchannel: "1",
         playlayer: "1",
-        webplayout: "1",
+        webplayout: "2",
         out: "manual",
         dataformat: "json",
         uicolor: "3",
@@ -40,59 +40,10 @@
           field: "f0",
           ftype: "textfield",
           title: "ID DEL JUEGO",
-          value: "23+5+3++3",
+          value: "23+8+2+12",
         },
 
-        {
-                "field": "f1",
-                "ftype": "dropdown",
-                "title": "Bx-pitcher-homeClub",
-                "value": "",
-                "items": [
-                    {
-                        "text": "Cerrar",
-                        "value": "0"
-                    },
-                    {
-                        "text": "Bx-pitcher-4lineas",
-                        "value": "1"
-                    },
-                    {
-                        "text": "Bx-pitcher-5lineas",
-                        "value": "2"
-                    },
-                    {
-                        "text": "Bx-pitcher-6lineas",
-                        "value": "3"
-                    },
-                ]
-            },
-
-            {
-                "field": "f2",
-                "ftype": "dropdown",
-                "title": "Bx-pitcher-Visiatnte",
-                "value": "",
-                "items": [
-                    {
-                        "text": "Cerrar",
-                        "value": "0"
-                    },
-                    {
-                        "text": "Bx-pitcher-4lineas",
-                        "value": "4"
-                    },
-                    {
-                        "text": "Bx-pitcher-5lineas",
-                        "value": "5"
-                    },
-                    {
-                        "text": "Bx-pitcher-6lineas",
-                        "value": "6"
-                    },
-                ]
-            },
-
+   
   
         ],
       };
@@ -106,205 +57,10 @@
       class="container SPXWindow SPX_AUTOSIZE"
       data-spx-remember="Use either SPX_AUTOSIZE or SPX_FIXSIZE"
     >
-    <div id="pitcher1" class="ventanas Bx-pitcher-4H">
-      <div class="pitcher_data">
-        <div class="cont-data">
-          <div>
-            <p>IL</p>
-            <p id="li_valor_4"></p>
-          </div>
-          <div>
-            <p>HOLD</p>
-            <p id="hold_valor_4"></p>
-          </div>
-          <div>
-            <p>K/BB</p>
-            <p id="k_valor_4"></p>
-          </div>
-          <div>
-            <p>EFECT</p>
-            <p id="efect_valor_4"></p>
-          </div>
-
-        </div>
-      <div class="logo_picher">
-          <video class="video"  height="150"  id="video1" loop muted autoplay ></video>
-      </div>
-    </div>
-
-  
-    </div>
-    <div id="pitcher2" class=" Bx-pitcher-5H">
-      <div class="pitcher_data">
-        <div class="cont-data">
-          <div>
-            <p>G/P</p>
-            <p id="gp_valor_5"></p>
-          </div>
-          <div>
-            <p>IL</p>
-            <p id="il_valor_5"></p>
-          </div>
-          <div>
-            <p>K/BB</p>
-            <p id="KBB_valor_5"></p>
-          </div>
-          <div>
-            <p>EFECT</p>
-            <p id="efect_valor_5"></p>
-          </div>
-          <div>
-            <p>WHIP</p>
-            <p id="ehip_valor_5"></p>
-          </div>
-
-        </div>
-      <div class="logo_picher">
-          <video class="video"  height="155" id="video2" loop muted autoplay></video>
-      </div>
-       
-    
-    </div>
-    </div>
-    <div id="pitcher3" class="ventanas Bx-pitcher-6H">
-      <div class="pitcher_data">
-        <div class="cont-data">
-          <div>
-            <p>G/P</p>
-            <p id="gp_valor_6"></p>
-          </div>
-          <div>
-            <p>IL</p>
-            <p id="il_valor_6"></p>
-          </div>
-          <div>
-            <p>K/BB</p>
-            <p id="KBB_valor_6"></p>
-          </div>
-          <div>
-            <p>AVG OPP</p>
-            <p id="AVGOPP_valor_6"></p>
-          </div>
-          <div>
-            <p>EFECT</p>
-            <p id="efect_valor_6"></p>
-          </div>
-          <div>
-            <p>WHIP</p>
-            <p id="ehip_valor_6"></p>
-          </div>
-        
-
-        </div>
-      <div class="logo_picher">
-          <video class="video"  height="150" id="video3" loop muted autoplay></video>
-      </div>
-       
-    
-    </div>
-
-    </div>
 
 
-    
-    <div id="pitcher4" class=" Bx-pitcher-4V">
-      <div class="pitcher_data">
-        <div class="cont-data">
-          <div>
-            <p>IL</p>
-            <p id="li_valor_4v"></p>
-          </div>
-          <div>
-            <p>HOLD</p>
-            <p id="hold_valor_4v"></p>
-          </div>
-          <div>
-            <p>K/BB</p>
-            <p id="k_valor_4v"></p>
-          </div>
-          <div>
-            <p>EFECT</p>
-            <p id="efect_valor_4v"></p>
-          </div>
-  
-        </div>
-      <div class="logo_picher">
-          <video class="video"  height="150"  id="video4" loop muted autoplay ></video>
-      </div>
-    </div>
-  
-    </div>
-  <div id="pitcher5" class="ventanas Bx-pitcher-5V">
-    <div class="pitcher_data">
-      <div class="cont-data">
-        <div>
-          <p>G/P</p>
-          <p id="gp_valor_5v"></p>
-        </div>
-        <div>
-          <p>IL</p>
-          <p id="il_valor_5v"></p>
-        </div>
-        <div>
-          <p>K/BB</p>
-          <p id="KBB_valor_5v"></p>
-        </div>
-        <div>
-          <p>EFECT</p>
-          <p id="efect_valor_5v"></p>
-        </div>
-        <div>
-          <p>WHIP</p>
-          <p id="ehip_valor_5v"></p>
-        </div>
 
-      </div>
-    <div class="logo_picher">
-        <video class="video"  height="150" id="video5" loop muted autoplay></video>
-    </div>
-     
-  
-  </div>
-  </div>
-  <div id="pitcher6" class="ventanas Bx-pitcher-6V">
-    <div class="pitcher_data">
-      <div class="cont-data">
-        <div>
-          <p>G/P</p>
-          <p id="gp_valor_6v"></p>
-        </div>
-        <div>
-          <p>IL</p>
-          <p id="il_valor_6v"></p>
-        </div>
-        <div>
-          <p>K/BB</p>
-          <p id="KBB_valor_6"></p>
-        </div>
-        <div>
-          <p>AVG OPP</p>
-          <p id="AVGOPP_valor_6v"></p>
-        </div>
-        <div>
-          <p>EFECT</p>
-          <p id="efect_valor_6v"></p>
-        </div>
-        <div>
-          <p>WHIP</p>
-          <p id="ehip_valor_6v"></p>
-        </div>
-      
 
-      </div>
-    <div class="logo_picher">
-        <video class="video"  height="150" id="video6" loop muted autoplay></video>
-    </div>
-     
-  
-  </div>
-
-  </div>
- </div>
 
 
  
@@ -414,7 +170,7 @@
       <div style="opacity: 0" id="f6"></div>
     
   </div>
-
+</div>
     <script src="../_js/jquery-3.0.0.min.js"></script>
     <script src="js/animaciones.js"></script>
     <script src="js/api.js"></script>

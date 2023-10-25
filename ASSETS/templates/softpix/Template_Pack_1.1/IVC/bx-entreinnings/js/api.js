@@ -104,10 +104,16 @@ Promise.all([request1])
                     Carreras_homeclub.innerText= carreras_homeclub
                     Carreras_visitante.innerText= carreras_visitante
 
-                    Hits_visitante.innerText = hits_visitante
-                    Hits_homeclub.innerText = hits_homeclub
-                    Errores_visitante.innerText = errores_visitante
-                    Errores_homeclub.innerText =  errores_homeclub
+                    Hits_visitante.innerText = errores_visitante
+                    Hits_homeclub.innerText = errores_homeclub
+                    Errores_visitante.innerText =  hits_visitante
+                    Errores_homeclub.innerText =  hits_homeclub
+
+                    
+                    
+                   
+
+                   
 
                     Id_equipo_homeclub.src =Logos_equipos[id_equipo_homeclub].img_url;
                     Id_equipo_visitante.src = Logos_equipos[id_equipo_visitante].img_url;

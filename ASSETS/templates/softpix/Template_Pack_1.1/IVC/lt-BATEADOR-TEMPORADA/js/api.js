@@ -23,6 +23,7 @@ function runTemplateUpdate() {
 document.getElementById('temporada').innerText ='TEMPORADA 23-24'
 
 var   id_peloteros;
+var id_equipo_jugado ; 
   
 let bateadores1 = htmlDecode(e('f1').innerText)
 let bateadores2 = htmlDecode(e('f2').innerText)
@@ -67,8 +68,8 @@ function getDataB() {
            var sheetName = sheet.properties.title;
            if (sheetName === 'bx') {
             let datos;
-            if(bateadores2 != '') datos = '!K17:L27'
-              else if(bateadores1 != '') datos = '!O17:P27'
+            if(bateadores2 != '') datos = '!K17:M27'
+              else if(bateadores1 != '') datos = '!O17:Q27'
                gapi.client.sheets.spreadsheets.values.get({
                    spreadsheetId: SPREADSHEET_ID,
                    range: sheetName + datos
@@ -77,6 +78,9 @@ function getDataB() {
                    if (data && data.length > 0) {
                        var primeraFila = data[seleciono];
                        id_peloteros = primeraFila[1] 
+                       id_equipo_jugado = primeraFila[2] 
+
+                    
 
                        document.getElementById('f1_gfx2').innerHTML = primeraFila[0]
 
@@ -131,9 +135,8 @@ function getDataB() {
                                parte,
                               
                            } = result1.data.juego;
-                          
-                           let iquipo_juega;
-                           parte == 0 ?   iquipo_juega = id_bateador_visitante  : iquipo_juega = id_bateador_homeclub 
+
+
                            const url = new URL(
                              "https://bss.qualitybeisbol.com/api/anual-pelotero-ave"
                          );
@@ -201,10 +204,12 @@ function getDataB() {
                            })
                    
                          });
+
+
                
                            let id_quipos_juega 
                            parte == 0 ?  id_quipos_juega = id_equipo_visitante : id_quipos_juega = id_equipo_homeclub 
-                           barraEquiposElement.style.backgroundImage = `url(${Barra_equipos[id_quipos_juega].img_url})`;  
+                           barraEquiposElement.style.backgroundImage = `url(${Barra_equipos[id_equipo_jugado].img_url})`;  
                
                    
                            runAnimationIN(id_quipos_juega)
