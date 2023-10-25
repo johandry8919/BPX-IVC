@@ -129,15 +129,30 @@ function getDataB() {
                              parte == 0 ?  equipo_jugando = result1.data.boxscore.visitante.peloteros : equipo_jugando = result1.data.boxscore.homeclub.peloteros  
                              
                                function equipo_juega (equipo_jugando,pelotero){
-
-                                
-                                 equipo_jugando.forEach((element, index) => {          
-        
+                                 equipo_jugando.forEach((element) => {     
                                    if(element.id_pelotero == pelotero){
                                      element.VB == null ? 0 :element.VB
                                      let VB = element.VB
                                      element.HIT == null ? 0 :element.HIT
                                      let HIT = element.HIT
+
+
+                                    let CA ='' 
+                                    let HR = ''
+                                    let H2 = ''
+                                     if(element.CA !=0){
+                                        CA = element.CA +'CA' 
+
+                                     }
+                                     if(element.HR !=0){
+                                     HR =  element.HR + 'HR' 
+
+                                     }
+                                     if(!element.H2 !=0){
+                                       H2 = element.H2  + 'B' 
+
+                                     }
+                                    
                                      if(document.getElementById('f1_gfx1')){
                                        document.getElementById('f1_gfx1').innerHTML = `
                      
@@ -148,6 +163,17 @@ function getDataB() {
                                    <div> 
                                      ${HIT}  
                                    </div>
+                                   <div> 
+                                   ${CA}
+
+                                   </div>
+                                   <div> 
+                                   ${H2}
+                                   </div>
+                                   <div> 
+                                   ${HR}
+                                   </div>
+                                 
                      
                                     `;
                              
@@ -160,13 +186,11 @@ function getDataB() {
 
                                equipo_juega(equipo_jugando , id_peloteros)
 
-
-               
                            let id_quipos_juega 
                            parte == 0 ?  id_quipos_juega = id_equipo_visitante :id_quipos_juega = id_equipo_homeclub 
                            barraEquiposElement.style.backgroundImage = `url(${Barra_equipos[id_equipo_jugado].img_url})`;  
                
-                           runAnimationIN(id_quipos_juega)
+                           runAnimationIN(id_equipo_jugado)
                
                       
                    }else {console.error("Error fetching data:", response.statusText);}})

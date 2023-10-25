@@ -180,9 +180,6 @@ function getDataB() {
                                  }
                                  return numero.toString().substring(1);
                                }
-               
-               
-                        
                                
                                element.AVE == null ? element.AVE = 0.000: element.AVE =  convertirNumero(element.AVE);
                                element.HR == 0 ? element.HR = 0.000 : element.HR = convertirNumero(element.HR) ;
@@ -204,15 +201,12 @@ function getDataB() {
                            })
                    
                          });
-
-
-               
                            let id_quipos_juega 
                            parte == 0 ?  id_quipos_juega = id_equipo_visitante : id_quipos_juega = id_equipo_homeclub 
                            barraEquiposElement.style.backgroundImage = `url(${Barra_equipos[id_equipo_jugado].img_url})`;  
                
                    
-                           runAnimationIN(id_quipos_juega)
+                           runAnimationIN(id_equipo_jugado)
                          
                       
                    }else {console.error("Error fetching data:", response.statusText);}})
