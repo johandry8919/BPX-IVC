@@ -8,6 +8,9 @@
       }
 
 
+      console.log(id_quipos_juega)
+
+
  const animateBar = (selector, delayTime, property, value, duration) => {
   const videoElement = document.getElementById("video");
   const sourceElement = document.createElement("source");

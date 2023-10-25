@@ -142,7 +142,6 @@ function getDataB() {
                                     let H2 = ''
                                      if(element.CA !=0){
                                         CA = element.CA +'CA' 
-
                                      }
                                      if(element.HR !=0){
                                      HR =  element.HR + 'HR' 
@@ -174,7 +173,6 @@ function getDataB() {
                                    ${HR}
                                    </div>
                                  
-                     
                                     `;
                              
                                     }
