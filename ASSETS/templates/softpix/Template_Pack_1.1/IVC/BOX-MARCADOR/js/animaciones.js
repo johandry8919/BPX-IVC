@@ -141,25 +141,25 @@
 
                       gsap.fromTo(
                         '#outs',
-                        { opacity:0, scale: 1.5 ,bottom:20 }, // Escala inicial de 2
+                        { opacity:0, scale: 1.5 ,bottom:0 }, // Escala inicial de 2
                         {
                           delay: 0.2,
                           duration: dur - 0.1,
                           opacity: 1,
                           scale: 1.5,
-                          bottom:20,
+                          bottom:5,
                           ease: "Power3.easeOut",
                           onComplete: () => {
 
                           gsap.fromTo(
                         '#outs',
-                        { opacity:1, scale: 1.5  }, // Escala inicial de 2
+                        { opacity:1, scale: 1  }, // Escala inicial de 2
                         {
                           delay: 0.2,
                           duration: dur - 0.1,
                           opacity: 1,
                           scale: 1,
-                          bottom:5,
+                          bottom:0,
                           ease: "Power3.easeOut",
                           onComplete: () => {
                             gsap.fromTo(

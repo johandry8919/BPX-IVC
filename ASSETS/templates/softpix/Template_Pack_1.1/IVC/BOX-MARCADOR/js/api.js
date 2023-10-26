@@ -5,20 +5,14 @@ const Id_equipo_visitante = document.getElementById("id_equipo_visitante");
 const cont = document.getElementById("cont");
 const Inning = document.getElementById("inning");
 const Initt_alta_baja = document.getElementById("initt_alta-baja");
-const Hombre_primera = document.getElementById("hombre_primera");
-const Hombre_segunda = document.getElementById("hombre_segunda");
-const Hombre_tercera = document.getElementById("hombre_tercera");
+const cont_base = document.getElementById("Bases");
 const video_logo = document.getElementById("video_logo");
-const Outs = document.getElementById("outsp");
+const outs1 = document.getElementById("outs1");
+const outs2 = document.getElementById("outs2");
 const barraEquiposElement = document.getElementById("barras");
-
-
-
 const url1 = new URL("https://bss.qualitybeisbol.com/api/boxscore");
 const url2 = new URL("https://bss.qualitybeisbol.com/api/diario-estadio-era");
-
 function runTemplateUpdate() {
-
     function ajustarCadena(cadena) {
         cadena = cadena.replace(/\+/g, ' ');
         cadena = cadena.replace(/\+/g, ' ');
@@ -92,6 +86,7 @@ function runTemplateUpdate() {
                         } = result1.data.juego;
 
 
+
                         let homeclub_lanzadores = result1.data.boxscore.homeclub.lanzadores;
                         let homeclub_peloteros =result1.data.boxscore.homeclub.peloteros;
                         let peloteros_visitante = result1.data.boxscore.visitante.peloteros;
@@ -101,15 +96,19 @@ function runTemplateUpdate() {
                         inning ? inning : inning = "0";
                         Inning.innerText = inning;
               
-                        if (outs == 1) {
-                          Outs.src = "./img/aout-1.png";
-                        } else if (outs ==2) {
-                          Outs.src = "./img/aout-2.png";
-                        } else Outs.src = "./img/aout.png";
+                  
+                     if (outs === 1) {
+                      outs1.classList.add("activate");
+                    } else if (outs === 2) {
+                      outs1.classList.add("activate");
+                      outs2.classList.add("activate");
+                    } else {
+                      outs1.classList.remove("activate");
+                      outs2.classList.remove("activate");
+                    }
               
                         document.getElementById("fondo_homeclut").src =Fondo_equipos[id_equipo_homeclub].img_url;
                          document.getElementById("fondo_visitante").src =Fondo_equipos[id_equipo_visitante].img_url;
-
 
                             let totalS = 0;
                             let totalB = 0;
@@ -140,10 +139,8 @@ function runTemplateUpdate() {
                         document.getElementById("bolas").innerText = totalB;
                         document.getElementById("strain").innerText = totalS;
                         if (parte == 1) {
-                          const totalStrikesBolasFoul =
-                            lanzador_homeclub_strikes +
-                            lanzador_homeclub_bolas +
-                            lanzador_homeclub_foul;
+                          const totalStrikesBolasFoul = lanzador_visitante_bolas +lanzador_visitante_foul + lanzador_visitante_strikes;
+                         
                           Initt_alta_baja.src = alta_baja[0].img_url;
                           
                           //data / boxscore / homeclub /lanzador
@@ -158,8 +155,7 @@ function runTemplateUpdate() {
                           
                           });
 
-                             
-                     
+
                           //data / boxscore / visitante /visitante
                           lanzadores_visitante.forEach((element) => {
                             if (element.id_picher == id_lanzador_visitante) {
@@ -178,15 +174,10 @@ function runTemplateUpdate() {
                             }
                           });
 
-
-                       
-
                         }
                         if (parte === 0) {
-                          const totalStrikesBolasFoul =
-                            lanzador_visitante_bolas +
-                            lanzador_visitante_foul +
-                            lanzador_visitante_strikes;
+                          const totalStrikesBolasFoul = lanzador_homeclub_strikes + lanzador_homeclub_bolas + lanzador_homeclub_foul;
+                          
                           Initt_alta_baja.src = alta_baja[1].img_url;
                           homeclub_lanzadores.forEach((element) => {
                             if (element.id_picher == id_lanzador_homeclub) {
@@ -214,18 +205,23 @@ function runTemplateUpdate() {
                             }
                           });
 
-                         
                         }
-                            const colorDeBase = "red";
-
-                            function actualizarColor(elemento, valor) {
-                              elemento.style.backgroundColor = valor === 1 ? colorDeBase : '';
-                            }
-                            
-                            actualizarColor(Hombre_primera, hombre_primera);
-                            actualizarColor(Hombre_segunda, hombre_segunda);
-                            actualizarColor(Hombre_tercera, hombre_tercera);
-                            
+                     
+                          const baseImages = {
+                            '0-0-0': 'img/bases.png',
+                            '1-0-0': 'img/bases-1.png',
+                            '0-1-0': 'img/bases-2.png',
+                            '0-0-1': 'img/bases-3.png',
+                            '1-1-0': 'img/bases-4.png',
+                            '0-1-1': 'img/bases-5.png',
+                            '1-1-1': 'img/bases-7.png',
+                            '1-0-1': 'img/bases-6.png',
+                          };
+                          
+                          const key = `${hombre_primera}-${hombre_segunda}-${hombre_tercera}`;
+                          const imageSrc = baseImages[key];
+                          cont_base.src = imageSrc;
+                          
                             carreras_homeclub  ? carreras_homeclub  :carreras_homeclub=  '00' 
                             carreras_visitante ? carreras_visitante  : carreras_visitante=  '00'
             
@@ -237,9 +233,7 @@ function runTemplateUpdate() {
                         
                             animationExecuted = true;
                         }
-                           
-        
-                     
+
                     } else {
                         console.error("Error fetching data:", response.statusText);
                     }

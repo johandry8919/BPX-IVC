@@ -7,27 +7,53 @@ body {
 }
 
 .container {
-  width: 100%;
+  width:266px;
   height: 270px;
   position: absolute;
-  bottom: 80px;
+  bottom: 120px;
   box-sizing: border-box;
   z-index: 1000;
   overflow: hidden;
   opacity: 1;
   z-index: 100;
+  left: 366px;
+}
+
+.cont-name {
+  height: 40px;
+  position: absolute;
+  width: 266px;
+  box-sizing: border-box;
+  color: white;
+  left: 0;
+  top: 47px;
+}
+.cont-name .name {
+  position: relative;
+  font-size: 20px;
+  width: 262px;
+  height: 40px;
+  overflow: hidden;
+  border: solid 1px rgb(225, 225, 225);
+  text-wrap: nowrap;
+  align-items: center;
+  padding: 0px 10px;
+  opacity: 0;
+  display: flex;
+  justify-content: space-between;
+
 }
 
 
 .Bx-pitcher-4H{
   width: 266px;
-  left: 366px;
+  left:0;
   height: 150px;
   background-image: url('../img/4_RENGLONES.png');
   background-repeat: no-repeat;
   background-size: contain;
   position: absolute;
-  bottom: 110px;
+  top: 90px;
   opacity: 0;
   display: flex;
   z-index: 0;

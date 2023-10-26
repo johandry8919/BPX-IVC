@@ -24,6 +24,13 @@ document.getElementById('temporada').innerText ='TEMPORADA 23-24'
 
 var   id_peloteros;
 var id_equipo_jugado ; 
+var AVE;
+var CA ;
+var HIT;
+var HR ;
+var CI;
+var OPS ;
+
   
 let bateadores1 = htmlDecode(e('f1').innerText)
 let bateadores2 = htmlDecode(e('f2').innerText)
@@ -61,15 +68,15 @@ function getDataB() {
        spreadsheetId: SPREADSHEET_ID
    }).then(function (response) {
        var sheets = response.result.sheets;
-       // sheets es un array de objetos que contiene información sobre cada hoja.
+       
        for (var i = 0; i < sheets.length; i++) {
            var sheet = sheets[i];
 
            var sheetName = sheet.properties.title;
            if (sheetName === 'bx') {
             let datos;
-            if(bateadores2 != '') datos = '!K17:M27'
-              else if(bateadores1 != '') datos = '!O17:Q27'
+            if(bateadores2 != '') datos = '!K17:S25'
+              else if(bateadores1 != '') datos = '!K28:S36'
                gapi.client.sheets.spreadsheets.values.get({
                    spreadsheetId: SPREADSHEET_ID,
                    range: sheetName + datos
@@ -77,12 +84,43 @@ function getDataB() {
                    var data = response.result.values;
                    if (data && data.length > 0) {
                        var primeraFila = data[seleciono];
+                       document.getElementById('f1_gfx2').innerHTML = primeraFila[0] + ' '
+                      
                        id_peloteros = primeraFila[1] 
-                       id_equipo_jugado = primeraFila[2] 
+                      id_equipo_jugado = primeraFila[2] 
 
-                    
+                      if(AVE != 0){
+                        AVE =  '   AVE' +  ' ' + primeraFila[3]  
+                      
 
-                       document.getElementById('f1_gfx2').innerHTML = primeraFila[0]
+                      }
+                      if(CA != 0){
+                        CA =  ' CA' +  ' ' + primeraFila[4]  
+                      
+
+                      }
+                      if(HIT != 0){
+                        HIT =  ' HIT' +  ' ' + primeraFila[5]  
+                      
+
+                      }
+                      if(HR != 0){
+                        HR =  ' HR' +  ' ' + primeraFila[6]  
+                      
+
+                      }
+                      if(CI != 0){
+                        CI =  ' CI' +  ' ' + primeraFila[7]  
+                      
+
+                      }
+                      if(OPS != 0){
+                        OPS =  ' OPS' +  ' ' + primeraFila[8]  
+                      
+
+                      }
+
+               
 
                    } 
 
@@ -136,14 +174,14 @@ function getDataB() {
                               
                            } = result1.data.juego;
 
-
                            const url = new URL(
                              "https://bss.qualitybeisbol.com/api/anual-pelotero-ave"
                          );
                          
                          const params = {
-                             "id_bateador":id_peloteros,
-                             "periodo": "TR",
+                          "id_bateador": id_peloteros,
+                          "periodo": "TR",
+                         
                          };
                          Object.keys(params)
                              .forEach(key => url.searchParams.append(key, params[key]));
@@ -154,48 +192,48 @@ function getDataB() {
                              headers,
                          }).then(response => response.json())
                          .then(datas => {
-                   
-                   
+
+
+                        
                         
                            datas.data.forEach((element, index) => {
-                             if(index == 0){
+
+                             if(index == 1){
                                function convertirNumero(numero) {
                                  if (numero === null || typeof numero === "undefined") {
                                    numero =.000;
                                  }
                                  return numero.toString().substring(1);
                                }
-               
-                               element.VB == null ? 0 :element.VB
-                               let VB = element.VB
-               
-                               element.HIT == null ? 0 :element.HIT
-                               let HIT = element.HIT
-               
-               
+              
                              
                                function convertirNumero(numero) {
                                  if (numero === null || typeof numero === 'undefined') {
-                                   numero = 0.000;
+                                   numero = '0.000';
                                  }
                                  return numero.toString().substring(1);
                                }
+
+                           
                                
-                               element.AVE == null ? element.AVE = 0.000: element.AVE =  convertirNumero(element.AVE);
-                               element.HR == 0 ? element.HR = 0.000 : element.HR = convertirNumero(element.HR) ;
-                                element.CI == 0 ? element.CI = 0.000 : element.CI = convertirNumero(element.CI);
-                                  element.OPS == 0 ?  element.OPS = 0 :element.OPS =  convertirNumero(element.OPS);
-                               
-                               
-                               
+                              // element.AVE == 0 ? element.AVE = 0.000: element.AVE =  convertirNumero(element.AVE);
+                               //element.HR == 0 ? element.HR = 0.000 : element.HR = convertirNumero(element.HR) ;
+                                //element.CI == 0 ? element.CI = 0.000 : element.CI = convertirNumero(element.CI);
+                                //element.OPS == 0 ?  element.OPS = 0 :element.OPS =  convertirNumero(element.OPS);
                                let nombre = element.nombre;
+
+
                                
                                document.getElementById("f1_gfx1").innerHTML =  ` 
                              
-                               <p id="">AVG  ${element.AVE}</p>
-                               <p id="">HR  ${element.HR}</p>
-                               <p id="">CI  ${element.CI}</p>
-                               <p id="">OPS  ${element.OPS}</p>  `;
+                               <p id="">${AVE} /</p>
+                               <p id="">${CA}  /</p>
+                               <p id="">${HIT} /</p>
+                               <p id=""${HR} /</p>
+                               <p id=""> ${CI} /</p>
+                               <p id="">${OPS} </p>
+                              
+                               `;
                                
                              }
                            })

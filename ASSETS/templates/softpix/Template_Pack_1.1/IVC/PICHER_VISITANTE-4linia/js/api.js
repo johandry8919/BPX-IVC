@@ -42,17 +42,33 @@ function runTemplateUpdate() {
 
                             id_lanzador_visitante,
                             id_equipo_visitante,
+                            lanzador_visitante_bolas,
+                            lanzador_visitante_foul,
+                            lanzador_visitante_strikes
                         } = result1.data.juego
+
+
+                       
 
                         let lanzadores_visitante = result1.data.boxscore.visitante.lanzadores;
                           //data / boxscore / visitante /visitante
+                          const totalStrikesBolasFoul =
+                          lanzador_visitante_bolas +
+                          lanzador_visitante_foul +
+                          lanzador_visitante_strikes;
                           lanzadores_visitante.forEach((element) => {
                             if (element.id_picher == id_lanzador_visitante) {
+                          
                                 // picher 4 fila 
                             document.getElementById('li_valor_4').innerText =  element.IP
                             document.getElementById('hold_valor_4').innerText = element.HOLD
                             document.getElementById('k_valor_4').innerText = element.SO +'/' + element.BB
                             document.getElementById('efect_valor_4').innerText = element.ERA
+
+                            let nombre = element.nombre;
+
+
+                            document.getElementById("f0_gfx").innerHTML = `<p>${nombre.charAt(0)} ${element.apellido}</p> <p>L ${totalStrikesBolasFoul}</p>  `;
                             }
                           });
 

@@ -68,6 +68,8 @@ function getDataB() {
                    var data = response.result.values;
                    if (data && data.length > 0) {
                        var primeraFila = data[seleciono];
+
+                       
                        id_peloteros = primeraFila[1] 
                        id_equipo_jugado = primeraFila[2] 
 
@@ -123,6 +125,9 @@ function getDataB() {
                                parte,
                               
                            } = result1.data.juego;
+
+
+                        
                              let equipo_jugando ;
                              let peloteros;
                              parte == 0 ? peloteros = id_bateador_visitante   : peloteros = id_bateador_homeclub
@@ -141,14 +146,14 @@ function getDataB() {
                                     let HR = ''
                                     let H2 = ''
                                      if(element.CA !=0){
-                                        CA = element.CA +'CA' 
+                                        CA = element.CA + '' + 'CA ' + '/'
                                      }
                                      if(element.HR !=0){
-                                     HR =  element.HR + 'HR' 
+                                     HR =  element.HR + 'HR '  + '/'
 
                                      }
                                      if(!element.H2 !=0){
-                                       H2 = element.H2  + 'B' 
+                                       H2 = element.H2  + '' + 'B '  + '/'
 
                                      }
                                     
@@ -156,12 +161,10 @@ function getDataB() {
                                        document.getElementById('f1_gfx1').innerHTML = `
                      
                                    <div>
-                                       ${VB}   -
+                                       ${VB}-${HIT} / 
                                     </div>
                      
-                                   <div> 
-                                     ${HIT}  
-                                   </div>
+                                
                                    <div> 
                                    ${CA}
 

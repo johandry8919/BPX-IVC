@@ -46,6 +46,9 @@ function runTemplateUpdate() {
                             id_lanzador_visitante,
                             id_equipo_homeclub,
                             id_equipo_visitante,
+                            lanzador_homeclub_strikes,
+                            lanzador_homeclub_bolas,
+                            lanzador_homeclub_foul,
                             parte,
                           
                         } = result1.data.juego;
@@ -56,10 +59,16 @@ function runTemplateUpdate() {
                         let peloteros_visitante = result1.data.boxscore.visitante.peloteros;
                         let lanzadores_visitante = result1.data.boxscore.visitante.lanzadores;
 
-        
+                        const totalStrikesBolasFoul = lanzador_homeclub_strikes + lanzador_homeclub_bolas + lanzador_homeclub_foul;
                           //data / boxscore / visitante /visitante
                           homeclub_lanzadores.forEach((element) => {
                             if (element.id_picher == id_lanzador_homeclub) {
+
+
+                              let nombre = element.nombre;
+
+
+                              document.getElementById("f0_gfx").innerHTML = `<p>${nombre.charAt(0)} ${element.apellido}</p> <p>L ${totalStrikesBolasFoul}</p>  `;
                                 // picher 4 fila 
                             document.getElementById('li_valor_4').innerText =  element.IP
                             document.getElementById('hold_valor_4').innerText = element.HOLD
