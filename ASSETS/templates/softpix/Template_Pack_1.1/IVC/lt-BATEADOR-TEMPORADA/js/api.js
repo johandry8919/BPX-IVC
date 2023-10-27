@@ -22,14 +22,14 @@ function runTemplateUpdate() {
 
 document.getElementById('temporada').innerText ='TEMPORADA 23-24'
 
-var   id_peloteros;
+var id_peloteros;
 var id_equipo_jugado ; 
-var AVE;
-var CA ;
-var HIT;
-var HR ;
-var CI;
-var OPS ;
+var AVE = '';
+var CA = '' ;
+var HIT = '';
+var HR = '';
+var CI = '';
+var OPS = '';
 
   
 let bateadores1 = htmlDecode(e('f1').innerText)
@@ -89,36 +89,70 @@ function getDataB() {
                        id_peloteros = primeraFila[1] 
                       id_equipo_jugado = primeraFila[2] 
 
-                      if(AVE != 0){
-                        AVE =  '   AVE' +  ' ' + primeraFila[3]  
+                     
+
+                      function convertirNumero(numero) {
+                        if (numero === null || typeof numero === "undefined") {
+                          numero =.000;
+                        }
+                        return numero.toString().substring(1);
+                      }
+
+                     
+
+                      if(primeraFila[3] != 0){
+
+                       let  AVE1= convertirNumero(primeraFila[3])
+
+                     
+                        AVE =  '    AVE ' +  ' ' + AVE1   + ' / '
                       
 
                       }
-                      if(CA != 0){
-                        CA =  ' CA' +  ' ' + primeraFila[4]  
+                      if(primeraFila[4] != 0){
+                        
+                        CA =  ' CA' +  ' ' + primeraFila[4]   + ' / '
                       
 
                       }
-                      if(HIT != 0){
-                        HIT =  ' HIT' +  ' ' + primeraFila[5]  
+                      if(primeraFila[5] != 0){
+                        HIT =  ' H' +  ' ' + primeraFila[5]   + '  / '
                       
 
                       }
-                      if(HR != 0){
-                        HR =  ' HR' +  ' ' + primeraFila[6]  
+                      if(primeraFila[6] != 0){
+                        HR =  ' HR' +  ' ' + primeraFila[6]   + '  / '
                       
 
                       }
-                      if(CI != 0){
-                        CI =  ' CI' +  ' ' + primeraFila[7]  
+                      if(primeraFila[7] != 0){
+                        CI =  ' CI' +  ' ' + primeraFila[7]   + '  / '
                       
 
                       }
-                      if(OPS != 0){
-                        OPS =  ' OPS' +  ' ' + primeraFila[8]  
-                      
+                      if(primeraFila[8] != 0){
+                        let   OPS1= convertirNumero(primeraFila[8])
+                       
+                        OPS =  ' OPS' +  ' ' +OPS1 
 
                       }
+
+
+
+                     
+                      document.getElementById("f1_gfx1").innerHTML =  ` 
+                    
+                      <p id="">${AVE} </p>
+                      <p id="">${CA}  </p>
+                      <p id="">${HIT} </p>
+                      <p id=""${HR} </p>
+                      <p id=""> ${CI} </p>
+                      <p id="">${OPS} </p>
+                     
+                      `;
+                      
+                    
+                   
 
                
 
@@ -223,19 +257,7 @@ function getDataB() {
                                let nombre = element.nombre;
 
 
-                               
-                               document.getElementById("f1_gfx1").innerHTML =  ` 
-                             
-                               <p id="">${AVE} /</p>
-                               <p id="">${CA}  /</p>
-                               <p id="">${HIT} /</p>
-                               <p id=""${HR} /</p>
-                               <p id=""> ${CI} /</p>
-                               <p id="">${OPS} </p>
-                              
-                               `;
-                               
-                             }
+                              }
                            })
                    
                          });

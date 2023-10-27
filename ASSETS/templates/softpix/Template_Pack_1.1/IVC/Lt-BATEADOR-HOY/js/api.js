@@ -59,8 +59,8 @@ function getDataB() {
            var sheetName = sheet.properties.title;
            if (sheetName === 'bx') {
             let datos;
-            if(bateadores2 != '') datos = '!K17:M27'
-              else if(bateadores1 != '') datos = '!O17:Q27'
+            if(bateadores2 != '') datos = '!K17:S25'
+              else if(bateadores1 != '') datos = '!K28:S36'
                gapi.client.sheets.spreadsheets.values.get({
                    spreadsheetId: SPREADSHEET_ID,
                    range: sheetName + datos
@@ -126,6 +126,10 @@ function getDataB() {
                               
                            } = result1.data.juego;
 
+                           console.log(result1.data)
+
+                           parte = 0
+
 
                         
                              let equipo_jugando ;
@@ -134,7 +138,11 @@ function getDataB() {
                              parte == 0 ?  equipo_jugando = result1.data.boxscore.visitante.peloteros : equipo_jugando = result1.data.boxscore.homeclub.peloteros  
                              
                                function equipo_juega (equipo_jugando,pelotero){
-                                 equipo_jugando.forEach((element) => {     
+
+                              
+                                 equipo_jugando.forEach((element) => {  
+
+                                      console.log(element)   
                                    if(element.id_pelotero == pelotero){
                                      element.VB == null ? 0 :element.VB
                                      let VB = element.VB

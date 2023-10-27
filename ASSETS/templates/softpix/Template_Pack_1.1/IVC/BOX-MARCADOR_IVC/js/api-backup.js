@@ -9,8 +9,11 @@ const Hombre_primera = document.getElementById("hombre_primera");
 const Hombre_segunda = document.getElementById("hombre_segunda");
 const Hombre_tercera = document.getElementById("hombre_tercera");
 const video_logo = document.getElementById("video_logo");
-const Outs = document.getElementById("outsp");
+const outs1 = document.getElementById("outs1");
+const outs2 = document.getElementById("outs2");
+const cont_base = document.getElementById("Bases");
 const barraEquiposElement = document.getElementById("barras");
+
 
 gapi.load('client', initClient);
 var SPREADSHEET_ID = '1kSVuoVD2Y7YON3ATTWGHzGCAA-Wz7sGmRFj0jxLizRY';
@@ -94,29 +97,51 @@ function getDataB() {
                 document.getElementById("f1_gfx").style.display = 'none';
                 document.getElementById("f0_gfx").style.display = 'none';
                 var out = valueData['VALOR'][10];
-                if (out == 1) {
-                    Outs.src = "./img/aout-1.png";
-                } else if (out == 2) {
-                    Outs.src = "./img/aout-2.png";
-                } else Outs.src = "./img/aout.png";
+             
+                if (out === '1') {
+                    outs1.classList.add("activate");
+                  } else if (out === '2') {
+                    outs1.classList.add("activate");
+                    outs2.classList.add("activate");
+                  } else {
+                    outs1.classList.remove("activate");
+                    outs2.classList.remove("activate");
+                  }
+
                 var primera =  valueData['VALOR'][11];
                 var segunda =  valueData['VALOR'][12];
                 var tercera =  valueData['VALOR'][13];
+
+
+                const baseImages = {
+                    '0-0-0': 'img/bases.png',
+                    '1-0-0': 'img/bases-1.png',
+                    '0-1-0': 'img/bases-2.png',
+                    '0-0-1': 'img/bases-3.png',
+                    '1-1-0': 'img/bases-4.png',
+                    '0-1-1': 'img/bases-5.png',
+                    '1-1-1': 'img/bases-7.png',
+                    '1-0-1': 'img/bases-6.png',
+                  };
+
+            
+                  let hombre_primera = 0
+                  let hombre_segunda = 0
+                  let hombre_tercera = 0
+
                 if( primera == 'TRUE'){
-                    Hombre_primera.style.backgroundColor = "#ff0000";
-                }else{
-                    Hombre_primera.style.backgroundColor = "";
+                    hombre_primera = 1
+                }if(segunda == 'TRUE'){
+                    hombre_segunda = 1
+                }if(tercera == 'TRUE'){
+                    hombre_tercera = 1
                 }
-                if(segunda == 'TRUE'){
-                    Hombre_segunda.style.backgroundColor = "#ff0000";
-                }else{
-                    Hombre_segunda.style.backgroundColor = "";
-                }
-                if(tercera == 'TRUE'){
-                    Hombre_tercera.style.backgroundColor = "#ff0000";
-                }else{
-                    Hombre_tercera.style.backgroundColor = "";
-                }
+                  
+                  const key = `${hombre_primera}-${hombre_segunda}-${hombre_tercera}`;
+                  const imageSrc = baseImages[key];
+                  cont_base.src = imageSrc;
+
+                
                 
     
                 if (!animationExecuted) {

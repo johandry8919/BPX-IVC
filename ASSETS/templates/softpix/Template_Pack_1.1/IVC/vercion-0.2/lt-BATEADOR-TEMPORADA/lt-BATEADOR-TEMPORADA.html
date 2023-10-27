@@ -1,0 +1,216 @@
+    <!-- ### CASPAR ### -->
+    <script src="../../js/gsap3.2.6.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../css/spx_layout.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/spx_fonts.css" />
+    <script type="text/javascript" src="../../js/spx_interface.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap"
+      rel="stylesheet"
+    />
+  
+    <link
+      rel="stylesheet"
+      type="text/css"
+      id="DynamicTheme"
+      href="css/styles.css"
+    />
+  
+      
+    <script type="text/javascript">
+      window.SPXGCTemplateDefinition = {
+        description: "",
+        playserver: "OVERLAY",
+        playchannel: "1",
+        playlayer: "1",
+        webplayout: "5",
+        out: "manual",
+        dataformat: "json",
+        uicolor: "2",
+        DataFields: [
+          {
+            field: "comment",
+            ftype: "textfield",
+            title: "lt-BATEADOR-TEMPORADA",
+            value: "lt-BATEADOR-TEMPORADA",
+          },
+
+           {
+          field: "f0",
+          ftype: "textfield",
+          title: "ID DEL JUEGO",
+          value: "23+2+4++3",
+        },
+           {
+          field: "f4",
+          ftype: "TEMPORADA",
+          title: "EMPORADA",
+          value: "TEMPORADA 23-24",
+        },
+
+
+        {
+                "field": "f1",
+                "ftype": "dropdown",
+                "title": "BATEADORES HOMECLUB",
+                "value": "",
+                "items": [
+
+                  {
+                        "text": "bateador-N/A",
+                        "value": ""
+                    },
+                    {
+                        "text": "bateador-1",
+                        "value": "0"
+                    },
+                    {
+                        "text": "bateador-2",
+                        "value": "1"
+                    },
+                    {
+                        "text": "bateador-3",
+                        "value": "2"
+                    },
+                    {
+                        "text": "bateador-4",
+                        "value": "3"
+                    },
+                    {
+                        "text": "bateador-5",
+                        "value": "4"
+                    },
+                    {
+                        "text": "bateador-6",
+                        "value": "5"
+                    },
+                    {
+                        "text": "bateador-7",
+                        "value": "6"
+                    },
+                    {
+                        "text": "bateador-8",
+                        "value": "7"
+                    },
+                    {
+                        "text": "bateador-9",
+                        "value": "8"
+                    },
+                   
+                ]
+            },
+
+            {
+                "field": "f2",
+                "ftype": "dropdown",
+                "title": "BATEADORES VISITANTE",
+                "value": "",
+                "items": [
+                   {
+                        "text": "bateador-N/A",
+                        "value": ""
+                    },
+                    {
+                        "text": "bateador-1",
+                        "value": "0"
+                    },
+                    {
+                        "text": "bateador-2",
+                        "value": "1"
+                    },
+                    {
+                        "text": "bateador-3",
+                        "value": "2"
+                    },
+                    {
+                        "text": "bateador-4",
+                        "value": "3"
+                    },
+                    {
+                        "text": "bateador-5",
+                        "value": "4"
+                    },
+                    {
+                        "text": "bateador-6",
+                        "value": "5"
+                    },
+                    {
+                        "text": "bateador-7",
+                        "value": "6"
+                    },
+                    {
+                        "text": "bateador-8",
+                        "value": "7"
+                    },
+                    {
+                        "text": "bateador-9",
+                        "value": "8"
+                    },
+                   
+                ]
+            },
+
+
+      
+         
+        ],
+      };
+    </script>
+  </head>
+  <body>
+  
+    
+    <div
+      id="container"
+      class="container SPXWindow SPX_AUTOSIZE"
+      data-spx-remember="Use either SPX_AUTOSIZE or SPX_FIXSIZE"
+    >
+
+    <div class="cont-1">
+        <div id="cont-6" class="cont-6">
+          <div id="temporada" class="temporada"><p>TEMPORADA 23-24</p></div>
+        
+          
+            <div id="cont"  class="cont">
+              <div id="barra_equipos"  class="barra_equipos">
+                <div id="barras" class="barras"></div>
+                <div id="barras_text" class="barras_text">
+                  <video loop width="100" height="60" autoplay muted id="video"></video>
+                  <p id="f1_gfx2"></p>
+                  <div  style="display: flex;" id="f1_gfx1">
+
+                  
+                  </div>
+                  
+                
+                </div>
+                
+
+              
+               
+             </div>
+
+            </div>
+        </div>
+       
+    </div>
+
+
+
+   
+   
+      <div style="opacity: 0" id="f3"></div>
+      <div style="opacity: 0" id="f0"></div>
+      <div style="opacity: 0" id="f1"></div>
+      <div style="opacity: 0" id="f2"></div>
+      <div style="opacity: 0" id="f4"></div>
+  </div>
+
+    <script src="../_js/jquery-3.0.0.min.js"></script>
+    <script src="js/animaciones.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/temStyles.js"></script>
+    <script src="https://apis.google.com/js/api.js"></script>
+   
+  </body>
