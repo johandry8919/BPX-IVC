@@ -1,5 +1,4 @@
 
-
 const video_logo = document.getElementById("video_logo");
 const url1 = new URL("https://bss.qualitybeisbol.com/api/boxscore");
 const url2 = new URL("https://bss.qualitybeisbol.com/api/diario-estadio-era");
@@ -30,7 +29,6 @@ function runTemplateUpdate() {
         "Accept": "application/json",
     };
 
-
             fetch(url1, {
                 method: "GET",
                 headers,
@@ -39,67 +37,66 @@ function runTemplateUpdate() {
                 .then(result1 => {
                     if (result1) {
                         let {
-                           
-                            id_bateador_homeclub,
-                            id_bateador_visitante,
+
                             id_lanzador_homeclub,
-                            id_lanzador_visitante,
                             id_equipo_homeclub,
-                            id_equipo_visitante,
                             lanzador_homeclub_strikes,
                             lanzador_homeclub_bolas,
                             lanzador_homeclub_foul,
-                            parte,
-                          
-                        } = result1.data.juego;
-
-
-                        let homeclub_lanzadores = result1.data.boxscore.homeclub.lanzadores;
-                        let homeclub_peloteros =result1.data.boxscore.homeclub.peloteros;
-                        let peloteros_visitante = result1.data.boxscore.visitante.peloteros;
-                        let lanzadores_visitante = result1.data.boxscore.visitante.lanzadores;
-
-                        const totalStrikesBolasFoul = lanzador_homeclub_strikes + lanzador_homeclub_bolas + lanzador_homeclub_foul;
+                        } = result1.data.juego
                           //data / boxscore / visitante /visitante
-                          homeclub_lanzadores.forEach((element) => {
+                          const totalStrikesBolasFoul =
+                          lanzador_homeclub_bolas +
+                          lanzador_homeclub_foul +
+                          lanzador_homeclub_strikes;
+
+
+                        const url = new URL(
+                          "https://bss.qualitybeisbol.com/api/acumula-lanzador-era"
+                      );
+                      
+                      const params = {
+                        "periodo": "TR",
+                        "temporada": "2023",
+                      
+                      };
+                      Object.keys(params)
+                          .forEach(key => url.searchParams.append(key, params[key]));
+                      
+                      
+                      fetch(url, {
+                          method: "GET",
+                          headers,
+                      }).then(response => response.json())
+                      .then(datas => {
+
+                        datas.data.forEach((element, index) => {
+
                             if (element.id_picher == id_lanzador_homeclub) {
-
-
-                              let nombre = element.nombre;
-
-
-                              document.getElementById("f0_gfx").innerHTML = `<p>${nombre.charAt(0)} ${element.apellido}</p> <p>L ${totalStrikesBolasFoul}</p>  `;
-                                // picher 4 fila 
-                            document.getElementById('li_valor_4').innerText =  element.IP
+                              element.G == undefined ? element.G = 0 : element.G
+                              element.P == undefined ? element.P = 0 : element.P
+                              element.IP == undefined ? element.IP = 0 : element.IP
+                              element.SO  == undefined? element.SO = 0 : element.SO
+                              element.BB == undefined ? element.BB = 0 : element.BB
+                              element.ERA == undefined ? element.ERA = 0 : element.ERA
+                              element.WHIP == undefined ? element.WHIP = 0 : element.WHIP
+      
+                              document.getElementById('li_valor_4').innerText =  element.IP
                             document.getElementById('hold_valor_4').innerText = element.HOLD
                             document.getElementById('k_valor_4').innerText = element.SO +'/' + element.BB
                             document.getElementById('efect_valor_4').innerText = element.ERA
-                            // picher 4 fila 
 
-                            // picher 5 fila 
-                           /* document.getElementById('gp_valor_5').innerText =  element.G + '/' + element.P
-                            document.getElementById('il_valor_5').innerText = element.IP
-                            document.getElementById('KBB_valor_5').innerText = element.SO +'/' + element.BB
-                            document.getElementById('efect_valor_5').innerText = element.ERA
-                            document.getElementById('ehip_valor_5').innerText = element.WHIP
+                          let nombre = element.nombre;
+                          document.getElementById("f0_gfx").innerHTML = `<p>${nombre.charAt(0)} ${element.apellido}</p> <p></p>  `;
+                          }
 
-                              
-                            // picher 5 fila 
+                        })
+                
+                      });
+                    
 
-                            // picher 6 fila 
-                            document.getElementById('gp_valor_6').innerText =  element.G + '/' + element.P
-                            document.getElementById('il_valor_6').innerText = element.IP
-                            document.getElementById('KBB_valor_6').innerText = element.SO +'/' + element.BB
-                             document.getElementById('AVGOPP_valor_6').innerText = element.ERA
-                            document.getElementById('efect_valor_6').innerText = element.ERA
-                            document.getElementById('ehip_valor_6').innerText = element.WHIP*/
-                            }
-                          });
-
-                          
                           const videoMedia = [
-                            { id: "video1", imgUrl: Video_media[id_equipo_homeclub].img_url },
-                           
+                            { id: "video", imgUrl: Video_media[id_equipo_homeclub].img_url },
                           ];
                           
                           function createVideoElement(id, imgUrl) {
@@ -125,10 +122,8 @@ function runTemplateUpdate() {
                     console.error("Error en una de las solicitudes:", error);
                 });
         
-    
-  
-    
 
 
 }
+
 

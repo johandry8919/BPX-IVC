@@ -75,8 +75,8 @@ function getDataB() {
            var sheetName = sheet.properties.title;
            if (sheetName === 'bx') {
             let datos;
-            if(bateadores2 != '') datos = '!K17:S25'
-              else if(bateadores1 != '') datos = '!K28:S36'
+            if(bateadores2 != '') datos = '!K17:M25'
+              else if(bateadores1 != '') datos = '!K28:M36'
                gapi.client.sheets.spreadsheets.values.get({
                    spreadsheetId: SPREADSHEET_ID,
                    range: sheetName + datos
@@ -84,7 +84,7 @@ function getDataB() {
                    var data = response.result.values;
                    if (data && data.length > 0) {
                        var primeraFila = data[seleciono];
-                       document.getElementById('f1_gfx2').innerHTML = primeraFila[0] + ' '
+                       document.getElementById('f1_gfx2').innerHTML = primeraFila[0] + '  ' 
                       
                        id_peloteros = primeraFila[1] 
                       id_equipo_jugado = primeraFila[2] 
@@ -98,62 +98,8 @@ function getDataB() {
                         return numero.toString().substring(1);
                       }
 
-                     
-
-                      if(primeraFila[3] != 0){
-
-                       let  AVE1= convertirNumero(primeraFila[3])
-
-                     
-                        AVE =  '    AVE ' +  ' ' + AVE1   + ' / '
-                      
-
-                      }
-                      if(primeraFila[4] != 0){
-                        
-                        CA =  ' CA' +  ' ' + primeraFila[4]   + ' / '
-                      
-
-                      }
-                      if(primeraFila[5] != 0){
-                        HIT =  ' H' +  ' ' + primeraFila[5]   + '  / '
-                      
-
-                      }
-                      if(primeraFila[6] != 0){
-                        HR =  ' HR' +  ' ' + primeraFila[6]   + '  / '
-                      
-
-                      }
-                      if(primeraFila[7] != 0){
-                        CI =  ' CI' +  ' ' + primeraFila[7]   + '  / '
-                      
-
-                      }
-                      if(primeraFila[8] != 0){
-                        let   OPS1= convertirNumero(primeraFila[8])
-                       
-                        OPS =  ' OPS' +  ' ' +OPS1 
-
-                      }
-
-
-
-                     
-                      document.getElementById("f1_gfx1").innerHTML =  ` 
-                    
-                      <p id="">${AVE} </p>
-                      <p id="">${CA}  </p>
-                      <p id="">${HIT} </p>
-                      <p id=""${HR} </p>
-                      <p id=""> ${CI} </p>
-                      <p id="">${OPS} </p>
-                     
-                      `;
-                      
-                    
-                   
-
+           
+                  
                
 
                    } 
@@ -227,12 +173,11 @@ function getDataB() {
                          }).then(response => response.json())
                          .then(datas => {
 
-
-                        
-                        
                            datas.data.forEach((element, index) => {
+                         
 
-                             if(index == 1){
+                             if(element.temporada == 2023) {
+                             
                                function convertirNumero(numero) {
                                  if (numero === null || typeof numero === "undefined") {
                                    numero =.000;
@@ -247,16 +192,24 @@ function getDataB() {
                                  }
                                  return numero.toString().substring(1);
                                }
+ 
+                               
+                            let avg =  convertirNumero(element.AVE);
+                               element.HR == '' ? element.HR = '0': element.HR
+                              element.CI == 0 ? element.CI = 0.000 : element.CI 
+                              let ops =  convertirNumero(element.OPS);
+
 
                            
-                               
-                              // element.AVE == 0 ? element.AVE = 0.000: element.AVE =  convertirNumero(element.AVE);
-                               //element.HR == 0 ? element.HR = 0.000 : element.HR = convertirNumero(element.HR) ;
-                                //element.CI == 0 ? element.CI = 0.000 : element.CI = convertirNumero(element.CI);
-                                //element.OPS == 0 ?  element.OPS = 0 :element.OPS =  convertirNumero(element.OPS);
                                let nombre = element.nombre;
+                               let resultado = parseInt(element.HIT) ;
 
-
+                                document.getElementById("f1_gfx1").innerHTML = ` 
+                                  <div>AVG ${avg} / </div>
+                                 <div>HR ${element.HR} / </div>
+                                  <div>H ${element.HIT} / </div>
+                                   <div>CI ${element.CI}  </div>
+                                   `;
                               }
                            })
                    

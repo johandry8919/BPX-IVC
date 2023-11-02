@@ -16,6 +16,7 @@ function runTemplateUpdate() {
 
 var   id_peloteros;
 var id_equipo_jugado ; 
+let parte  ;
   
 let bateadores1 = htmlDecode(e('f1').innerText)
 let bateadores2 = htmlDecode(e('f2').innerText)
@@ -59,8 +60,8 @@ function getDataB() {
            var sheetName = sheet.properties.title;
            if (sheetName === 'bx') {
             let datos;
-            if(bateadores2 != '') datos = '!K17:S25'
-              else if(bateadores1 != '') datos = '!K28:S36'
+            if(bateadores2 != '') datos = '!K17:S25' , parte = 0
+              else if(bateadores1 != '') datos = '!K28:S36' , parte = 1
                gapi.client.sheets.spreadsheets.values.get({
                    spreadsheetId: SPREADSHEET_ID,
                    range: sheetName + datos
@@ -73,7 +74,7 @@ function getDataB() {
                        id_peloteros = primeraFila[1] 
                        id_equipo_jugado = primeraFila[2] 
 
-                       document.getElementById('f1_gfx2').innerHTML = primeraFila[0]
+                       document.getElementById('f1_gfx2').innerHTML = primeraFila[0] + ' / '
 
                    } 
 
@@ -122,16 +123,11 @@ function getDataB() {
                                id_bateador_visitante,
                                id_equipo_homeclub,
                                id_equipo_visitante,
-                               parte,
+                              
                               
                            } = result1.data.juego;
 
-                           console.log(result1.data)
-
-                           parte = 0
-
-
-                        
+                           console.log(parte)
                              let equipo_jugando ;
                              let peloteros;
                              parte == 0 ? peloteros = id_bateador_visitante   : peloteros = id_bateador_homeclub
@@ -139,7 +135,7 @@ function getDataB() {
                              
                                function equipo_juega (equipo_jugando,pelotero){
 
-                              
+                          
                                  equipo_jugando.forEach((element) => {  
 
                                       console.log(element)   
@@ -154,7 +150,7 @@ function getDataB() {
                                     let HR = ''
                                     let H2 = ''
                                      if(element.CA !=0){
-                                        CA = element.CA + '' + 'CA ' + '/'
+                                        CA = element.CA + '' + 'CA ' + ' /'
                                      }
                                      if(element.HR !=0){
                                      HR =  element.HR + 'HR '  + '/'
@@ -169,7 +165,7 @@ function getDataB() {
                                        document.getElementById('f1_gfx1').innerHTML = `
                      
                                    <div>
-                                       ${VB}-${HIT} / 
+                                       ${VB}-${HIT}  /
                                     </div>
                      
                                 

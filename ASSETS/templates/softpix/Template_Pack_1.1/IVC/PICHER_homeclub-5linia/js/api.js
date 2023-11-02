@@ -30,7 +30,6 @@ function runTemplateUpdate() {
         "Accept": "application/json",
     };
 
-
             fetch(url1, {
                 method: "GET",
                 headers,
@@ -39,47 +38,92 @@ function runTemplateUpdate() {
                 .then(result1 => {
                     if (result1) {
                         let {
-                           
-                            id_bateador_homeclub,
-                            id_bateador_visitante,
+
                             id_lanzador_homeclub,
-                            id_lanzador_visitante,
                             id_equipo_homeclub,
-                            id_equipo_visitante,
                             lanzador_homeclub_strikes,
                             lanzador_homeclub_bolas,
                             lanzador_homeclub_foul,
-                            parte,
-                          
-                        } = result1.data.juego;
+                        } = result1.data.juego
 
 
-                        let homeclub_lanzadores = result1.data.boxscore.homeclub.lanzadores;
-                        let homeclub_peloteros =result1.data.boxscore.homeclub.peloteros;
-                        let peloteros_visitante = result1.data.boxscore.visitante.peloteros;
-                        let lanzadores_visitante = result1.data.boxscore.visitante.lanzadores;
+                           //data / boxscore / visitante /visitante
+                           const totalStrikesBolasFoul =
+                           lanzador_homeclub_bolas +
+                           lanzador_homeclub_foul +
+                           lanzador_homeclub_strikes;
 
-                        const totalStrikesBolasFoul = lanzador_homeclub_strikes + lanzador_homeclub_bolas + lanzador_homeclub_foul;
-                          //data / boxscore / visitante /visitante
-                          homeclub_lanzadores.forEach((element) => {
-                            if (element.id_picher == id_lanzador_homeclub) {
-                              let nombre = element.nombre;
 
-                              document.getElementById("f0_gfx").innerHTML = `<p>${nombre.charAt(0)} ${element.apellido}</p> <p>L ${totalStrikesBolasFoul}</p>  `;
-                            // picher 5 fila 
-                           document.getElementById('gp_valor_5').innerText =  element.G + '/' + element.P
-                            document.getElementById('il_valor_5').innerText = element.IP
-                            document.getElementById('KBB_valor_5').innerText = element.SO +'/' + element.BB
-                            document.getElementById('efect_valor_5').innerText = element.ERA
-                            document.getElementById('ehip_valor_5').innerText = element.WHIP
+                        const url = new URL(
+                          "https://bss.qualitybeisbol.com/api/acumula-lanzador-era"
+                      );
+                      
+                      const params = {
+                        "periodo": "TR",
+                        "temporada": "2023",
+                      
+                      };
+                      Object.keys(params)
+                          .forEach(key => url.searchParams.append(key, params[key]));
+                      
+                      
+                      fetch(url, {
+                          method: "GET",
+                          headers,
+                      }).then(response => response.json())
+                      .then(datas => {
 
+                       
+                        function convertirNumero(numero) {
+                          if (numero === null || typeof numero === "undefined") {
+                            numero = .000;
+                          }
+                          if (numero > 0) {
+                            if (numero % 1 === 0) {
+                              return numero.toFixed(2);
+                            } else {
+                              return (Math.ceil(numero * 100) / 100).toFixed(2);
                             }
-                          });
+                          } else {
+                            return numero = '.000';
+                          }
+                        }
+                        
 
-                          
+                   
+
+                        datas.data.forEach((element, index) => {
+
+                         
+
+                            if (element.id_picher == id_lanzador_homeclub) {
+                              let WHIP =   convertirNumero(element.WHIP)
+                              element.G == undefined ? element.G = 0 : element.G
+                              element.P == undefined ? element.P = 0 : element.P
+                              element.IP == undefined ? element.IP = 0 : element.IP
+                              element.SO  == undefined? element.SO = 0 : element.SO
+                              element.BB == undefined ? element.BB = 0 : element.BB
+                              element.ERA == undefined ? element.ERA = 0 : element.ERA
+                             
+      
+                              document.getElementById('gp_valor_5').innerText =  element.G + '/' + element.P
+                              document.getElementById('il_valor_5').innerText = element.IP
+                              document.getElementById('KBB_valor_5').innerText = element.SO +'/' + element.BB
+                              document.getElementById('efect_valor_5').innerText = element.ERA
+                              document.getElementById('ehip_valor_5').innerText = WHIP
+
+                          let nombre = element.nombre;
+                          document.getElementById("f0_gfx").innerHTML = `<p>${nombre.charAt(0)} ${element.apellido}</p> <p></p>  `;
+                          }
+
+                        })
+                
+                      });
+                     
+                       
+
                           const videoMedia = [
                             { id: "video", imgUrl: Video_media[id_equipo_homeclub].img_url },
-                           
                           ];
                           
                           function createVideoElement(id, imgUrl) {
@@ -105,10 +149,8 @@ function runTemplateUpdate() {
                     console.error("Error en una de las solicitudes:", error);
                 });
         
-    
-  
-    
 
 
 }
+
 

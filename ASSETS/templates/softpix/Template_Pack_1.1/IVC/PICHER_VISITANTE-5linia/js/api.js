@@ -48,8 +48,18 @@ function runTemplateUpdate() {
                         } = result1.data.juego
 
 
+                        
+
+
+                      
+                          const totalStrikesBolasFoul =
+                          lanzador_visitante_bolas +
+                          lanzador_visitante_foul +
+                          lanzador_visitante_strikes;
+
+
                         const url = new URL(
-                          "https://bss.qualitybeisbol.com/api/acumula-lanzador-ave"
+                          "https://bss.qualitybeisbol.com/api/acumula-lanzador-era"
                       );
                       
                       const params = {
@@ -68,16 +78,27 @@ function runTemplateUpdate() {
                       .then(datas => {
 
 
-                     
-                     
-                        datas.data.forEach((element, index) => {
+                        function convertirNumero(numero) {
+                          if (numero === null || typeof numero === "undefined") {
+                            numero = .000;
+                          }
+                          if (numero > 0) {
+                            if (numero % 1 === 0) {
+                              return numero.toFixed(2);
+                            } else {
+                              return (Math.ceil(numero * 100) / 100).toFixed(2);
+                            }
+                          } else {
+                            return numero = '.000';
+                          }
+                        }
+                        
 
-                          console.log(element)
+                           datas.data.forEach((element, index) => {
 
-
-                         
-
+                    
                             if (element.id_picher == id_lanzador_visitante) {
+                              let WHIP = convertirNumero(element.WHIP)
 
                             
                               element.G == undefined ? element.G = 0 : element.G
@@ -86,16 +107,16 @@ function runTemplateUpdate() {
                               element.SO  == undefined? element.SO = 0 : element.SO
                               element.BB == undefined ? element.BB = 0 : element.BB
                               element.ERA == undefined ? element.ERA = 0 : element.ERA
-                              element.WHIP == undefined ? element.WHIP = 0 : element.WHIP
+                             
       
                               document.getElementById('gp_valor_5').innerText =  element.G + '/' + element.P
                               document.getElementById('il_valor_5').innerText = element.IP
                               document.getElementById('KBB_valor_5').innerText = element.SO +'/' + element.BB
                               document.getElementById('efect_valor_5').innerText = element.ERA
-                              document.getElementById('ehip_valor_5').innerText = element.WHIP
+                              document.getElementById('ehip_valor_5').innerText = WHIP
 
                           let nombre = element.nombre;
-                          document.getElementById("f0_gfx").innerHTML = `<p>${nombre.charAt(0)} ${element.apellido}</p> <p>L ${totalStrikesBolasFoul}</p>  `;
+                          document.getElementById("f0_gfx").innerHTML = `<p>${nombre.charAt(0)} ${element.apellido}</p> <p></p>  `;
                           }
                            
 
@@ -108,12 +129,6 @@ function runTemplateUpdate() {
 
 
 
-                        let lanzadores_visitante = result1.data.boxscore.visitante.lanzadores;
-                          //data / boxscore / visitante /visitante
-                          const totalStrikesBolasFoul =
-                          lanzador_visitante_bolas +
-                          lanzador_visitante_foul +
-                          lanzador_visitante_strikes;
                      
 
                           const videoMedia = [

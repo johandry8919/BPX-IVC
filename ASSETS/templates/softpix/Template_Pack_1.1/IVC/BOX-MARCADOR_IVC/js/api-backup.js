@@ -13,6 +13,8 @@ const outs1 = document.getElementById("outs1");
 const outs2 = document.getElementById("outs2");
 const cont_base = document.getElementById("Bases");
 const barraEquiposElement = document.getElementById("barras");
+const versu_a = document.getElementById("versu_a");
+const versu_b = document.getElementById("versu_b");
 
 
 gapi.load('client', initClient);
@@ -71,18 +73,13 @@ function getDataB() {
                     });
                 });
                 
+
                 Carreras_homeclub.innerText = valueData['VALOR'][5];
                 Carreras_visitante.innerText =  valueData['VALOR'][4];
                 var idta = valueData['ID-EQUIPO'][1];
                 var idtb = valueData['ID-EQUIPO'][2];
 
-                idta == 2? (Carreras_visitante.style.color = "black")  : "";
-                idtb == 3? (Carreras_visitante.style.color = "black")  : "";
-
-                document.getElementById("fondo_homeclut").src =
-                Fondo_equipos[idtb].img_url;
-                document.getElementById("fondo_visitante").src =
-                Fondo_equipos[idta].img_url;
+ 
 
                 Inning.innerText = valueData['VALOR'][6];
                 document.getElementById("bolas").innerText = valueData['VALOR'][9];
@@ -146,6 +143,40 @@ function getDataB() {
     
                 if (!animationExecuted) {
                     runAnimationIN();
+                    versu_b.src =  Versu_Q[idta].img_url
+                    versu_a.src =  Versu_D[idtb].img_url
+
+                   
+   
+
+                        function activate_video(element , id){
+                        
+                            const videoElement = document.getElementById(`${element}`);
+                            const sourceElement = document.createElement("source");
+                            sourceElement.src = Video_media[id].img_url;
+                            sourceElement.type = "video/webm";
+                            videoElement.appendChild(sourceElement);
+                            videoElement.play();
+                            document.getElementById("fondo_homeclut").src =
+                            Fondo_equipos[idtb].img_url;
+                            document.getElementById("fondo_visitante").src =
+                            Fondo_equipos[idta].img_url;
+                        }
+
+
+                        activate_video("video_1" , idta)
+                        activate_video("video_2" , idtb)
+
+                       
+                       
+                      
+                        
+                        
+                                  
+                        
+                        
+                     
+                  
                     animationExecuted = true;
                 }
             }, function (error) {
@@ -158,4 +189,7 @@ function getDataB() {
 }
 setInterval(function () {
     getDataB();
-}, 10000);
+}, 5000);
+
+
+
