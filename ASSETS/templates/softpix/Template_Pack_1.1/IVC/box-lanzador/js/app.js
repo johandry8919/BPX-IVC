@@ -2,10 +2,35 @@
 // const video_logo = document.getElementById("video_logo");
 const url1 = new URL("https://bss.qualitybeisbol.com/api/boxscore");
 const url2 = new URL("https://bss.qualitybeisbol.com/api/diario-estadio-era");
+const PEriodo = document.getElementById("Periodo")
 
 
 
 function runTemplateUpdate() {
+  let temporada = htmlDecode(e("f6").innerText);
+  let periodo = htmlDecode(e("f7").innerText);
+
+//   TR 2021 = TEMPORADA 2021
+// RR 2021 = ROUND ROBIN 2022
+// F 2021 = FINAL 2021
+// TR 2020 = TEMPORADA 2020
+// RR 2020 = ROUND ROBIN 2021
+// F 2020 = FINAL 2021
+PEriodo.innerHTML = "TEMPORADA " + ' ' + temporada
+
+  if(periodo=="TR" && temporada == "2023") PEriodo.innerHTML = "ESTA TEMPORADA"
+  if(periodo=="TR" && temporada == "2021") PEriodo.innerHTML = "TEMPORADA 2021"
+  if(periodo=="RR" && temporada == "2023") PEriodo.innerHTML = "TEMPORADA 2024"
+  if(periodo=="TR" && temporada == "2022") PEriodo.innerHTML = "TEMPORADA 2022"
+  if(periodo=="RR" && temporada == "2022") PEriodo.innerHTML = "ROUND ROBIN 2023"
+  if(periodo=="RR" && temporada == "2021") PEriodo.innerHTML = "ROUND ROBIN 2022"
+  if(periodo=="F" && temporada == "2022") PEriodo.innerHTML = " FINAL 2023"
+  if(periodo=="F" && temporada == "2021") PEriodo.innerHTML = " FINAL 2021"
+  if(periodo=="F" && temporada == "2023") PEriodo.innerHTML = " TEMPORADA 2024"
+  if(periodo=="F" && temporada == "2020") PEriodo.innerHTML = " TEMPORADA 2021"
+
+
+
 
   function ajustarCadena(cadena) {
     cadena = cadena.replace(/\+/g, ' ');
@@ -96,8 +121,8 @@ function getDataB() {
                       );
                       
                       const params = {
-                        "periodo": "TR",
-                        "temporada": "2023",
+                        "periodo": periodo,
+                        "temporada": temporada,
                       
                       };
                       Object.keys(params)
@@ -109,6 +134,10 @@ function getDataB() {
                           headers,
                       }).then(response => response.json())
                       .then(datas => {
+
+
+                        
+ 
 
                      
                function convertirNumero(number) {
@@ -123,9 +152,14 @@ function getDataB() {
               
                 return numeroTruncado;
               }
+
+            
+                         
                         datas.data.forEach((element, index) => {
                             if (element.id_picher == id_peloteros) {
-                         
+
+
+                        
                               let WHIP =   convertirNumero(element.WHIP)
                                element.G == undefined ? element.G = 0 : element.G
                                element.P == undefined ? element.P = 0 : element.P

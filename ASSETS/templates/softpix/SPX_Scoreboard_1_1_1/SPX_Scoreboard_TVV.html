@@ -379,7 +379,7 @@
         //  var diaDelMes = '16';
 
         const firstRequest = fetch(
-          `https://statsapi.mlb.com/api/v1/schedule?sportId=17&leagueId=135&startDate=2023-11-${diaDelMes}&endDate=2023-11-${diaDelMes}&gameType=E&&gameType=S&&gameType=R`
+          `https://statsapi.mlb.com/api/v1/schedule?sportId=17&leagueId=135&startDate=2024-01-${diaDelMes}&endDate=2024-01-${diaDelMes}&gameType=E&&gameType=S&&gameType=L`
         )
           .then((response) => response.json())
           .then((data) => {
@@ -420,7 +420,7 @@
               const inicialNombre = partes[0].charAt(0).toUpperCase();
               const apellido =
                 partes.length > 1 ? partes.slice(1).join(" ") : partes[0];
-              const resultado = inicialNombre + " . " + apellido;
+              const resultado = inicialNombre + "." + apellido;
 
               return resultado;
             }
