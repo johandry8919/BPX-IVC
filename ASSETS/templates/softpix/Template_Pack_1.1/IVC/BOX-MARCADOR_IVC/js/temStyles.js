@@ -55,6 +55,7 @@ const Video_media = [
   { id_equipo: 6, img_url: "./media/logo_team_6.webm" },
   { id_equipo: 7, img_url: "./media/logo_team_7.webm" },
   { id_equipo: 8, img_url: "./media/logo_team_8.webm" },
+  { id_equipo: 9, img_url: "./media/play.webm" },
     
   ];
 

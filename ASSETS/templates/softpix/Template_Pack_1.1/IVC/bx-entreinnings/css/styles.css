@@ -1,63 +1,70 @@
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap");
 
 body {
-  font-family: "Rajdhani", sans-serif;
+  font-family: 'Oswald', sans-serif;
   font-weight: bold;
   font-size: 30px;
 }
 
 .container {
   width: 100%;
-  height: 240px;
+  height: 350px;
   position: absolute;
   bottom: 224px;
   box-sizing: border-box;
   z-index: 1000;
   overflow: hidden;
   left: 233px;
-
-
-
 }
 
-.container .entreinnings{
+.container .entreinnings {
   width: 606px;
   height: 220px;
-  position:relative;
+  position: relative;
   top: 0;
   opacity: 0;
 
-  
+
+
+
 }
-.container .entreinnings .cont_che_alta_baja{
-  width: 355px;
-  height: 35px;
-  position:relative;
-  top: 30px;
+
+.container .entreinnings .cont_che_alta_baja {
+  width: 575px;
+  height: 53px;
+  position: relative;
+  top: 20px;
   margin-top: 25px;
-  margin-left: 10px;
   display: flex;
   justify-content: space-between;
-  
+  margin-left: 10px;
+
+
 }
-.container .entreinnings .cont_che_alta_baja div:nth-child(1){
+
+.container .entreinnings .cont_che_alta_baja div:nth-child(1) {
   width: 100%;
   background-repeat: no-repeat;
   background-size: contain;
   text-align: center;
 
+
 }
-.container .entreinnings .cont_che_alta_baja div:nth-child(2){
+
+.container .entreinnings .cont_che_alta_baja div:nth-child(2) {
   background-image: url('../img/CHE.png');
   background-repeat: no-repeat;
-  background-size: contain;
-  width: 100%;
-  right: 0;
+  background-size: cover;
+  width: 263px;
+  height: 53px;
+  right: 30px;
+  position: absolute;
 }
-.container .entreinnings .cont-patrocinador{
+
+.container .entreinnings .cont-patrocinador {
   width: 330px;
   height: 150px;
-  position:absolute;
+  position: absolute;
   bottom: 5px;
   right: 15px;
   background-image: url('../img/cont-patrocinio.png');
@@ -68,27 +75,28 @@ body {
   z-index: 0;
   opacity: 0;
 
-  
-}
-.container .entreinnings .cont-patrocinador  div{
- position: absolute;
- width: 210px;
- height: 136px;
- right: 10px;
- top: 10px;
- display: flex;
- align-items: center;
 
-  
 }
 
+.container .entreinnings .cont-patrocinador div {
+  position: absolute;
+  width: 210px;
+  height: 136px;
+  right: 10px;
+  top: 10px;
+  display: flex;
+  align-items: center;
 
 
-.container .cont_innings{
-  width: 380px;
-  height: 155px;
-  position:absolute;
-  bottom:0;
+}
+
+
+
+.container .cont_innings {
+  width: 575px;
+  height: 238px;
+  position: absolute;
+  top: 70px;
   background-image: url('../img/cont-1.png');
   background-repeat: no-repeat;
   background-size: contain;
@@ -99,44 +107,49 @@ body {
 
 
 
+
+
 }
-.cont-logo{
-  width: 100%;
-  height: 65px;
+
+.cont-logo {
+  width: 260px;
+  height: 180px;
   display: flex;
-  position: relative;
-
-
-}
-
-.logo{
-  width: 175px;
-  height: 70px;
-
-  margin-left: 10px;
-
-
-}
-.cont-logo .number_data{
-  width: 170px;
-  height: 70px;
-  display: flex;
-  align-items: center;
-  position: relative; 
-}
-.cont-logo .number_data div{
   position: absolute;
- 
-  
-}
-.cont-logo .number_data div:nth-child(1){
+  left: 15px;
+  flex-direction: column;
+  top: 25px;
 
-  left: 20px;
+
 }
-.cont-logo .number_data div:nth-child(2){
-  left: 85px;
+
+.logo {
+  width: 95%;
+  height: 120px;
+  margin-left: 10px;
+  margin-top: 10px;
 }
-.cont-logo .number_data div:nth-child(3){
-  right: 0px;
- 
+
+.cont-che {
+
+  width: 260px;
+  height: 195px;
+  position: absolute;
+  right: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 5px;
+  text-align: center;
+
+}
+
+.cont-che div {
+  width: 80px;
+  height: 80px;
+  font-size: 50px;
+
+
+
+
+
 }

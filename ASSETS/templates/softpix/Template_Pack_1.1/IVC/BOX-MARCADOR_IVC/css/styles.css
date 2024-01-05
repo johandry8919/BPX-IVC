@@ -28,8 +28,20 @@ body {
   box-sizing: border-box;
   z-index: 1000;
   opacity: 0;
+ 
   
 
+}
+
+.play{
+  width: 100%;
+  height: auto;
+  position: absolute;
+  bottom: -22;
+  z-index: 3000;
+  opacity: 1;
+  overflow: hidden;
+  
 }
 
 .cont-1 {

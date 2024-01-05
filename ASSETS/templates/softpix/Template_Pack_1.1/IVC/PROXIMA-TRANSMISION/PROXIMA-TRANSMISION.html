@@ -1,0 +1,217 @@
+
+
+
+
+      <!-- ### CASPAR ### -->
+      <script src="../../js/gsap3.2.6.min.js"></script>
+      <link rel="stylesheet" type="text/css" href="../../css/spx_layout.css" />
+      <link rel="stylesheet" type="text/css" href="../../css/spx_fonts.css" />
+      <script type="text/javascript" src="../../js/spx_interface.js"></script>
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap"
+        rel="stylesheet"
+      />
+    
+      <link
+        rel="stylesheet"
+        type="text/css"
+        id="DynamicTheme"
+        href="css/styles.css"
+      />
+    
+  
+      <script type="text/javascript">
+        window.SPXGCTemplateDefinition = {
+          description: "",
+          playserver: "OVERLAY",
+          playchannel: "1",
+          playlayer: "1",
+          webplayout: "5",
+          out: "manual",
+          dataformat: "json",
+          uicolor: "4",
+          DataFields: [
+            {
+              field: "comment",
+              ftype: "textfield",
+              title: "PROXIMA-TRANSMISION",
+              value: "PROXIMA-TRANSMISION",
+            },
+  
+      
+         
+             {
+            field: "f2",
+            ftype: "textfield",
+            title: "Próxima Transmisión",
+            value: "Próxima Transmisión",
+          },
+
+          {
+                "field": "f5",
+                "ftype": "dropdown",
+                "title": "ID VISITANTE LEFT",
+                "value": "1",
+                "items": [
+                   {
+                        "text": "EQUIPOS-LEFT",
+                        "value": "1"
+                    },
+                    {
+                        "text": "TIGRE",
+                        "value": "1"
+                    },
+                    {
+                        "text": "AGUILA",
+                        "value": "2"
+                    },
+                    {
+                        "text": "NAVEGANTES",
+                        "value": "3"
+                    },
+                    {
+                        "text": "LEONE",
+                        "value": "4"
+                    },
+                    {
+                        "text": "TIBURONES",
+                        "value": "5"
+                    },
+                    {
+                        "text": "CARDENALES",
+                        "value": "6"
+                    },
+                    {
+                        "text": "CARIBES",
+                        "value": "7"
+                    },
+                    {
+                        "text": "BRAVO",
+                        "value": "8"
+                    },
+                   
+                   
+                ]
+            },
+
+
+            {
+                "field": "f6",
+                "ftype": "dropdown",
+                "title": "ID HOMECLUP-RIGHT",
+                "value": "1",
+                "items": [
+                   {
+                        "text": "EQUIPOS-RIGHT",
+                        "value": "1"
+                    },
+                    {
+                        "text": "TIGRE",
+                        "value": "1"
+                    },
+                    {
+                        "text": "AGUILA",
+                        "value": "2"
+                    },
+                    {
+                        "text": "NAVEGANTES",
+                        "value": "3"
+                    },
+                    {
+                        "text": "LEONE",
+                        "value": "4"
+                    },
+                    {
+                        "text": "TIBURONES",
+                        "value": "5"
+                    },
+                    {
+                        "text": "CARDENALES",
+                        "value": "6"
+                    },
+                    {
+                        "text": "CARIBES",
+                        "value": "7"
+                    },
+                    {
+                        "text": "BRAVO",
+                        "value": "8"
+                    },
+                   
+                   
+                ]
+            },
+  
+        
+           
+          ],
+        };
+      </script>
+    </head>
+    <body>
+    
+      
+      <div
+        id="container"
+        class="container SPXWindow SPX_AUTOSIZE"
+        data-spx-remember="Use either SPX_AUTOSIZE or SPX_FIXSIZE"
+      >
+  
+      <div class="cont-1">
+          <div id="cont-6" class="cont-6">
+            <div id="temporada" class="temporada"></div>
+              <div id="cont"  class="cont">
+                <div id="barra_equipos"  class="barra_equipos">
+                  <div id="barras" class="barras"></div>
+                  <div id="barras_text" class="barras_text">
+                    <div class="TALENTOS1"  id="f1_gfx1">
+
+                     <div class="logo_visitante">
+                       
+                        <img style="position: absolute; top: 0; left: 45px; top: -20;"   width="120" height="100"  id="video1"  alt="">
+                     </div>
+                     <div   class="vs">
+                        <img width="60"  height="60" src="img/VS.png" alt="">
+                     </div>
+                     <div class="logo_homeclub">
+
+                      <img style="position: absolute; top: 0; left: 10px; top: -20;"   width="120" height="100"  id="video2"  alt="">
+                     </div>
+                 
+                    </div>
+                    <div   id="f1_gfx2"  class="TALENTOS2">
+                    
+                    </div>
+                    
+                  </div>
+                  
+  
+                
+                 
+               </div>
+  
+              </div>
+          </div>
+         
+      </div>
+  
+  
+  
+     
+     
+        <div style="opacity: 0" id="f3"></div>
+        <div style="opacity: 0" id="f0"></div>
+        <div style="opacity: 0" id="f1"></div>
+        <div style="opacity: 0" id="f2"></div>
+        <div style="opacity: 0" id="f5"></div>
+        <div style="opacity: 0" id="f6"></div>
+    </div>
+  
+      <script src="../_js/jquery-3.0.0.min.js"></script>
+      <script src="js/animaciones.js"></script>
+      <script src="js/api.js"></script>
+      <script src="js/temStyles.js"></script>
+     
+    </body>

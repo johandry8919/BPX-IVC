@@ -45,7 +45,7 @@
 
     animateBar('#barras', 0.5, 'x', -2000, 2);
     animateBar('#temporada', 0.9, 'y', 150, 0.5);
-    animateBar('#barras_text', 0.5, 'x', 950, 0.5);
+    animateBar('#barras_text', 0.9, 'x', 950, 0.5);
    
   }
  

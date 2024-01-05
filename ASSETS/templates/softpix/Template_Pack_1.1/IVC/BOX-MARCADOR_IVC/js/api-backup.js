@@ -79,6 +79,12 @@ function getDataB() {
                 var idta = valueData['ID-EQUIPO'][1];
                 var idtb = valueData['ID-EQUIPO'][2];
 
+
+            
+                
+
+              
+
  
 
                 Inning.innerText = valueData['VALOR'][6];
@@ -142,7 +148,7 @@ function getDataB() {
                 
     
                 if (!animationExecuted) {
-                    runAnimationIN();
+                    runAnimationIN(idta , idtb);
                     versu_b.src =  Versu_Q[idta].img_url
                     versu_a.src =  Versu_D[idtb].img_url
 

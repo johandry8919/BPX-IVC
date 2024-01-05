@@ -1,0 +1,538 @@
+<!-- ### CASPAR ### -->
+<script src="../Template_Pack_1.1/js/gsap3.2.6.min.js"></script>
+<script type="text/javascript" src="jss/spx_interface.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" type="text/css" href="css/spx_layout.css" />
+<link rel="stylesheet" type="text/css" href="/css/spx_fonts.css" />
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" type="text/css" id="DynamicTheme" href="csss/styles.css" />
+
+
+<script type="text/javascript">
+  window.SPXGCTemplateDefinition = {
+    "defversion": "1",
+    description: "bx-score left",
+    playserver: "OVERLAY",
+    playchannel: "1",
+    playlayer: "1",
+    webplayout: "2",
+    out: "manual",
+    dataformat: "json",
+    uicolor: "2",
+    DataFields: [
+      {
+        field: "comment",
+        ftype: "textfield",
+        title: "BOX-MARCADOR",
+        value: "BOX-MARCADOR",
+      },
+
+
+
+
+    ],
+  };
+</script>
+</head>
+
+<body>
+
+  <div id="gfx">
+    <spxrow>
+      <div style="opacity: 0; display: none;" id="PRIMERA" class="PRIMERA"></div>
+      <div style="opacity: 0;  display: none;" id="SEGUNDA" class="PRIMERA"></div>
+      <div style="opacity: 0;  display: none;" id="TERCERA" class="TERCERA"></div>
+      <div style="opacity: 0;  display: none;" id="OUTS" class="OUTS"></div>
+
+      <div id="period"></div>
+      <spxcol style="flex: 2; opacity: 0;" class="clock">
+        <span id="clock">00:00</span>
+
+      </spxcol>
+
+      <spxcol id="" class="team" style="flex: 4; text-align: center; opacity: 0;">
+        <span id="homeTeam">Tigres</span>
+      </spxcol>
+
+      <spxcol id="" class="team" style="flex: 4; text-align: center; opacity: 0;">
+        <span id="awayTeam">Tigres</span>
+      </spxcol>
+
+      <spxcol style="flex: 1;">
+        <span id="spacer"></span>
+      </spxcol>
+
+      <div id="container" class="container ">
+
+        <div style="opacity: 0;" id="cont-name" class="cont-name">
+          <div id="lanzador" style=" font-size: 25px; position: absolute;  top:3 ; z-index: 2000; opacity: 0;"
+            class="lanzador">L:0</div>
+          <div style="background-color: rgb(19, 19, 19);" id="f0_gfx" class="name name_1"></div>
+          <div style="background-color: rgb(19, 19, 19); " id="f1_gfx" class="name name_2"></div>
+        </div>
+
+
+
+        <div id="container2" class="container2">
+          <div class="cont-1">
+            <div class="cont_logo_equipos">
+              <div id="id_equipo_visitante" class="logo_equipo logo_equipo_2">
+                <img id="fondo_visitante" height="60" width="100%">
+                <div id="homeScore" class="carreras_visitante">
+                </div>
+
+              </div>
+              <div id="id_equipo_homeclub" class="logo_equipo logo_equipo_1">
+                <img id="fondo_homeclut" height="60" width="100%">
+                <div id="awayScore" class="carreras_homeclub">
+
+                </div>
+
+              </div>
+            </div>
+
+            <div class="cont-2">
+              <div id="animate_fondo" class="animate_fondo"></div>
+              <div class="innin">
+                <div style="color: black; height: 30px;" id="INNING" class="iniit"></div>
+                <div id="alta_vaja" class="alta_vaja">
+                  <img id="initt_alta-baja" style="text-align: center;" width="30" height="30">
+                </div>
+
+
+              </div>
+
+              <div id="outs" class="outs">
+                <div class="outs1" id="outs1"></div>
+                <div class="outs2" id="outs2"></div>
+              </div>
+
+            </div>
+
+            <div class="cont-3">
+
+
+              <div id="animacion_aout" style="color: red; background-color: white; z-index: 1000;"
+                class="animacion_aout">
+                <p style="opacity: 0;" id="animacion_O"> O</p>
+                <p style="opacity: 0;" id="animacion_U"> U</p>
+                <p style="opacity: 0;" id="animacion_T"> T</p>
+              </div>
+              <div id="animeradio" class="animeradio"></div>
+
+
+
+              <div class="bases">
+
+                <div id="cont-base" class="cont-base">
+                  <div id="hombre_primera"></div>
+                  <div id="hombre_segunda"></div>
+                  <div id="hombre_tercera"></div>
+                </div>
+
+              </div>
+
+
+            </div>
+
+
+            <div id="cont" class="cont-4">
+
+
+              <div style="opacity: 0;" id="BOLAScore" class="xrt">0</div>
+              <div id="guion" style="opacity: 0;">-</div>
+              <div style="opacity: 0;" id="STRIKESScore" class="strain">0</div>
+
+            </div>
+            <div id="cont-5" class="cont-5">
+
+            </div>
+
+
+          </div>
+        </div>
+
+
+      </div>
+
+      <spxrow id="parte">
+        <div style="opacity: 0;" id="PARTE" class="PARTE">BAJA</div>
+      </spxrow>
+      <spxrow>
+        <div style="opacity: 0" id="NOMBRE"></div>
+      </spxrow>
+      <spxrow>
+        <div style="opacity: 0" id="id_juego"></div>
+      </spxrow>
+      <spxrow>
+        <div style="opacity: 0" id="Lanzamientohome">0</div>
+      </spxrow>
+      <spxrow>
+        <div style="opacity: 0" id="numeroLanzamiento">0</div>
+      </spxrow>
+      <spxrow>
+        <div style="opacity: 0" id="foul">0</div>
+      </spxrow>
+
+
+
+    </spxrow>
+
+  </div>
+
+
+
+
+
+  <script src="js/spx_scoreboard.js"></script>
+  <script src="js/lib/anime.min.js"></script>
+
+  <script src="https://apis.google.com/js/api.js"></script>
+  <script src="../_js/jquery-3.0.0.min.js"></script>
+  <script src="jss/animaciones.js"></script>
+  <!-- <script src="jss/api-backup.js"></script> -->
+  <script src="jss/temStyles.js"></script>
+
+
+
+  <script>
+    let durationIN = 500
+    let durationOUT = 200
+    function runAnimationOUT() {
+      const container = document.getElementById('container'); // Asume que el contenedor tiene el ID 'container'.
+      const name = document.getElementById('cont-name'); // Asume que el contenedor tiene el ID 'container'.
+      const container2 = document.getElementById('container2'); // Asume que el contenedor tiene el ID 'container'.
+      const windowWidth = window.innerWidth; // Ancho de la ventana del navegador.
+      const containerWidth = container.offsetWidth; // Ancho del contenedor.
+
+      gsap.to(container, {
+        x: -2000,
+        opacity: 1,
+        duration: 2,
+        onComplete: function () {
+          container.style.display = 'none';
+        }
+      });
+      gsap.to(name, {
+        x: -2000,
+        opacity: 1,
+        duration: 2,
+        onComplete: function () {
+          container.style.display = 'none';
+        }
+      });
+      gsap.to(container2, {
+        x: -2000,
+        opacity: 1,
+        duration: 2,
+        onComplete: function () {
+          container.style.display = 'none';
+        }
+      });
+    }
+
+
+    function updateTemplateField(element, str) {
+
+      if (element == 'foul') { Foul.push(1) }
+      let PARTE = document.getElementById("PARTE").innerText;
+
+      let lanzadores = document.getElementById('lanzador')
+
+      PARTE == "ALTA" ? lanzadores.innerText = 'L:' + document.getElementById('Lanzamientohome').innerText : lanzadores.innerText = 'L:' + document.getElementById('numeroLanzamiento').innerText
+
+      if (element == 'numeroLanzamiento') {
+        const vist = document.getElementById('lanzador')
+        vist.innerText = 'L:' + str
+      }
+      if (element == 'Lanzamientohome') {
+        const vist = document.getElementById('lanzador')
+        vist.innerText = 'L:' + str
+      }
+
+
+      let nombre = document.getElementById("NOMBRE").innerText;
+      if (str == "ACTIVO") {
+        document.getElementById("cont-name").style.opacity = '1'
+      }
+      if (str == "INACTIVO") {
+        document.getElementById("cont-name").style.opacity = '0'
+
+      }
+      const Initt_alta_baja = document.getElementById("initt_alta-baja");
+      let primera = document.getElementById("PRIMERA").innerText
+      let segunda = document.getElementById("SEGUNDA").innerText
+      let tercera = document.getElementById("TERCERA").innerText
+      const out = document.getElementById("OUTS").innerText;
+      const Hombre_primera = document.getElementById("hombre_primera");
+      const Hombre_segunda = document.getElementById("hombre_segunda");
+      const Hombre_tercera = document.getElementById("hombre_tercera");
+
+
+      if (primera === "1") {
+        Hombre_primera.style.backgroundColor = colorDeBase;
+
+      } else if (primera === "0") {
+        Hombre_primera.style.backgroundColor = ''
+      }
+
+      if (segunda === "1") {
+        Hombre_segunda.style.backgroundColor = colorDeBase;
+
+      } else if (segunda === "0") {
+        Hombre_segunda.style.backgroundColor = ''
+      }
+
+      if (tercera === "1") {
+        Hombre_tercera.style.backgroundColor = colorDeBase;
+
+      } else if (tercera === "0") {
+        Hombre_tercera.style.backgroundColor = ''
+      }
+
+
+      const outs1 = document.getElementById("outs1");
+      const outs2 = document.getElementById("outs2");
+
+      if (out == "1") {
+        outs1.classList.add("activate");
+      } else if (out == "2") {
+        outs1.classList.add("activate");
+        outs2.classList.add("activate");
+      } else {
+        outs1.classList.remove("activate");
+        outs2.classList.remove("activate");
+      }
+
+
+
+      if (PARTE == "ALTA") {
+        Initt_alta_baja.src = "./imge/alta.png";
+      } else {
+        Initt_alta_baja.src = "./imge/baja.png";
+      }
+
+
+
+      const Id_equipo_homeclub = document.getElementById("fondo_homeclut");
+      const Id_equipo_visitante = document.getElementById("fondo_visitante");
+      const Carreras_homeclub = document.querySelector(".carreras_homeclub");
+      const Carreras_visitante = document.querySelector(".carreras_visitante");
+
+
+      const teamNames = ['Tigres', 'Águilas', 'Navegantes', 'Leones', 'Tiburones', 'Cardenales', 'Caribes', 'Bravos'];
+      const homeclub = document.getElementById('awayTeam').innerText;
+
+      const teamIndex = teamNames.indexOf(homeclub);
+
+      if (teamIndex !== -1) {
+        let equipos = teamIndex + 1
+        equipos == 1 ? (Carreras_homeclub.style.color = "#FFFFFF") : "";
+        equipos == 2 ? (Carreras_homeclub.style.color = "#000000") : "";
+        equipos == 3 ? (Carreras_homeclub.style.color = "#022499") : "";
+        equipos == 4 ? (Carreras_homeclub.style.color = "#FCBF24") : "";
+        equipos == 8 ? (Carreras_homeclub.style.color = "#000000") : "";
+        Id_equipo_homeclub.src = Fondo_equipos[teamIndex + 1].img_url;
+      }
+      const visitante = document.getElementById('homeTeam').innerText
+      const teamIndex2 = teamNames.indexOf(visitante);
+
+
+
+      if (teamIndex2 !== -1) {
+        let equipos = parseInt(teamIndex2 + 1)
+        equipos == 1 ? Carreras_visitante.style.color = "#FFFFFF" : "";
+        equipos == 2 ? Carreras_visitante.style.color = "#000000" : "";
+        equipos == 3 ? Carreras_visitante.style.color = "#022499" : "";
+        equipos == 4 ? Carreras_visitante.style.color = "#FCBF24" : "";
+        equipos == 8 ? Carreras_visitante.style.color = "black" : "black";
+        Id_equipo_visitante.src = Fondo_equipos[teamIndex2 + 1].img_url;
+      }
+
+
+      //     // Handle incoming text updates from the Scoreboard plugin
+      if (!element || !str) {
+        console.log('Missing data! Expecting 2 parameters');
+        return
+      }
+
+      if (element.includes('Score')) {
+        setTimeout(() => { e(element).innerText = htmlDecode(str); }, 100);
+        const scoreFX = anime.timeline({ duration: 100 })
+        const TeamEle = e(element);
+        scoreFX
+          .add({ targets: TeamEle, scale: [1, 0], easing: 'easeInOutBack' })
+          .add({ targets: TeamEle, scale: [2, 1], easing: 'easeOutBack' }, '100')
+        scoreFX.play()
+        return
+      }
+      e(element).innerHTML = htmlDecode(str);
+
+
+      let posicion = '15px';
+      function fetchData() {
+        let id_juegos = document.getElementById("id_juego").innerText;
+        var fechaActual = new Date();
+        var diaDelMes = fechaActual.getDate();
+        // var diaDelMes = '16';
+
+        const firstRequest = fetch(
+          `https://statsapi.mlb.com/api/v1/schedule?sportId=17&leagueId=135&startDate=2023-11-${diaDelMes}&endDate=2023-11-${diaDelMes}&gameType=E&&gameType=S&&gameType=R`
+        )
+          .then((response) => response.json())
+          .then((data) => {
+            return id_juegos;
+          })
+          .catch((error) => {
+            console.error("Error en la primera solicitud:", error);
+            throw error;
+          });
+
+        const secondRequest = firstRequest.then((id_juego) => {
+          return fetch(
+            `https://statsapi.mlb.com/api/v1.1/game/${id_juego}/feed/live`
+          )
+            .then((response) => response.json())
+            .catch((error) => {
+              console.error("Error en la segunda solicitud:", error);
+              throw error;
+            });
+        });
+
+        Promise.all([firstRequest, secondRequest])
+          .then(([id_juego, result]) => {
+            let PARTE = result.liveData.linescore.inningHalf;
+            let defense;
+            let offense;
+            let avg;
+            let strikes = result.liveData.linescore.strikes;
+            if (PARTE == 'Top') {
+              posicion = "15px"
+            } else if (PARTE == 'Bottom') {
+              posicion = "310px"
+            }
+
+
+            function obtenerInicialApellido(nombreCompleto) {
+              const partes = nombreCompleto.split(" ");
+              const inicialNombre = partes[0].charAt(0).toUpperCase();
+              const apellido =
+                partes.length > 1 ? partes.slice(1).join(" ") : partes[0];
+              const resultado = inicialNombre + " . " + apellido;
+
+              return resultado;
+            }
+
+
+            document.getElementById('lanzador').style.right = posicion
+
+            if (PARTE == 'Bottom') {
+              offense = result.liveData.linescore.offense.batter.fullName;
+              defense = result.liveData.linescore.defense.pitcher.fullName;
+
+              const nombre_apellido1 = obtenerInicialApellido(offense);
+              const nombre_apellido2 = obtenerInicialApellido(defense);
+              const id_jugador_data = result.liveData.linescore.offense.batter.id;
+              const datos_pelotero = result.liveData.boxscore.teams.home.players;
+              for (const key in datos_pelotero) {
+                if (Object.hasOwnProperty.call(datos_pelotero, key)) {
+                  const element = datos_pelotero[key];
+
+
+
+                  if (element.person.id === id_jugador_data) {
+
+                    document.getElementById("f1_gfx").innerHTML = `
+                <p style="letter-spacing: 2px;" id="BATIADOR" class="nombre">${nombre_apellido1}</p>
+                <p id="ave">${element.seasonStats.batting.avg}</p>`;
+
+
+
+                    document.getElementById("f0_gfx").innerHTML = `
+                <p style="letter-spacing: 2px;" id="LANZADOR" class="nombre">${nombre_apellido2}</p>
+                
+                `;
+                  }
+                }
+              }
+            } else if (PARTE === "Top") {
+
+              var resultsv = 0;
+              offense = result.liveData.linescore.offense.batter.fullName;
+              defense = result.liveData.linescore.defense.pitcher.fullName;
+              const nombre_apellido1 = obtenerInicialApellido(offense);
+              const nombre_apellido2 = obtenerInicialApellido(defense);
+              const id_jugador_data = result.liveData.linescore.offense.batter.id;
+              const datos_pelotero = result.liveData.boxscore.teams.away.players;
+
+              for (const key in datos_pelotero) {
+                if (Object.hasOwnProperty.call(datos_pelotero, key)) {
+                  const element = datos_pelotero[key];
+                  if (element.person.id == id_jugador_data) {
+                    document.getElementById("f0_gfx").innerHTML = `
+                <p style="letter-spacing: 2px;" id="BATIADOR" class="nombre">${nombre_apellido1}</p>
+                <p id="ave" class="ave">${element.seasonStats.batting.avg}</p>`;
+
+
+
+                    document.getElementById("f1_gfx").innerHTML = `
+                <p style="letter-spacing: 2px;" id="LANZADOR" class="nombre">${nombre_apellido2}</p>
+               
+               
+                
+                
+                `;
+                  }
+                }
+              }
+            }
+
+
+          })
+          .catch((error) => console.error("Error en Promise.all:", error));
+
+
+      }
+
+      fetchData();
+      // Refrescar cada 2 segundos
+      setInterval(fetchData, 2000);
+
+    }
+
+    function updateSponsorLogo(imgName) {
+
+    }
+    const colorDeBase = "#000000";
+    function scoreboardStyle(value) {
+      // This is an example handler of an extra item of Scoreboard plugin
+      let curClipPath = e('gfx').style.clipPath;
+      switch (value) {
+        case 'full':
+          anime({
+            targets: '#gfx',
+            webkitClipPath: [curClipPath, 'inset(0% 0% 0% 0%)'],
+            duration: 500, easing: 'easeInQuad'
+          })
+          break;
+
+        case 'clock':
+          anime({
+            targets: '#gfx',
+            webkitClipPath: [curClipPath, 'inset(0% 0% 0% 80%)'],
+            duration: 500, easing: 'easeOutQuad'
+          })
+          break;
+
+        default:
+          console.log('Unknown value ' + value);
+          break;
+      }
+    }
+  </script>
+
+
+
+</body>

@@ -5,60 +5,6 @@
       "playserver": "OVERLAY",
       "playchannel": "1",
       "playlayer": "1",
-      "webplayout": "1",
-      "out": "manual",
-      "dataformat": "json",
-      "uicolor": "3",
-      "DataFields": [
-        {
-          "field": "comment",
-          "ftype": "textfield",
-          "title": "PICHER_VISITANTE-5linia",
-          "value": "PICHER_VISITANTE-5linia"
-        },
-        {
-          "field": "f0",
-          "ftype": "textfield",
-          "title": "ID DEL JUEGO",
-          "value": "23+8+2+12"
-        }
-      ],
-      "onair": "false",
-      "imported": "1698768994087",
-      "relpath": "/softpix/Template_Pack_1.1/IVC/PICHER_VISITANTE-5linia/PICHER_VISITANTE-5linia.html"
-    },
-    {
-      "description": "",
-      "playserver": "OVERLAY",
-      "playchannel": "1",
-      "playlayer": "1",
-      "webplayout": "1",
-      "out": "manual",
-      "dataformat": "json",
-      "uicolor": "3",
-      "DataFields": [
-        {
-          "field": "comment",
-          "ftype": "textfield",
-          "title": "PICHER_homeclub-5linia",
-          "value": "PICHER_homeclub-5linia"
-        },
-        {
-          "field": "f0",
-          "ftype": "textfield",
-          "title": "ID DEL JUEGO",
-          "value": "23+8+2+12"
-        }
-      ],
-      "onair": "false",
-      "imported": "1698769421808",
-      "relpath": "/softpix/Template_Pack_1.1/IVC/PICHER_homeclub-5linia/PICHER_homeclub-5linia.html"
-    },
-    {
-      "description": "",
-      "playserver": "OVERLAY",
-      "playchannel": "1",
-      "playlayer": "1",
       "webplayout": "2",
       "out": "manual",
       "dataformat": "json",
@@ -78,7 +24,7 @@
         }
       ],
       "onair": "false",
-      "imported": "1698770330996",
+      "imported": "1700342674872",
       "relpath": "/softpix/Template_Pack_1.1/IVC/BOX-MARCADOR_IVC/BOX-MARCADOR-DATAOFF.html"
     },
     {
@@ -201,11 +147,11 @@
         }
       ],
       "onair": "false",
-      "imported": "1698775824658",
+      "imported": "1700343990063",
       "relpath": "/softpix/Template_Pack_1.1/IVC/Lt-BATEADOR-HOY/Lt-BATEADOR-HOY.html"
     }
   ],
   "warning": "Modifications done in the SPX will overwrite this file.",
   "copyright": "(c) 2020-2023 Softpix (https://spx.graphics)",
-  "updated": "2023-10-31T18:10:24.658Z"
+  "updated": "2023-11-18T21:46:30.063Z"
 }

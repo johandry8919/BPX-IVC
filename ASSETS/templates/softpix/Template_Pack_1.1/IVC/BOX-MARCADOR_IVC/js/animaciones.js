@@ -1,6 +1,6 @@
   
   
-  function runAnimationIN(id_quipos_juega) {
+  function runAnimationIN(idta,idtb) {
     if (window.top.spxRenderer && window.top.spxRenderer.fps) {
         gsap.ticker.fps(window.top.spxRenderer.fps);
         console.log("spxRenderer: " + window.top.spxRenderer.fps + " FPS");
@@ -9,8 +9,6 @@
    
 
     setTimeout(()=>{
-
-
       function activate_video(element , id){
                         
         const videoElement = document.getElementById(`${element}`);
@@ -19,18 +17,15 @@
         sourceElement.type = "video/webm";
         videoElement.appendChild(sourceElement);
         videoElement.play();
-
-       
-    
     }
 
-    activate_video("animatelogo2" , 3)
-    activate_video("animatelogo1" , 6)
+    activate_video("animatelogo2" , idtb)
+    activate_video("animatelogo1" , idta)
   
 
       const animateLogo_equipo = (selector, delayTime, Offset) => {
 
-     
+      
      
         const dur = 1;
         const dur2 = 0.5;
@@ -56,13 +51,14 @@
             opacity: 1,
             ease: "Power4.easeOut",
             onComplete: () => {
+              
         
 
               gsap.fromTo(
                 '#animate_fondo',
                 { opacity: 0 },
                 {
-                  delay: 9,
+                  delay: 5,
                   duration: dur2 - 0.2,
                   opacity: 1,
                   ease: "Power4.easeOut",
@@ -84,17 +80,18 @@
               gsap.fromTo(
                 '#animate_fondo',
                 { x:-20},
-                { delay: 9, duration: dur2 - 0.2, x: 0, ease: "back.out(0.2)" ,
+                { delay: 5, duration: dur2 - 0.2, x: 0, ease: "back.out(0.2)" ,
               
               
               }
               );
       
             gsap.to('#animate_fondo', {
-              delay: delayTime + 10, // 2 segundos de pausa
+              delay: delayTime + 1, // 2 segundos de pausa
               duration: 0.3, // Duración muy corta para evitar animación visible
               y: 100, 
               onComplete: () => {
+                document.getElementById('cont_play').style.display = "none"
                 gsap.fromTo(
                   '#inning',
                   { opacity: 0 },
@@ -287,12 +284,12 @@
 
      
 
-      animateLogo_equipo("#animatelogo1", 0.2, -20 );
-      animateLogo_equipo("#animatelogo2", 0.2, -20 );
+      animateLogo_equipo("#animatelogo1", 1.6, -20 );
+      animateLogo_equipo("#animatelogo2", 1.6, -20 );
 
-      ocultar_logo_fomdo("#container", 8, -20 );
-      ocultar_logo_fomdo("#cont_logo_equipos", 8, -20 );
-    },9000)
+      ocultar_logo_fomdo("#container", 5, -20 );
+      ocultar_logo_fomdo("#cont_logo_equipos",5, -20 );
+    },4000)
       
 
       
@@ -313,7 +310,7 @@
       );
       gsap.fromTo(
         '#cont-2_a',
-        { opacity: 0, scale:4.5 },
+        { opacity: 0, scale:3.5 },
         {
           delay: delayTime,
           duration: dur - 0.2,
@@ -324,7 +321,7 @@
       );
       gsap.fromTo(
         '#logo_video',
-        { opacity: 1, scale:4.2},
+        { opacity: 1, scale:3.2},
         {
           delay: 0.6,
           duration: dur3 - 0.2,
@@ -342,23 +339,38 @@
           duration: dur - 0.2,
           overflow:'hidden',
           ease: "Power4.easeOut",
-           onComplete: () => {
-
-
-           }
+           
         }
       );
 
       gsap.to('#cont-2_a', {
-        delay: delayTime + 10, // 2 segundos de pausa
+        delay: delayTime + 4.5, // 2 segundos de pausa
         duration: 0.3, // Duración muy corta para evitar animación visible
-        y: 500, })
+        y: 500, 
+        opacity:0,
+        display: "none",
+      })
       gsap.to('#logo_video', {
-        delay: delayTime + 10, // 2 segundos de pausa
+        delay: delayTime + 4.5, // 2 segundos de pausa
         duration: 0.3, // Duración muy corta para evitar animación visible
-        y: 500, })
+        y: 500, 
+        opacity:0,
+        display: "none",
+        onComplete: () => {
+          const videoElement = document.getElementById("play");
+                            const sourceElement = document.createElement("source");
+                            sourceElement.src = Video_media[9].img_url;
+                            sourceElement.type = "video/webm";
+                            videoElement.appendChild(sourceElement);
+                            videoElement.play();
+
+
+        }
+
+      
+      })
       gsap.to(selector, {
-        delay: delayTime + 10, // 2 segundos de pausa
+        delay: delayTime + 4.5, // 2 segundos de pausa
         duration: 0.3, // Duración muy corta para evitar animación visible
         y: 500, })
     

@@ -53,11 +53,6 @@
 </head>
 
 <body>
-
-
-
-
-
   <div id="container" class="container SPXWindow SPX_AUTOSIZE"
     data-spx-remember="Use either SPX_AUTOSIZE or SPX_FIXSIZE">
 
@@ -78,37 +73,39 @@
      
       <div  class="cont_che_alta_baja">
         
-        <div id="alta_baja" style="color: aliceblue; display: flex; padding: 3px; align-items: center;" class="alta_baja">
-          <p id="Inning" style="margin-left: 10px;"></p>
-          <p id="ALTA_BAJA"  style="color: aliceblue; margin-left: 20px; font-size: 25px;"></p>
+        <div id="alta_baja" style="color: rgb(255, 255, 255); display: flex; padding: 5px; align-items: center;" class="alta_baja">
+          <p id="Inning" style="margin-left: 15px; font-size: 30px;"></p>
+          <p id="ALTA_BAJA"  style="color: aliceblue; margin-left: 20px; font-size: 30px;"></p>
         </div>
         <div class="che"></div>
       </div>
 
       <div class="cont_innings">
-        <div class="logo_visitante cont-logo">
-          <div class="logo visitante"> <img id="id_equipo_visitante" width="100%" height="65" alt=""></div>
-          <div class="number_data">
+        <div class="cont-logo">
+          <div class="logo visitante">
+             <img id="id_equipo_visitante" width="100%" height="70" alt="">
+          </div>
+
+          <div class="logo homeclub"> 
+            <img id="id_equipo_homeclub" width="100%" height="70"  alt="">
+          </div>
+         
+
+        </div>
+     
+
+          <div class="cont-che">
+        
             <div id="Carreras_visitante"></div>
             <div id="Errores_visitante"></div>
             <div  id="Hits_visitante"></div>
-
+    
+    
+  
+              <div id="Carreras_homeclub"></div>
+              <div id="Errores_homeclub"></div>
+              <div id="Hits_homeclub"></div>
           </div>
-
-        </div>
-        <div class="logo_homeclub cont-logo">
-          <div class="logo homeclub">  <img id="id_equipo_homeclub" width="100%" height="65"  alt=""></div>
-          <div class="number_data">
-            <div id="Carreras_homeclub"></div>
-            <div id="Errores_homeclub"></div>
-            <div id="Hits_homeclub"></div>
-
-          </div>
-
-        </div>
-
-       
-       
       </div>
 
     </div>

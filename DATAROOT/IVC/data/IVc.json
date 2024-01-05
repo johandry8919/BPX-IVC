@@ -1,7 +1,7 @@
 {
   "warning": "Modifications done in the SPX will overwrite this file.",
   "copyright": "(c) 2020-2023 Softpix (https://spx.graphics)",
-  "updated": "2023-11-01T01:30:28.409Z",
+  "updated": "2024-01-05T20:36:41.497Z",
   "templates": [
     {
       "description": "",
@@ -23,150 +23,236 @@
           "field": "f0",
           "ftype": "textfield",
           "title": "ID DEL JUEGO",
-          "value": "23+1+6+35"
+          "value": "23+5+3++3"
         }
       ],
       "onair": "false",
-      "imported": "1698513831424",
-      "relpath": "/softpix/Template_Pack_1.1/IVC/BOX-MARCADOR_IVC/BOX-MARCADOR-DATAOFF.html",
-      "itemID": "1698513864230"
+      "imported": "1699475537359",
+      "relpath": "/softpix/Template_Pack_1.1/IVC/BOX-MARCADOR_IVC-01.0/BOX-MARCADOR-DATAOFF.html",
+      "itemID": "1699475543507"
     },
     {
       "description": "",
       "playserver": "OVERLAY",
       "playchannel": "1",
       "playlayer": "1",
-      "webplayout": "5",
+      "webplayout": "20",
       "out": "manual",
       "dataformat": "json",
-      "uicolor": "2",
+      "uicolor": "4",
       "DataFields": [
         {
           "field": "comment",
           "ftype": "textfield",
-          "title": "lt-BATEADOR-TEMPORADA",
-          "value": "lt-BATEADOR-TEMPORADA"
+          "title": "PROXIMA-TRANSMISION",
+          "value": "PROXIMA-TRANSMISION"
+        },
+        {
+          "field": "f2",
+          "ftype": "textfield",
+          "title": "Próxima Transmisión",
+          "value": "Próxima Transmisión"
+        },
+        {
+          "field": "f5",
+          "ftype": "dropdown",
+          "title": "ID VISITANTE LEFT",
+          "value": "3",
+          "items": [
+            {
+              "text": "EQUIPOS-LEFT",
+              "value": "1"
+            },
+            {
+              "text": "TIGRE",
+              "value": "1"
+            },
+            {
+              "text": "AGUILA",
+              "value": "2"
+            },
+            {
+              "text": "NAVEGANTES",
+              "value": "3"
+            },
+            {
+              "text": "LEONE",
+              "value": "4"
+            },
+            {
+              "text": "TIBURONES",
+              "value": "5"
+            },
+            {
+              "text": "CARDENALES",
+              "value": "6"
+            },
+            {
+              "text": "CARIBES",
+              "value": "7"
+            },
+            {
+              "text": "BRAVO",
+              "value": "8"
+            }
+          ]
+        },
+        {
+          "field": "f6",
+          "ftype": "dropdown",
+          "title": "ID HOMECLUP-RIGHT",
+          "value": "8",
+          "items": [
+            {
+              "text": "EQUIPOS-RIGHT",
+              "value": "1"
+            },
+            {
+              "text": "TIGRE",
+              "value": "1"
+            },
+            {
+              "text": "AGUILA",
+              "value": "2"
+            },
+            {
+              "text": "NAVEGANTES",
+              "value": "3"
+            },
+            {
+              "text": "LEONE",
+              "value": "4"
+            },
+            {
+              "text": "TIBURONES",
+              "value": "5"
+            },
+            {
+              "text": "CARDENALES",
+              "value": "6"
+            },
+            {
+              "text": "CARIBES",
+              "value": "7"
+            },
+            {
+              "text": "BRAVO",
+              "value": "8"
+            }
+          ]
+        }
+      ],
+      "onair": "false",
+      "imported": "1699969821962",
+      "relpath": "/softpix/Template_Pack_1.1/IVC/PROXIMA-TRANSMISION/PROXIMA-TRANSMISION.html",
+      "itemID": "1699969832222"
+    },
+    {
+      "description": "",
+      "playserver": "OVERLAY",
+      "playchannel": "1",
+      "playlayer": "1",
+      "webplayout": "6",
+      "out": "manual",
+      "dataformat": "json",
+      "uicolor": "5",
+      "DataFields": [
+        {
+          "field": "comment",
+          "ftype": "textfield",
+          "title": "bx-entreinnings",
+          "value": "bx-entreinnings"
         },
         {
           "field": "f0",
           "ftype": "textfield",
           "title": "ID DEL JUEGO",
-          "value": "23+1+6+35"
+          "value": "23+4+7162"
         },
         {
-          "field": "f4",
-          "ftype": "TEMPORADA",
-          "title": "EMPORADA",
-          "value": "TEMPORADA 23-24"
-        },
-        {
-          "field": "f1",
-          "ftype": "dropdown",
-          "title": "BATEADORES HOMECLUB",
-          "value": "1",
-          "items": [
-            {
-              "text": "bateador-N/A",
-              "value": ""
-            },
-            {
-              "text": "bateador-1",
-              "value": "0"
-            },
-            {
-              "text": "bateador-2",
-              "value": "1"
-            },
-            {
-              "text": "bateador-3",
-              "value": "2"
-            },
-            {
-              "text": "bateador-4",
-              "value": "3"
-            },
-            {
-              "text": "bateador-5",
-              "value": "4"
-            },
-            {
-              "text": "bateador-6",
-              "value": "5"
-            },
-            {
-              "text": "bateador-7",
-              "value": "6"
-            },
-            {
-              "text": "bateador-8",
-              "value": "7"
-            },
-            {
-              "text": "bateador-9",
-              "value": "8"
-            }
-          ]
-        },
-        {
-          "field": "f2",
-          "ftype": "dropdown",
-          "title": "BATEADORES VISITANTE",
-          "value": "",
-          "items": [
-            {
-              "text": "bateador-N/A",
-              "value": ""
-            },
-            {
-              "text": "bateador-1",
-              "value": "0"
-            },
-            {
-              "text": "bateador-2",
-              "value": "1"
-            },
-            {
-              "text": "bateador-3",
-              "value": "2"
-            },
-            {
-              "text": "bateador-4",
-              "value": "3"
-            },
-            {
-              "text": "bateador-5",
-              "value": "4"
-            },
-            {
-              "text": "bateador-6",
-              "value": "5"
-            },
-            {
-              "text": "bateador-7",
-              "value": "6"
-            },
-            {
-              "text": "bateador-8",
-              "value": "7"
-            },
-            {
-              "text": "bateador-9",
-              "value": "8"
-            }
-          ]
+          "field": "f3",
+          "ftype": "filelist",
+          "title": "Elija la imagen del patrocinador",
+          "assetfolder": "/media/images/bg/",
+          "extension": "png",
+          "value": "none"
         }
       ],
       "onair": "false",
-      "imported": "1698513852316",
-      "relpath": "/softpix/Template_Pack_1.1/IVC/lt-BATEADOR-TEMPORADA/lt-BATEADOR-TEMPORADA.html",
-      "itemID": "1698513867032"
+      "imported": "1699981963311",
+      "relpath": "/softpix/Template_Pack_1.1/IVC/bx-entreinnings/bx-entreinnings.html",
+      "itemID": "1699981985091"
     },
     {
       "description": "",
       "playserver": "OVERLAY",
       "playchannel": "1",
       "playlayer": "1",
-      "webplayout": "5",
+      "webplayout": "6",
+      "out": "manual",
+      "dataformat": "json",
+      "uicolor": "5",
+      "DataFields": [
+        {
+          "field": "comment",
+          "ftype": "textfield",
+          "title": "bx-cambioPitcher",
+          "value": "bx-cambioPitcher"
+        },
+        {
+          "field": "f0",
+          "ftype": "textfield",
+          "title": "ID DEL JUEGO",
+          "value": "23+8+4154"
+        },
+        {
+          "field": "f3",
+          "ftype": "filelist",
+          "title": "Elija la imagen del patrocinador",
+          "assetfolder": "/media/images/bg/",
+          "extension": "png",
+          "value": "none"
+        }
+      ],
+      "onair": "false",
+      "imported": "1699981974093",
+      "relpath": "/softpix/Template_Pack_1.1/IVC/bx-cambioPitcher/bx-cambioPitcher.html",
+      "itemID": "1699981989468"
+    },
+    {
+      "description": "",
+      "playserver": "OVERLAY",
+      "playchannel": "1",
+      "playlayer": "1",
+      "webplayout": "6",
+      "out": "manual",
+      "dataformat": "json",
+      "uicolor": "3",
+      "DataFields": [
+        {
+          "field": "comment",
+          "ftype": "textfield",
+          "title": "BOX-SCORE-FINAL-A",
+          "value": "BOX-SCORE-FINAL-A"
+        },
+        {
+          "field": "f0",
+          "ftype": "textfield",
+          "title": "ID DEL JUEGO",
+          "value": "23+4+7162"
+        }
+      ],
+      "onair": "false",
+      "imported": "1699983372245",
+      "relpath": "/softpix/Template_Pack_1.1/IVC/BOX-SCORE-FINAL-A/BOX-SCORE-FINAL-A.html",
+      "itemID": "1699983380149"
+    },
+    {
+      "description": "",
+      "playserver": "OVERLAY",
+      "playchannel": "1",
+      "playlayer": "1",
+      "webplayout": "20",
       "out": "manual",
       "dataformat": "json",
       "uicolor": "4",
@@ -181,7 +267,7 @@
           "field": "f0",
           "ftype": "textfield",
           "title": "ID DEL JUEGO",
-          "value": "23+1+6+35"
+          "value": "23+5+3168"
         },
         {
           "field": "f1",
@@ -235,7 +321,7 @@
           "field": "f2",
           "ftype": "dropdown",
           "title": "BATEADORES VISITANTE",
-          "value": "3",
+          "value": "8",
           "items": [
             {
               "text": "bateador-N/A",
@@ -281,9 +367,43 @@
         }
       ],
       "onair": "false",
-      "imported": "1698533720657",
+      "imported": "1700581312758",
       "relpath": "/softpix/Template_Pack_1.1/IVC/Lt-BATEADOR-HOY/Lt-BATEADOR-HOY.html",
-      "itemID": "1698533728085"
+      "itemID": "1700581325004"
+    },
+    {
+      "description": "",
+      "playserver": "OVERLAY",
+      "playchannel": "1",
+      "playlayer": "1",
+      "webplayout": "20",
+      "out": "manual",
+      "dataformat": "json",
+      "uicolor": "4",
+      "DataFields": [
+        {
+          "field": "comment",
+          "ftype": "textfield",
+          "title": "OTROS-ENCUENTROS",
+          "value": "OTROS-ENCUENTROS"
+        },
+        {
+          "field": "f0",
+          "ftype": "textfield",
+          "title": "ID DEL JUEGO",
+          "value": "23+3+4129"
+        },
+        {
+          "field": "f1",
+          "ftype": "textfield",
+          "title": "nombre estaio",
+          "value": "Estadio Monumental Simón Bolívar"
+        }
+      ],
+      "onair": "false",
+      "imported": "1700675769704",
+      "relpath": "/softpix/Template_Pack_1.1/IVC/OTROS-ENCUENTROS/OTROS-ENCUENTROS.html",
+      "itemID": "1700675778884"
     },
     {
       "description": "",
@@ -298,27 +418,83 @@
         {
           "field": "comment",
           "ftype": "textfield",
-          "title": "PICHER_VISITANTE-5linia",
-          "value": "PICHER_VISITANTE-5linia"
+          "title": "box-lanzador",
+          "value": "box-lanzador"
         },
         {
           "field": "f0",
           "ftype": "textfield",
           "title": "ID DEL JUEGO",
-          "value": "23+1+6+35"
+          "value": "23+3+6152"
+        },
+        {
+          "field": "f1",
+          "ftype": "dropdown",
+          "title": "Lanzador   HOMECLUB",
+          "value": "",
+          "items": [
+            {
+              "text": "Lanzador-N/A",
+              "value": ""
+            },
+            {
+              "text": "Lanzador-1",
+              "value": "0"
+            },
+            {
+              "text": "Lanzador-2",
+              "value": "1"
+            },
+            {
+              "text": "Lanzador-3",
+              "value": "2"
+            },
+            {
+              "text": "Lanzador-4",
+              "value": "3"
+            }
+          ]
+        },
+        {
+          "field": "f2",
+          "ftype": "dropdown",
+          "title": "Lanzador   VISITANTE",
+          "value": "0",
+          "items": [
+            {
+              "text": "Lanzador-N/A",
+              "value": ""
+            },
+            {
+              "text": "Lanzador-1",
+              "value": "0"
+            },
+            {
+              "text": "Lanzador-2",
+              "value": "1"
+            },
+            {
+              "text": "Lanzador-3",
+              "value": "2"
+            },
+            {
+              "text": "Lanzador-4",
+              "value": "3"
+            }
+          ]
         }
       ],
       "onair": "false",
-      "imported": "1698700821391",
-      "relpath": "/softpix/Template_Pack_1.1/IVC/PICHER_VISITANTE-5linia/PICHER_VISITANTE-5linia.html",
-      "itemID": "1698700840391"
+      "imported": "1700778629270",
+      "relpath": "/softpix/Template_Pack_1.1/IVC/box-lanzador/box-lanzador.htm",
+      "itemID": "1700778643173"
     },
     {
       "description": "",
       "playserver": "OVERLAY",
       "playchannel": "1",
       "playlayer": "1",
-      "webplayout": "3",
+      "webplayout": "6",
       "out": "manual",
       "dataformat": "json",
       "uicolor": "3",
@@ -326,76 +502,400 @@
         {
           "field": "comment",
           "ftype": "textfield",
-          "title": "PICHER_homeclub-5linia",
-          "value": "PICHER_homeclub-5linia"
+          "title": "BOX-SCORE-FINAL-A",
+          "value": "BOX-SCORE-FINAL-A"
         },
         {
           "field": "f0",
           "ftype": "textfield",
           "title": "ID DEL JUEGO",
-          "value": "23+1+6+35"
+          "value": "23+2+4166"
         }
       ],
       "onair": "false",
-      "imported": "1698700830738",
-      "relpath": "/softpix/Template_Pack_1.1/IVC/PICHER_homeclub-5linia/PICHER_homeclub-5linia.html",
-      "itemID": "1698700844882"
+      "imported": "1701900858672",
+      "relpath": "/softpix/Template_Pack_1.1/IVC/BOX-SCORE-FINAL-A/BOX-SCORE-FINAL-A.html",
+      "itemID": "1701900869533"
     },
     {
       "description": "",
       "playserver": "OVERLAY",
       "playchannel": "1",
       "playlayer": "1",
-      "webplayout": "1",
+      "webplayout": "20",
       "out": "manual",
       "dataformat": "json",
-      "uicolor": "3",
+      "uicolor": "2",
       "DataFields": [
         {
           "field": "comment",
           "ftype": "textfield",
-          "title": "PICHER_VISITANTE-4linia",
-          "value": "PICHER_VISITANTE-4linia"
+          "title": "lt-BATEADOR-TEMPORADA",
+          "value": "lt-BATEADOR-TEMPORADA"
         },
         {
           "field": "f0",
           "ftype": "textfield",
           "title": "ID DEL JUEGO",
-          "value": "23+8+2+12"
+          "value": "24+1+8++3"
+        },
+        {
+          "field": "f4",
+          "ftype": "TEMPORADA",
+          "title": "EMPORADA",
+          "value": "TEMPORADA 23-24"
+        },
+        {
+          "field": "f1",
+          "ftype": "dropdown",
+          "title": "BATEADORES HOMECLUB",
+          "value": "7",
+          "items": [
+            {
+              "text": "bateador-N/A",
+              "value": ""
+            },
+            {
+              "text": "bateador-1",
+              "value": "0"
+            },
+            {
+              "text": "bateador-2",
+              "value": "1"
+            },
+            {
+              "text": "bateador-3",
+              "value": "2"
+            },
+            {
+              "text": "bateador-4",
+              "value": "3"
+            },
+            {
+              "text": "bateador-5",
+              "value": "4"
+            },
+            {
+              "text": "bateador-6",
+              "value": "5"
+            },
+            {
+              "text": "bateador-7",
+              "value": "6"
+            },
+            {
+              "text": "bateador-8",
+              "value": "7"
+            },
+            {
+              "text": "bateador-9",
+              "value": "8"
+            }
+          ]
+        },
+        {
+          "field": "f2",
+          "ftype": "dropdown",
+          "title": "BATEADORES VISITANTE",
+          "value": "",
+          "items": [
+            {
+              "text": "bateador-N/A",
+              "value": ""
+            },
+            {
+              "text": "bateador-1",
+              "value": "0"
+            },
+            {
+              "text": "bateador-2",
+              "value": "1"
+            },
+            {
+              "text": "bateador-3",
+              "value": "2"
+            },
+            {
+              "text": "bateador-4",
+              "value": "3"
+            },
+            {
+              "text": "bateador-5",
+              "value": "4"
+            },
+            {
+              "text": "bateador-6",
+              "value": "5"
+            },
+            {
+              "text": "bateador-7",
+              "value": "6"
+            },
+            {
+              "text": "bateador-8",
+              "value": "7"
+            },
+            {
+              "text": "bateador-9",
+              "value": "8"
+            }
+          ]
+        },
+        {
+          "field": "f6",
+          "ftype": "dropdown",
+          "title": "TEMPORADA",
+          "value": "2023",
+          "items": [
+            {
+              "text": "2023",
+              "value": "2023"
+            },
+            {
+              "text": "2022",
+              "value": "2022"
+            },
+            {
+              "text": "2021",
+              "value": "2021"
+            },
+            {
+              "text": "2020",
+              "value": "2020"
+            },
+            {
+              "text": "2019",
+              "value": "2019"
+            },
+            {
+              "text": "2018",
+              "value": "2018"
+            }
+          ]
+        },
+        {
+          "field": "f7",
+          "ftype": "dropdown",
+          "title": "PERIODO",
+          "value": "RR",
+          "items": [
+            {
+              "text": "TEMPORADA REGULAR",
+              "value": "TR"
+            },
+            {
+              "text": "ROUND ROBIN",
+              "value": "RR"
+            },
+            {
+              "text": "FINAL",
+              "value": "F"
+            }
+          ]
         }
       ],
       "onair": "false",
-      "imported": "1698701890523",
-      "relpath": "/softpix/Template_Pack_1.1/IVC/PICHER_VISITANTE-4linia/PICHER_VISITANTE-4linia.html",
-      "itemID": "1698701900730"
+      "imported": "1704402621297",
+      "relpath": "/softpix/Template_Pack_1.1/IVC/lt-BATEADOR-TEMPORADA/lt-BATEADOR-TEMPORADA.html",
+      "itemID": "1704402631532"
     },
     {
       "description": "",
       "playserver": "OVERLAY",
       "playchannel": "1",
       "playlayer": "1",
-      "webplayout": "1",
+      "webplayout": "20",
       "out": "manual",
       "dataformat": "json",
-      "uicolor": "3",
+      "uicolor": "2",
       "DataFields": [
         {
           "field": "comment",
           "ftype": "textfield",
-          "title": "PICHER_homeclub-4linia",
-          "value": "PICHER_homeclub-4linia"
+          "title": "BATEADOR-VS-MANO-PITCHER",
+          "value": "BATEADOR-VS-MANO-PITCHER"
         },
         {
           "field": "f0",
           "ftype": "textfield",
           "title": "ID DEL JUEGO",
-          "value": "23+8+5+30"
+          "value": "24+8+5++8"
+        },
+        {
+          "field": "f4",
+          "ftype": "TEMPORADA",
+          "title": "EMPORADA",
+          "value": "TEMPORADA 23-24"
+        },
+        {
+          "field": "f1",
+          "ftype": "dropdown",
+          "title": "BATEADORES HOMECLUB",
+          "value": "",
+          "items": [
+            {
+              "text": "bateador-N/A",
+              "value": ""
+            },
+            {
+              "text": "bateador-1",
+              "value": "0"
+            },
+            {
+              "text": "bateador-2",
+              "value": "1"
+            },
+            {
+              "text": "bateador-3",
+              "value": "2"
+            },
+            {
+              "text": "bateador-4",
+              "value": "3"
+            },
+            {
+              "text": "bateador-5",
+              "value": "4"
+            },
+            {
+              "text": "bateador-6",
+              "value": "5"
+            },
+            {
+              "text": "bateador-7",
+              "value": "6"
+            },
+            {
+              "text": "bateador-8",
+              "value": "7"
+            },
+            {
+              "text": "bateador-9",
+              "value": "8"
+            }
+          ]
+        },
+        {
+          "field": "f2",
+          "ftype": "dropdown",
+          "title": "BATEADORES VISITANTE",
+          "value": "5",
+          "items": [
+            {
+              "text": "bateador-N/A",
+              "value": ""
+            },
+            {
+              "text": "bateador-1",
+              "value": "0"
+            },
+            {
+              "text": "bateador-2",
+              "value": "1"
+            },
+            {
+              "text": "bateador-3",
+              "value": "2"
+            },
+            {
+              "text": "bateador-4",
+              "value": "3"
+            },
+            {
+              "text": "bateador-5",
+              "value": "4"
+            },
+            {
+              "text": "bateador-6",
+              "value": "5"
+            },
+            {
+              "text": "bateador-7",
+              "value": "6"
+            },
+            {
+              "text": "bateador-8",
+              "value": "7"
+            },
+            {
+              "text": "bateador-9",
+              "value": "8"
+            }
+          ]
+        },
+        {
+          "field": "f6",
+          "ftype": "dropdown",
+          "title": "TEMPORADA",
+          "value": "2023",
+          "items": [
+            {
+              "text": "2023",
+              "value": "2023"
+            },
+            {
+              "text": "2022",
+              "value": "2022"
+            },
+            {
+              "text": "2021",
+              "value": "2021"
+            },
+            {
+              "text": "2020",
+              "value": "2020"
+            },
+            {
+              "text": "2019",
+              "value": "2019"
+            },
+            {
+              "text": "2018",
+              "value": "2018"
+            }
+          ]
+        },
+        {
+          "field": "f7",
+          "ftype": "dropdown",
+          "title": "PERIODO",
+          "value": "TR",
+          "items": [
+            {
+              "text": "TEMPORADA REGULAR",
+              "value": "TR"
+            },
+            {
+              "text": "ROUND ROBIN",
+              "value": "RR"
+            },
+            {
+              "text": "FINAL",
+              "value": "F"
+            }
+          ]
+        },
+        {
+          "field": "f8",
+          "ftype": "dropdown",
+          "title": "Mano pitcher",
+          "value": "D",
+          "items": [
+            {
+              "text": "Mano pitcher D",
+              "value": "D"
+            },
+            {
+              "text": "Mano pitcher Z",
+              "value": "Z"
+            }
+          ]
         }
       ],
       "onair": "false",
-      "imported": "1698701916780",
-      "relpath": "/softpix/Template_Pack_1.1/IVC/PICHER_homeclub-4linia/PICHER_homeclub-4linia.html",
-      "itemID": "1698701926334"
+      "imported": "1704486013831",
+      "relpath": "/softpix/Template_Pack_1.1/IVC/BATEADOR-VS-MANO-PITCHER/BATEADOR-VS-MANO-PITCHER.html",
+      "itemID": "1704486025655"
     }
   ]
 }

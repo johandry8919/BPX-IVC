@@ -5,7 +5,8 @@ const Inning = document.getElementById("Inning");
 const Hombre_primera = document.getElementById("hombre_primera");
 const Hombre_segunda = document.getElementById("hombre_segunda");
 const Hombre_tercera = document.getElementById("hombre_tercera");
-const Outs = document.getElementById("outsp");
+const outs1 = document.getElementById("outs1");
+const outs2 = document.getElementById("outs2");
 
 
 const Carreras_homeclub = document.getElementById('Carreras_homeclub')
@@ -89,13 +90,13 @@ Promise.all([request1])
 
                     if(parte == 1){
                         ALTA_BAJA.innerText = 'BAJA'
-                        alta_baja.style.backgroundImage = "url('img/baja.png')";
+                        // alta_baja.style.backgroundImage = "url('img/baja.png')";
 
                        
 
                     }else{
                         ALTA_BAJA.innerText = 'ALTA'
-                        alta_baja.style.backgroundImage = "url('img/alta.png')";
+                        // alta_baja.style.backgroundImage = "url('img/alta.png')";
 
                     }
 
@@ -114,13 +115,17 @@ Promise.all([request1])
                         Hombre_tercera.style.backgroundColor = colorDebase;
                         }
 
-                        if (outs === 1) {
-                            Outs.src = "./img/aout-1.png";
-                          } else if (outs === 2) {
-                            Outs.src = "./img/aout-2.png";
-                          }
-
-                   
+                       
+              
+                        if (outs == 1) {
+                                  outs1.classList.add("activate");
+                              } else if (outs == 2) {
+                                  outs1.classList.add("activate");
+                                  outs2.classList.add("activate");
+                              } else {
+                                  outs1.classList.remove("activate");
+                                  outs2.classList.remove("activate");
+                              }
 
                     Carreras_homeclub.innerText= carreras_homeclub
                     Carreras_visitante.innerText= carreras_visitante
@@ -135,15 +140,6 @@ Promise.all([request1])
         console.error("Error en una de las solicitudes:", error);
     });
 
- 
-
-    //e('fxt').innerHTML = htmlDecode(e('f0').innerText)
-    
-     
-
-       
-    
-     
     }
 
 

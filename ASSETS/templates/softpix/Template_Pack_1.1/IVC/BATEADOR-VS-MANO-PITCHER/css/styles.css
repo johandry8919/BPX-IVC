@@ -1,0 +1,135 @@
+
+
+body {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 580;
+
+}
+
+.container {
+  width: 100%;
+  height: 170px;
+  position: absolute;
+  bottom: 80px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: 55px;
+  box-sizing: border-box;
+  z-index: 2000;
+  overflow: hidden;
+}
+
+.cont-1 {
+  width: 100%;
+  height: 130px;
+  position: absolute;
+  bottom: 0;
+  left: 65px;
+  color: white;
+}
+
+.f1_gfx1 {
+ display: flex;
+ text-wrap: nowrap;
+ overflow: hidden;
+}
+.f1_gfx1 div {
+  margin-left: 10px ;
+  letter-spacing: 1px;
+
+
+}
+
+
+
+
+.cont-6{
+  width:53%;
+  height: 118px;
+  position: absolute;
+  bottom: 0;
+  overflow: hidden;
+  right: 0px;
+
+
+}
+.cont-6 .temporada{
+  width: 200px;
+  height: 42px;
+  opacity: 0;
+}
+.cont-6 .temporada img{
+  position: absolute;
+  left: 0;
+  top: 4px;
+
+}
+
+
+
+.cont-6 .lineup{
+  width: 193px;
+  height: 42px;
+  position: absolute;
+  left:0;
+  top: 0;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.cont-6 .cont{
+  width: 100%;
+  height: 65px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+
+.cont-6 .barra_equipos .barras{
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height:65;
+  position: absolute;
+ 
+}
+.cont-6 .barra_equipos .barras_text{
+  width: 100%;
+  height:65;
+  position: absolute;
+  display: flex;
+  color: #fff;
+  align-items: center;
+  opacity: 1;
+
+  z-index: 2000;
+  grid-column: 4px;
+  font-size: 30px;
+  text-wrap: wrap;
+  opacity: 0;
+  left: 100px;
+}
+
+.cont-6 .barra_equipos .barras_text p{
+  margin-left: 5px;
+
+}
+
+.cont-6 .barra_equipos .barras_text_info{
+  width: 2200;
+  position: absolute;
+   font-size: 30px ;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    bottom: 0;
+     opacity: 1;
+     height: 65;
+     text-wrap: wrap;
+     letter-spacing: 5px;
+}
+.f1_gfx2{
+  font-weight: bold;
+  font-size: 30px;
+
+}

@@ -1,0 +1,305 @@
+    <!-- ### CASPAR ### -->
+    <script src="../../js/gsap3.2.6.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../css/spx_layout.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/spx_fonts.css" />
+    <script type="text/javascript" src="../../js/spx_interface.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@480&display=swap" rel="stylesheet">
+  
+    <link
+      rel="stylesheet"
+      type="text/css"
+      id="DynamicTheme"
+      href="css/styles.css"
+    />
+  
+      
+    <script type="text/javascript">
+      window.SPXGCTemplateDefinition = {
+        description: "",
+        playserver: "OVERLAY",
+        playchannel: "1",
+        playlayer: "1",
+        webplayout: "20",
+        out: "manual",
+        dataformat: "json",
+        uicolor: "2",
+        DataFields: [
+          {
+            field: "comment",
+            ftype: "textfield",
+            title: "BATEADOR-VS-MANO-PITCHER",
+            value: "BATEADOR-VS-MANO-PITCHER",
+          },
+
+           {
+          field: "f0",
+          ftype: "textfield",
+          title: "ID DEL JUEGO",
+          value: "24+8+5++8",
+        },
+           {
+          field: "f4",
+          ftype: "TEMPORADA",
+          title: "EMPORADA",
+          value: "TEMPORADA 23-24",
+        },
+
+
+        {
+                "field": "f1",
+                "ftype": "dropdown",
+                "title": "BATEADORES HOMECLUB",
+                "value": "",
+                "items": [
+
+                  {
+                        "text": "bateador-N/A",
+                        "value": ""
+                    },
+                    {
+                        "text": "bateador-1",
+                        "value": "0"
+                    },
+                    {
+                        "text": "bateador-2",
+                        "value": "1"
+                    },
+                    {
+                        "text": "bateador-3",
+                        "value": "2"
+                    },
+                    {
+                        "text": "bateador-4",
+                        "value": "3"
+                    },
+                    {
+                        "text": "bateador-5",
+                        "value": "4"
+                    },
+                    {
+                        "text": "bateador-6",
+                        "value": "5"
+                    },
+                    {
+                        "text": "bateador-7",
+                        "value": "6"
+                    },
+                    {
+                        "text": "bateador-8",
+                        "value": "7"
+                    },
+                    {
+                        "text": "bateador-9",
+                        "value": "8"
+                    },
+                   
+                ]
+            },
+
+            {
+                "field": "f2",
+                "ftype": "dropdown",
+                "title": "BATEADORES VISITANTE",
+                "value": "",
+                "items": [
+                   {
+                        "text": "bateador-N/A",
+                        "value": ""
+                    },
+                    {
+                        "text": "bateador-1",
+                        "value": "0"
+                    },
+                    {
+                        "text": "bateador-2",
+                        "value": "1"
+                    },
+                    {
+                        "text": "bateador-3",
+                        "value": "2"
+                    },
+                    {
+                        "text": "bateador-4",
+                        "value": "3"
+                    },
+                    {
+                        "text": "bateador-5",
+                        "value": "4"
+                    },
+                    {
+                        "text": "bateador-6",
+                        "value": "5"
+                    },
+                    {
+                        "text": "bateador-7",
+                        "value": "6"
+                    },
+                    {
+                        "text": "bateador-8",
+                        "value": "7"
+                    },
+                    {
+                        "text": "bateador-9",
+                        "value": "8"
+                    },
+                   
+                ]
+            },
+
+
+            {
+                "field": "f6",
+                "ftype": "dropdown",
+                "title": "TEMPORADA",
+                "value": "2023",
+                "items": [
+
+                  {
+                        "text": "2023",
+                        "value": "2023"
+                    },
+                  {
+                        "text": "2022",
+                        "value": "2022"
+                    },
+                  {
+                        "text": "2021",
+                        "value": "2021"
+                    },
+                    {
+                        "text": "2020",
+                        "value": "2020"
+                    },
+                    {
+                        "text": "2019",
+                        "value": "2019"
+                    },
+
+                    {
+                        "text": "2018",
+                        "value": "2018"
+                    },
+                   
+                   
+                ]
+            },
+
+            {
+                "field": "f7",
+                "ftype": "dropdown",
+                "title": "PERIODO",
+                "value": "",
+                "items": [
+
+                  {
+                        "text": "TEMPORADA REGULAR",
+                        "value": "TR"
+                    },
+                  {
+                        "text": "ROUND ROBIN",
+                        "value": "RR"
+                    },
+                  {
+                        "text": "FINAL",
+                        "value": "F"
+                    },
+                    
+                   
+                   
+                ]
+            },
+
+            {
+                "field": "f8",
+                "ftype": "dropdown",
+                "title": "Mano pitcher",
+                "value": "D",
+                "items": [
+
+                  {
+                        "text": "Mano pitcher D",
+                        "value": "D"
+                    },
+                  {
+                        "text": "Mano pitcher Z",
+                        "value": "Z"
+                    },
+                 
+                   
+                   
+                ]
+            },
+
+
+
+
+      
+         
+        ],
+      };
+    </script>
+  </head>
+  <body>
+  
+    
+    <div
+      id="container"
+      class="container SPXWindow SPX_AUTOSIZE"
+      data-spx-remember="Use either SPX_AUTOSIZE or SPX_FIXSIZE"
+    >
+
+    <div class="cont-1">
+        <div id="cont-6" class="cont-6">
+          <div id="temporada" class="temporada"> <img id="Mano_bateador" style="position: absolute; left: -120px;" src="" ></div>
+        
+          
+            <div id="cont"  class="cont">
+              <div id="barra_equipos"  class="barra_equipos">
+                <div id="barras" class="barras"></div>
+               
+                <div id="barras_text" class="barras_text">
+                  <video loop style="position:  absolute;  left: -150px;" width="200" height="115"  id="video"></video>
+                 
+                 
+                  <p class="f1_gfx2" style="padding-right: 10px;" id="f1_gfx2"></p>
+                  <div class="f1_gfx1"   id="f1_gfx1">
+
+                  
+                  </div>
+                  
+                
+                </div>
+                
+
+              
+               
+             </div>
+
+            </div>
+        </div>
+       
+    </div>
+
+
+
+   
+   
+      <div style="opacity: 0" id="f3"></div>
+      <div style="opacity: 0" id="f0"></div>
+      <div style="opacity: 0" id="f1"></div>
+      <div style="opacity: 0" id="f2"></div>
+      <div style="opacity: 0" id="f4"></div>
+      <div style="opacity: 0" id="f6"></div>
+      <div style="opacity: 0" id="f7"></div>
+      <div style="opacity: 0" id="f8"></div>
+  </div>
+
+    <script src="../_js/jquery-3.0.0.min.js"></script>
+    <script src="js/animaciones.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/temStyles.js"></script>
+    <script src="https://apis.google.com/js/api.js"></script>
+   
+  </body>

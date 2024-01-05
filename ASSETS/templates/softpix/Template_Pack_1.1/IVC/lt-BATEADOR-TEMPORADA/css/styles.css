@@ -1,9 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap");
+
 
 body {
-  font-family: "Rajdhani", sans-serif;
-  font-weight: bold;
-  font-size: 30px;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 580;
+
 }
 
 .container {
@@ -58,7 +58,7 @@ body {
   height: 42px;
   position: absolute;
   left:0;
-  top: 18px;
+  top: 13px;
   background-image: url('../img/vacio.png');
   background-size: cover;
   background-repeat: no-repeat;
@@ -69,11 +69,12 @@ body {
  align-items: center;
  opacity: 0;
  color: black;
- font-size: 15px;
+ font-size: 20px;
  padding: 15px 5px ;
  text-align: center;
  justify-content: center;
  text-wrap: nowrap;
+ font-weight: bold;
 }
 
 
@@ -102,6 +103,7 @@ body {
   width: 100%;
   height:65;
   position: absolute;
+ 
 }
 .cont-6 .barra_equipos .barras_text{
   width: 100%;
@@ -111,12 +113,13 @@ body {
   color: #fff;
   align-items: center;
   opacity: 1;
-  overflow: hidden;
+
   z-index: 2000;
   grid-column: 4px;
-  font-size: 25px;
+  font-size: 30px;
   text-wrap: wrap;
   opacity: 0;
+  left: 100px;
 }
 
 .cont-6 .barra_equipos .barras_text p{
@@ -136,4 +139,9 @@ body {
      height: 65;
      text-wrap: wrap;
      letter-spacing: 5px;
+}
+.f1_gfx2{
+  font-weight: bold;
+  font-size: 30px;
+
 }

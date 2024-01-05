@@ -32,6 +32,7 @@
     { delay: 0.2, duration: dur - 0.2, x: 0, ease: "back.out(0.0)" }
   );
 
+
   gsap.fromTo(
     "#entreinnings",
     { opacity: 0 },

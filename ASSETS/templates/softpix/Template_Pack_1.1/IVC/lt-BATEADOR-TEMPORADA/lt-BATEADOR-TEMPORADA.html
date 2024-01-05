@@ -3,12 +3,9 @@
     <link rel="stylesheet" type="text/css" href="../../css/spx_layout.css" />
     <link rel="stylesheet" type="text/css" href="../../css/spx_fonts.css" />
     <script type="text/javascript" src="../../js/spx_interface.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@480&display=swap" rel="stylesheet">
   
     <link
       rel="stylesheet"
@@ -24,7 +21,7 @@
         playserver: "OVERLAY",
         playchannel: "1",
         playlayer: "1",
-        webplayout: "5",
+        webplayout: "20",
         out: "manual",
         dataformat: "json",
         uicolor: "2",
@@ -152,6 +149,70 @@
             },
 
 
+            {
+                "field": "f6",
+                "ftype": "dropdown",
+                "title": "TEMPORADA",
+                "value": "2023",
+                "items": [
+
+                  {
+                        "text": "2023",
+                        "value": "2023"
+                    },
+                  {
+                        "text": "2022",
+                        "value": "2022"
+                    },
+                  {
+                        "text": "2021",
+                        "value": "2021"
+                    },
+                    {
+                        "text": "2020",
+                        "value": "2020"
+                    },
+                    {
+                        "text": "2019",
+                        "value": "2019"
+                    },
+
+                    {
+                        "text": "2018",
+                        "value": "2018"
+                    },
+                   
+                   
+                ]
+            },
+            
+            {
+                "field": "f7",
+                "ftype": "dropdown",
+                "title": "PERIODO",
+                "value": "",
+                "items": [
+
+                  {
+                        "text": "TEMPORADA REGULAR",
+                        "value": "TR"
+                    },
+                  {
+                        "text": "ROUND ROBIN",
+                        "value": "RR"
+                    },
+                  {
+                        "text": "FINAL",
+                        "value": "F"
+                    },
+                    
+                   
+                   
+                ]
+            },
+
+
+
       
          
         ],
@@ -175,9 +236,12 @@
             <div id="cont"  class="cont">
               <div id="barra_equipos"  class="barra_equipos">
                 <div id="barras" class="barras"></div>
+               
                 <div id="barras_text" class="barras_text">
-                  <video loop width="100" height="60" autoplay muted id="video"></video>
-                  <p style="padding-right: 10px;" id="f1_gfx2"></p>
+                  <video loop style="position:  absolute;  left: -150px;" width="200" height="115"  id="video"></video>
+                 
+                 
+                  <p class="f1_gfx2" style="padding-right: 10px;" id="f1_gfx2"></p>
                   <div class="f1_gfx1"   id="f1_gfx1">
 
                   
@@ -205,6 +269,9 @@
       <div style="opacity: 0" id="f1"></div>
       <div style="opacity: 0" id="f2"></div>
       <div style="opacity: 0" id="f4"></div>
+      <div style="opacity: 0" id="f6"></div>
+      <div style="opacity: 0" id="f7"></div>
+    
   </div>
 
     <script src="../_js/jquery-3.0.0.min.js"></script>
