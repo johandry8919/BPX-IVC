@@ -1,0 +1,245 @@
+<!-- ### CASPAR ### -->
+<script src="../../js/gsap3.2.6.min.js"></script>
+<link rel="stylesheet" type="text/css" href="../../css/spx_layout.css" />
+<link rel="stylesheet" type="text/css" href="../../css/spx_fonts.css" />
+<script type="text/javascript" src="../../js/spx_interface.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" type="text/css" id="DynamicTheme" href="css/styles.css" />
+
+
+<script type="text/javascript">
+  window.SPXGCTemplateDefinition = {
+    description: "",
+    playserver: "OVERLAY",
+    playchannel: "1",
+    playlayer: "1",
+    webplayout: "1",
+    out: "manual",
+    dataformat: "json",
+    uicolor: "3",
+    DataFields: [
+      {
+        field: "comment",
+        ftype: "textfield",
+        title: "Lanzadores-Salvados",
+        value: "Lanzadores-Salvados",
+      },
+
+      {
+        field: "f0",
+        ftype: "textfield",
+        title: "ID DEL JUEGO",
+        value: "23+8+2+12",
+      },
+
+      {
+        "field": "f1",
+        "ftype": "dropdown",
+        "title": "Lanzador   HOMECLUB ",
+        "value": "",
+        "items": [
+
+          {
+            "text": "Lanzador-N/A",
+            "value": ""
+          },
+          {
+            "text": "Lanzador-1",
+            "value": "0"
+          },
+          {
+            "text": "Lanzador-2",
+            "value": "1"
+          },
+          {
+            "text": "Lanzador-3",
+            "value": "2"
+          },
+          {
+            "text": "Lanzador-4",
+            "value": "3"
+          },
+
+
+        ]
+      },
+
+      {
+        "field": "f2",
+        "ftype": "dropdown",
+        "title": "Lanzador   VISITANTE",
+        "value": "",
+        "items": [
+
+          {
+            "text": "Lanzador-N/A",
+            "value": ""
+          },
+          {
+            "text": "Lanzador-1",
+            "value": "0"
+          },
+          {
+            "text": "Lanzador-2",
+            "value": "1"
+          },
+          {
+            "text": "Lanzador-3",
+            "value": "2"
+          },
+          {
+            "text": "Lanzador-4",
+            "value": "3"
+          },
+
+
+        ]
+      },
+
+      {
+        "field": "f6",
+        "ftype": "dropdown",
+        "title": "TEMPORADA",
+        "value": "2023",
+        "items": [
+
+          {
+            "text": "2023",
+            "value": "2023"
+          },
+          {
+            "text": "2022",
+            "value": "2022"
+          },
+          {
+            "text": "2021",
+            "value": "2021"
+          },
+          {
+            "text": "2020",
+            "value": "2020"
+          },
+          {
+            "text": "2019",
+            "value": "2019"
+          },
+
+          {
+            "text": "2018",
+            "value": "2018"
+          },
+
+
+        ]
+      },
+
+      {
+        "field": "f7",
+        "ftype": "dropdown",
+        "title": "PERIODO",
+        "value": "",
+        "items": [
+
+          {
+            "text": "TEMPORADA REGULAR",
+            "value": "TR"
+          },
+          {
+            "text": "ROUND ROBIN",
+            "value": "RR"
+          },
+          {
+            "text": "FINAL",
+            "value": "F"
+          },
+
+
+
+        ]
+      },
+
+
+
+
+
+
+    ],
+  };
+</script>
+</head>
+
+<body>
+
+
+  <div id="container" class="container SPXWindow SPX_AUTOSIZE"
+    data-spx-remember="Use either SPX_AUTOSIZE or SPX_FIXSIZE">
+
+
+    <div id="posicion" class="cont">
+
+      <div id="cont-1" style="position: absolute; z-index: 200; opacity: 0; " class="cont-1">
+        <!-- <video  style="position: absolute; top: -170;"   id="video" class="animatelogo" width="500" height="600"></video> -->
+
+        <img style="position: absolute; top: 15;" class="animatelogo" width="250" height="250" id="video">
+
+        <div class="cont-2">
+
+
+          <div style="text-align: center; margin-top: 80px; font-size: 40px; padding: 10px;" id="f0_gfx">LUIS BRISEÑO
+          </div>
+          <div style="text-align: center; margin-top:1px; font-size: 35px;" id="Periodo">ESTA TEMPORADA</div>
+
+          <div class="cont-3">
+
+            <div>
+              <p class="left">G/P</p>
+              <p id="GP" class="right">.000</p>
+            </div>
+            <div>
+              <p class="left">IL</p>
+              <p id="IL" class="right">.000</p>
+            </div>
+            <div>
+              <p class="left">K/B</p>
+              <p id="kB" class="right">.000</p>
+            </div>
+
+            <div>
+              <p class="left">EFECT</p>
+              <p id="EFECT" class="right">.000</p>
+            </div>
+            <div>
+              <p class="left">S</p>
+              <p id="S" class="right">.000</p>
+            </div>
+
+
+          </div>
+        </div>
+
+      </div>
+      <video id="video1" width="100%"></video>
+    </div>
+
+  </div>
+
+
+  <div style="opacity: 0" id="f0"></div>
+  <div style="opacity: 0" id="f1"></div>
+  <div style="opacity: 0" id="f2"></div>
+  <div style="opacity: 0" id="f6"></div>
+  <div style="opacity: 0" id="f7"></div>
+
+
+  </div>
+
+  <script src="../_js/jquery-3.0.0.min.js"></script>
+  <script src="https://apis.google.com/js/api.js"></script>
+  <script src="js/animaciones.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/temStyles.js"></script>
+
+</body>

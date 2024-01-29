@@ -43,14 +43,32 @@ function runTemplateUpdate() {
 
   }
 
-  let TemporadaResul = temporada;
+  let TemporadaResul;
 
-  if(periodo == "RR"){
-    TemporadaResul = `RR`
-  }else if(periodo == "F"){
-    TemporadaResul = `FINAL`
-
+  switch (temporada) {
+    case "2023":
+      TemporadaResul = (periodo == "TR") ? "ESTA TEMPORADA" : (periodo == "RR") ? "ROUND ROBIN 24" : (periodo == "F") ? "FINAL 2024" : "";
+      break;
+    case "2022":
+      TemporadaResul = (periodo == "TR") ? "TEMPORADA 2022" : (periodo == "RR") ? "ROUND ROBIN 23" : (periodo == "F") ? "FINAL 2023" : "";
+      break;
+    case "2021":
+      TemporadaResul = (periodo == "TR") ? "TEMPORADA 2021" : (periodo == "RR") ? "ROUND ROBIN 22" : (periodo == "F") ? "FINAL 2021" : "";
+      break;
+    case "2020":
+      TemporadaResul = (periodo == "TR") ? "TEMPORADA 2020" : (periodo == "RR") ? "ROUND ROBIN 21" : (periodo == "F") ? "FINAL 2021" : "";
+      break;
+    case "2019":
+      TemporadaResul = (periodo == "TR") ? "TEMPORADA 2019" : (periodo == "RR") ? "ROUND ROBIN 19" : (periodo == "F") ? "FINAL 2019" : "";
+      break;
+    case "2018":
+      TemporadaResul = (periodo == "TR") ? "TEMPORADA 2018" : (periodo == "RR") ? "ROUND ROBIN 18" : (periodo == "F") ? "FINAL 2018" : "";
+      break;
+    default:
+      TemporadaResul = "";
+      break;
   }
+
 
 
   gapi.load("client", initClient);
@@ -112,11 +130,11 @@ function runTemplateUpdate() {
 
                   
                       document.getElementById("f1_gfx1").innerHTML = ` 
-                      <div > (${TemporadaResul}) / </div>
+                      <div > ${TemporadaResul} /  </div>
                       <div ><small>AVG</small> ${0} / </div>
                      <div><small>HR</small> ${0} / </div>
                       <div><small>H</small> ${0} / </div>
-                       <div><small>CI </small>  ${0}  </div>
+                       
                        `;
 
                       
@@ -172,13 +190,14 @@ function runTemplateUpdate() {
                           );
 
 
-                          
+              
 
                           const params = {
                             id_bateador: id_peloteros,
                             periodo: periodo,
                             temporada: temporada,
-                            mano_bateador: Mano_bateador
+                            mano_pitcher: Mano_bateador
+                            
                           };
                           Object.keys(params).forEach((key) =>
                             url.searchParams.append(key, params[key])
@@ -197,21 +216,19 @@ function runTemplateUpdate() {
                                 return numero.toString().substring(1);
                               }
 
-                              
-
-                          
 
                               datas.data.forEach((element, index) => {
+
+                              
                                 let AVG = convertirNumero(element.AVE);
                                 document.getElementById(
                                   "f1_gfx1"
                                 ).innerHTML = ` 
-                                <div > (${TemporadaResul}) / </div>
-                                <div > ${element.VB}-${element.HIT}  / </div>
+                                <div  >${TemporadaResul} / </div>
                                 <div><small>AVG </small>  ${AVG} / </div>
                                 <div><small>HR</small> ${element.HR} / </div>
                                 <div><small>H</small> ${element.HIT} / </div>
-                                <div><small>CI</small> ${element.CI} / </div>
+                               
                                  
                                  
                                  `;

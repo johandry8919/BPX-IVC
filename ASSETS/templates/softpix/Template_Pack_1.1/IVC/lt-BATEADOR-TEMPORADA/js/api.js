@@ -16,28 +16,45 @@ function runTemplateUpdate() {
   let temporada = htmlDecode(e("f6").innerText);
   let periodo = htmlDecode(e("f7").innerText);
 
-  if (temporada == "2023") {
-    document.getElementById("temporada").innerText = "TEMPORADA 23-24";
-  } else {
-    document.getElementById("temporada").innerText =
-      "TEMPORADA " + "" + temporada;
-  }
 
-  let Temporada;
+// TR 2023 = ESTA TEMPORADA
+// RR 2023 = ROUND ROBIN 2024
+// F 2023 = FINAL 2024
+// TR 2022 = TEMPORADA 2022
+// RR 2022 = ROUND ROBIN 2023
+// F 2022 = FINAL 2023
+// TR 2021 = TEMPORADA 2021
+// RR 2021 = ROUND ROBIN 2022
+// F 2021 = FINAL 2021
+// TR 2020 = TEMPORADA 2020
+// RR 2020 = ROUND ROBIN 2021
+// F 2020 = FINAL 2021
 
-  if(periodo == 'RR'){
-    if(temporada == "2023" ) Temporada = "2024"
-      else if(temporada == "2018" ) Temporada = "2019"
-    else  Temporada = temporada
-    
-    document.getElementById("temporada").innerText = " RR " + "  " + Temporada;
-  }
-  if(periodo == 'F'){
-    if(temporada == "2023" ) Temporada = "2024"
-      else if(temporada == "2018" ) Temporada = "2019"
-    else  Temporada = temporada
-    document.getElementById("temporada").innerText = " F  " + "  " + Temporada;
-  }
+switch (temporada) {
+  case "2023":
+    TemporadaResul = (periodo == "TR") ? "ESTA TEMPORADA" : (periodo == "RR") ? "ROUND ROBIN 2024" : (periodo == "F") ? "FINAL 2024" : "";
+    break;
+  case "2022":
+    TemporadaResul = (periodo == "TR") ? "TEMPORADA 2022" : (periodo == "RR") ? "ROUND ROBIN 2023" : (periodo == "F") ? "FINAL 2023" : "";
+    break;
+  case "2021":
+    TemporadaResul = (periodo == "TR") ? "TEMPORADA 2021" : (periodo == "RR") ? "ROUND ROBIN 2022" : (periodo == "F") ? "FINAL 2021" : "";
+    break;
+  case "2020":
+    TemporadaResul = (periodo == "TR") ? "TEMPORADA 2020" : (periodo == "RR") ? "ROUND ROBIN 2021" : (periodo == "F") ? "FINAL 2021" : "";
+    break;
+  case "2019":
+    TemporadaResul = (periodo == "TR") ? "TEMPORADA 2019" : (periodo == "RR") ? "ROUND ROBIN 2019" : (periodo == "F") ? "FINAL 2019" : "";
+    break;
+  case "2018":
+    TemporadaResul = (periodo == "TR") ? "TEMPORADA 2018" : (periodo == "RR") ? "ROUND ROBIN 2018" : (periodo == "F") ? "FINAL 2018" : "";
+    break;
+  default:
+    TemporadaResul = "ESTA TEMPORADA";
+    break;
+}
+
+document.getElementById("temporada").innerText = TemporadaResul;
 
   var id_peloteros;
   var id_equipo_jugado;
@@ -127,7 +144,8 @@ function runTemplateUpdate() {
                     const url1 = new URL(
                       "https://bss.qualitybeisbol.com/api/boxscore"
                     );
-                  
+                    
+
                     function ajustarCadena(cadena) {
                       cadena = cadena.replace(/\+/g, " ");
                       cadena = cadena.replace(/\+/g, " ");
@@ -169,9 +187,6 @@ function runTemplateUpdate() {
                             "https://bss.qualitybeisbol.com/api/anual-pelotero-ave"
                           );
 
-
-                          
-
                           const params = {
                             id_bateador: id_peloteros,
                             periodo: periodo,
@@ -188,7 +203,6 @@ function runTemplateUpdate() {
                             .then((response) => response.json())
                             .then((datas) => {
                               datas.data.forEach((element, index) => {
-                              
                                 if (true) {
                                   function convertirNumero(numero) {
                                     if (
